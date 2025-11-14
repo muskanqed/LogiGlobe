@@ -161,6 +161,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-cream text-foreground font-body;
   }
@@ -181,29 +182,98 @@
   .text-navy {
     color: oklch(0.2 0.02 250);
   }
+
   .bg-navy {
     background-color: oklch(0.2 0.02 250);
   }
+
   .text-cream {
     color: oklch(0.98 0.005 60);
   }
+
   .bg-cream {
     background-color: oklch(0.98 0.005 60);
   }
+
   /* Replaced red utilities with navy accent utilities */
   .text-accent {
     color: oklch(0.2 0.02 250);
   }
+
   .bg-accent {
     background-color: oklch(0.2 0.02 250);
   }
+
   .bg-accent-dark {
     background-color: oklch(0.15 0.02 250);
   }
+
   .border-cream {
     border-color: oklch(0.98 0.005 60);
   }
+
   .border-accent {
     border-color: oklch(0.2 0.02 250);
   }
+}
+
+/* Custom Mapbox Popup Styling */
+.mapboxgl-custom-popup .mapboxgl-popup-content {
+  @apply bg-card text-card-foreground p-5 rounded-lg;
+}
+
+.mapboxgl-custom-popup .mapboxgl-popup-close-button {
+  font-size: 22px;
+  padding: 0 6px;
+  right: 0;
+  top: 0;
+}
+
+.mapboxgl-custom-popup .mapboxgl-popup-close-button:hover {
+  background-color: transparent;
+}
+
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+  border-bottom-color: var(--card);
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+  border-top-color: var(--card);
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+  border-right-color: var(--card);
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+  border-left-color: var(--card);
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+
+
+.dark .mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+  border-bottom-color: var(--card);
+}
+
+.dark .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+  border-top-color: var(--card);
+}
+
+.dark .mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+  border-right-color: var(--card);
+}
+
+.dark .mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+  border-left-color: var(--card);
 }

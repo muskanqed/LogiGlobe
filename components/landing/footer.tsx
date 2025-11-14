@@ -1,6 +1,6 @@
-import Link from "next/link"
+import { Mail, MapPin, Phone } from "lucide-react"
 import Image from "next/image"
-import { Mail, Phone, MapPin } from "lucide-react"
+import Link from "next/link"
 
 export function Footer() {
   return (

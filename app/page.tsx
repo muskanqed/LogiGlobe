@@ -2,7 +2,7 @@ import { Navbar } from "@/components/landing/navbar"
 import { Hero } from "@/components/landing/hero"
 import { StatsSection } from "@/components/landing/stats-section"
 import { AdvantageSection } from "@/components/landing/advantage-section"
-import { ServicesGrid } from "@/components/landing/services-grid"
+import { LogisticsVideoSection } from "@/components/landing/logistics-video-section"
 import { BenefitsSection } from "@/components/landing/benefits-section"
 import { LeadershipSection } from "@/components/landing/leadership-section"
 import { TrustedBy } from "@/components/landing/trusted-by"
@@ -16,7 +16,7 @@ export default function Home() {
       <Hero />
       <StatsSection />
       <AdvantageSection />
-      <ServicesGrid />
+      <LogisticsVideoSection />
       <BenefitsSection />
       <LeadershipSection />
       <TrustedBy />

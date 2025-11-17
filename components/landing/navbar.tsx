@@ -69,6 +69,9 @@ export function Navbar() {
             <Link href="#leadership" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
               Leadership
             </Link>
+            <Link href="/careers" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
+              Careers
+            </Link>
             <Link href="#contact" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
               Contact
             </Link>
@@ -145,6 +148,13 @@ export function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Leadership
+            </Link>
+            <Link
+              href="/careers"
+              className="block py-2 text-sm font-medium text-navy hover:text-navy/70"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Careers
             </Link>
             <Link
               href="#contact"

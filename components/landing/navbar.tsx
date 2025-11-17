@@ -66,6 +66,9 @@ export function Navbar() {
             <Link href="#services" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
               Services
             </Link>
+            <Link href="/partners" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
+              Partners
+            </Link>
             <Link href="#leadership" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
               Leadership
             </Link>
@@ -141,6 +144,13 @@ export function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Services
+            </Link>
+            <Link
+              href="/partners"
+              className="block py-2 text-sm font-medium text-navy hover:text-navy/70"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Partners
             </Link>
             <Link
               href="#leadership"

@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/landing/navbar"
 import { HeroSection } from "@/components/careers/hero-section"
-import { AboutCareers } from "@/components/careers/about-careers"
-import { ApplicationForm } from "@/components/careers/application-form"
+import { CareersContentForm } from "@/components/careers/careers-content-form"
 import { CareersFooter } from "@/components/careers/careers-footer"
 import { Metadata } from "next"
 
@@ -15,8 +14,7 @@ export default function CareersPage() {
     <main className="min-h-screen">
       <Navbar />
       <HeroSection />
-      <AboutCareers />
-      <ApplicationForm />
+      <CareersContentForm />
       <CareersFooter />
     </main>
   )

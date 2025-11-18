@@ -82,7 +82,7 @@ export function ContactSection() {
         <div className="text-center mb-16">
           <div className="w-16 h-[3px] bg-navy mx-auto mb-6" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy mb-4 font-heading">
-            Get In <span className="text-navy/70">Touch</span>
+            Get In <span className="text-gradient">Touch</span>
           </h2>
           <p className="text-lg text-navy/70 max-w-2xl mx-auto">
             Have a question or need a quote? Reach out to us and we'll respond promptly

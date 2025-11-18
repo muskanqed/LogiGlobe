@@ -9,7 +9,7 @@ export function AdvantageSection() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-6 leading-tight text-navy font-heading">
               The ROLO FLEETS
               <br />
-              <span className="text-navy/70">Advantage</span>
+              <span className="text-gradient">Advantage</span>
             </h2>
             <p className="text-lg text-gray mb-6 leading-relaxed">
               ROLO Fleets carries forward a legacy of over four decades, originally founded by the grandfather of our

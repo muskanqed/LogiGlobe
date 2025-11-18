@@ -1,4 +1,4 @@
-import { Compass, Zap, Shield, Users } from "lucide-react"
+import { Compass, Shield, Users, Zap } from "lucide-react"
 
 export function MissionSection() {
   return (
@@ -7,7 +7,7 @@ export function MissionSection() {
         <div className="text-center mb-16">
           <div className="w-16 h-[3px] bg-navy mx-auto mb-6" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy mb-4 font-heading">
-            Mission & <span className="text-navy/70">Purpose</span>
+            Mission & <span className="text-gradient">Purpose</span>
           </h2>
           <p className="text-lg text-navy/70 max-w-2xl mx-auto">
             Bridging tradition with innovation to transform Indian logistics

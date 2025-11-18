@@ -20,7 +20,7 @@ export function Footer() {
                 <div className="text-sm text-cream/70">
                   1st Floor, VVT Avenue, Indira Nagar,
                   <br />
-                  Nashik, Maharashtra, India
+                  Nashik, Maharashtra, India - 422009
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -32,10 +32,10 @@ export function Footer() {
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-cream" />
                 <a
-                  href="mailto:info@rolofleets.com"
+                  href="mailto:support@rolofleets.com"
                   className="text-sm text-cream/70 hover:text-cream transition-colors"
                 >
-                  info@rolofleets.com
+                  support@rolofleets.com
                 </a>
               </div>
             </div>

@@ -1,5 +1,5 @@
-import { Navbar } from "@/components/landing/navbar"
 import { Footer } from "@/components/landing/footer"
+import { Navbar } from "@/components/landing/navbar"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search } from "lucide-react"
@@ -46,8 +46,8 @@ export default function TrackPage() {
                     Call: +91 93079 21926
                   </a>
                   <span className="hidden sm:inline text-muted-foreground">|</span>
-                  <a href="mailto:info@rolofleets.com" className="text-sm font-medium text-[#E53935] hover:underline">
-                    Email: info@rolofleets.com
+                  <a href="mailto:support@rolofleets.com" className="text-sm font-medium text-[#E53935] hover:underline">
+                    Email: support@rolofleets.com
                   </a>
                 </div>
               </div>

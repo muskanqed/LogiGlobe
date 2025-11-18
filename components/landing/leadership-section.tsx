@@ -15,8 +15,8 @@ const leaders = [
   },
   {
     name: "Anup Jagganath Gosavi",
-    title: "Co-Founder",
-    bio: "20+ years in corporate & entrepreneurial experience with expertise in operations and technology.",
+    title: "Co-founder & COO",
+    bio: "MBA in International Business; 11+ years of expertise in growth strategy and marketing.",
     image: "/senior-business-leader-portrait.jpg",
   },
   {

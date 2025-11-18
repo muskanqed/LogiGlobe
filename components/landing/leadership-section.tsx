@@ -8,6 +8,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import { Linkedin } from "lucide-react"
+import Link from "next/link"
 
 const leaders = [
   {
@@ -15,36 +17,42 @@ const leaders = [
     title: "Founder & CEO",
     bio: "MBA in International Business; expertise in growth strategy and marketing.",
     image: "/business-executive-portrait.png",
+    linkedin: "https://linkedin.com",
   },
   {
     name: "Vishal Ramesh Bidve",
     title: "Co-Founder & CTO",
     bio: "IIT Bombay alumnus; specializes in AI, ML & blockchain-enabled logistics.",
     image: "/technology-executive-portrait.jpg",
+    linkedin: "https://linkedin.com",
   },
   {
     name: "Anup Jagganath Gosavi",
     title: "Co-founder & COO",
     bio: "MBA in International Business; 11+ years of expertise in growth strategy and marketing.",
     image: "/senior-business-leader-portrait.jpg",
+    linkedin: "https://linkedin.com",
   },
   {
     name: "Sandip Vitthal Mandhare",
     title: "Director – Operations",
     bio: "10+ years in operations; ensures process discipline and ground execution excellence.",
     image: "/operations-director-portrait.jpg",
+    linkedin: "https://linkedin.com",
   },
   {
     name: "Dnyaneshwar Sahebrao Tanpure",
     title: "Director – Supply Chain",
     bio: "25+ years in trucking and logistics; drives supply-chain efficiency and reliability.",
     image: "/logistics-director-portrait.jpg",
+    linkedin: "https://linkedin.com",
   },
   {
     name: "Arvind Dattatray Chavan",
     title: "Director – Vendor Management",
     bio: "20+ years in vendor relations; ensures transparent and dependable partnerships.",
     image: "/vendor-management-executive-portrait.jpg",
+    linkedin: "https://linkedin.com",
   },
 ]
 
@@ -81,9 +89,20 @@ export function LeadershipSection() {
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-navy mb-1 group-hover:text-navy/80 transition-colors font-heading">
-                      {leader.name}
-                    </h3>
+                    <div className="flex items-start justify-between gap-2 mb-1">
+                      <h3 className="text-xl font-bold text-navy group-hover:text-navy/80 transition-colors font-heading">
+                        {leader.name}
+                      </h3>
+                      <Link
+                        href={leader.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-shrink-0 p-1.5 rounded-full bg-navy/5 hover:bg-navy hover:text-white transition-all"
+                        aria-label={`${leader.name}'s LinkedIn profile`}
+                      >
+                        <Linkedin className="w-4 h-4" />
+                      </Link>
+                    </div>
                     <div className="text-sm font-semibold text-navy/70 mb-3">{leader.title}</div>
                     <p className="text-sm text-gray leading-relaxed">{leader.bio}</p>
                   </div>

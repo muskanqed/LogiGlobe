@@ -50,8 +50,13 @@ export function Navbar() {
             <Image src="/logo-navy-cream.png" alt="Rolo Fleet" width={200} height={80} className="h-14 w-auto" />
           </Link>
 
+
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
+            <Link href="/" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
+              Home
+            </Link>
             {/* About Dropdown */}
             <div
               className="relative"

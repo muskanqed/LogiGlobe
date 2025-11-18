@@ -1,4 +1,7 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
+import { AnimatedCounter } from "@/components/ui/animated-counter"
 import Link from "next/link"
 
 export function Hero() {
@@ -51,19 +54,35 @@ export function Hero() {
           {/* Quick Stats */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-16 pt-12 border-t border-cream/20">
             <div>
-              <div className="text-4xl font-bold text-cream mb-1 font-heading">40+</div>
+              <AnimatedCounter
+                end={40}
+                suffix="+"
+                className="text-4xl font-bold text-cream mb-1 font-heading"
+              />
               <div className="text-sm text-cream/60 uppercase tracking-wide">Years Legacy</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-cream mb-1 font-heading">500+</div>
+              <AnimatedCounter
+                end={500}
+                suffix="+"
+                className="text-4xl font-bold text-cream mb-1 font-heading"
+              />
               <div className="text-sm text-cream/60 uppercase tracking-wide">Partners</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-cream mb-1 font-heading">99%</div>
+              <AnimatedCounter
+                end={95}
+                suffix="%"
+                className="text-4xl font-bold text-cream mb-1 font-heading"
+              />
               <div className="text-sm text-cream/60 uppercase tracking-wide">On-Time</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-cream mb-1 font-heading">20K+</div>
+              <AnimatedCounter
+                end={20}
+                suffix="K+"
+                className="text-4xl font-bold text-cream mb-1 font-heading"
+              />
               <div className="text-sm text-cream/60 uppercase tracking-wide">Monthly</div>
             </div>
           </div>

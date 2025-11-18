@@ -219,4 +219,20 @@
   .border-accent {
     border-color: oklch(0.2 0.02 250);
   }
+
+  /* Gradient text utility for section headers */
+  .text-gradient {
+    background: linear-gradient(to right, #1B2735 0%, #6B7280 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Light gradient for dark backgrounds */
+  .text-gradient-light {
+    background: linear-gradient(to right, #F5F5F0 0%, #D1D5DB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }

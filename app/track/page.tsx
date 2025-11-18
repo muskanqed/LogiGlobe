@@ -12,9 +12,9 @@ export default function TrackPage() {
       <section className="flex-1 py-20 bg-gradient-to-b from-background to-muted/30">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <div className="w-16 h-1 bg-[#E53935] mx-auto mb-6" />
+            <div className="w-16 h-1 bg-navy mx-auto mb-6" />
             <h1 className="text-4xl sm:text-5xl font-black mb-4">
-              Track Your <span className="text-[#E53935]">Shipment</span>
+              Track Your <span className="text-navy">Shipment</span>
             </h1>
             <p className="text-lg text-muted-foreground">
               Enter your tracking number to get real-time updates on your shipment
@@ -29,7 +29,7 @@ export default function TrackPage() {
                 </label>
                 <div className="flex gap-2">
                   <Input id="tracking" type="text" placeholder="Enter your tracking number" className="flex-1" />
-                  <Button type="submit" className="bg-[#E53935] hover:bg-[#D32F2F] text-white">
+                  <Button type="submit" className="bg-navy hover:bg-navy/90 text-white">
                     <Search className="w-5 h-5 mr-2" />
                     Track
                   </Button>
@@ -42,11 +42,11 @@ export default function TrackPage() {
                   Contact our support team for assistance with tracking or shipment inquiries.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <a href="tel:+919307921926" className="text-sm font-medium text-[#E53935] hover:underline">
+                  <a href="tel:+919307921926" className="text-sm font-medium text-navy hover:underline">
                     Call: +91 93079 21926
                   </a>
                   <span className="hidden sm:inline text-muted-foreground">|</span>
-                  <a href="mailto:support@rolofleets.com" className="text-sm font-medium text-[#E53935] hover:underline">
+                  <a href="mailto:support@rolofleets.com" className="text-sm font-medium text-navy hover:underline">
                     Email: support@rolofleets.com
                   </a>
                 </div>

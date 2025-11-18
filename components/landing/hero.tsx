@@ -36,7 +36,7 @@ export function Hero() {
               size="lg"
               className="bg-cream hover:bg-cream/90 text-navy font-semibold text-base px-10 rounded-sm"
             >
-              <Link href="#services">Explore Our Services</Link>
+              <Link href="/#services">Explore Our Services</Link>
             </Button>
             <Button
               asChild
@@ -44,7 +44,7 @@ export function Hero() {
               variant="outline"
               className="border-2 border-cream/40 text-cream hover:bg-cream/10 font-semibold text-base px-10 bg-transparent rounded-sm"
             >
-              <Link href="#leadership">Track Shipment</Link>
+              <Link href="/#leadership">Track Shipment</Link>
             </Button>
           </div>
 

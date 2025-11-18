@@ -32,7 +32,7 @@ export function CTABanner() {
             size="lg"
             className="bg-cream hover:bg-cream/90 text-navy font-semibold text-base px-10 rounded-sm"
           >
-            <Link href="#contact">
+            <Link href="/#contact">
               Get Started Today <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
           </Button>

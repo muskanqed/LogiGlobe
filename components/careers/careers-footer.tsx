@@ -51,7 +51,7 @@ export function CareersFooter() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="text-cream/70 hover:text-cream transition-colors text-sm"
                 >
                   Surface Transportation
@@ -59,7 +59,7 @@ export function CareersFooter() {
               </li>
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="text-cream/70 hover:text-cream transition-colors text-sm"
                 >
                   Air Logistics
@@ -67,7 +67,7 @@ export function CareersFooter() {
               </li>
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="text-cream/70 hover:text-cream transition-colors text-sm"
                 >
                   Supply Chain Solutions
@@ -75,7 +75,7 @@ export function CareersFooter() {
               </li>
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="text-cream/70 hover:text-cream transition-colors text-sm"
                 >
                   Vendor Management
@@ -83,7 +83,7 @@ export function CareersFooter() {
               </li>
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="text-cream/70 hover:text-cream transition-colors text-sm"
                 >
                   Technology Integration
@@ -91,7 +91,7 @@ export function CareersFooter() {
               </li>
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="text-cream/70 hover:text-cream transition-colors text-sm"
                 >
                   Warehousing
@@ -114,7 +114,7 @@ export function CareersFooter() {
               </li>
               <li>
                 <Link
-                  href="#history"
+                  href="/#history"
                   className="text-cream/70 hover:text-cream transition-colors text-sm"
                 >
                   About Us
@@ -130,7 +130,7 @@ export function CareersFooter() {
               </li>
               <li>
                 <Link
-                  href="#contact"
+                  href="/#contact"
                   className="text-cream/70 hover:text-cream transition-colors text-sm"
                 >
                   Contact Us

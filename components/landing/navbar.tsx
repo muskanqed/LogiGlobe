@@ -36,25 +36,25 @@ export function Navbar() {
               {aboutDropdownOpen && (
                 <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg py-2">
                   <Link
-                    href="#history"
+                    href="/#history"
                     className="block px-4 py-2 text-sm text-navy hover:bg-gray-50 transition-colors"
                   >
                     History
                   </Link>
                   <Link
-                    href="#leaders"
+                    href="/#leaders"
                     className="block px-4 py-2 text-sm text-navy hover:bg-gray-50 transition-colors"
                   >
                     Our Leaders
                   </Link>
                   <Link
-                    href="#vision"
+                    href="/#vision"
                     className="block px-4 py-2 text-sm text-navy hover:bg-gray-50 transition-colors"
                   >
                     Vision
                   </Link>
                   <Link
-                    href="#mission"
+                    href="/#mission"
                     className="block px-4 py-2 text-sm text-navy hover:bg-gray-50 transition-colors"
                   >
                     Mission & Purpose
@@ -63,19 +63,19 @@ export function Navbar() {
               )}
             </div>
 
-            <Link href="#services" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
+            <Link href="/#services" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
               Services
             </Link>
             <Link href="/partners" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
               Partners
             </Link>
-            <Link href="#leadership" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
+            <Link href="/#leadership" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
               Leadership
             </Link>
             <Link href="/careers" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
               Careers
             </Link>
-            <Link href="#contact" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
+            <Link href="/#contact" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
               Contact
             </Link>
             <Button asChild className="bg-navy hover:bg-navy/90 text-white font-semibold rounded-sm">
@@ -107,28 +107,28 @@ export function Navbar() {
               {mobileAboutOpen && (
                 <div className="pl-4 mt-2 space-y-2">
                   <Link
-                    href="#history"
+                    href="/#history"
                     className="block py-2 text-sm text-navy hover:text-navy/70"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     HISTORY
                   </Link>
                   <Link
-                    href="#leaders"
+                    href="/#leaders"
                     className="block py-2 text-sm text-navy hover:text-navy/70"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     OUR LEADERS
                   </Link>
                   <Link
-                    href="#vision"
+                    href="/#vision"
                     className="block py-2 text-sm text-navy hover:text-navy/70"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     VISION
                   </Link>
                   <Link
-                    href="#mission"
+                    href="/#mission"
                     className="block py-2 text-sm text-navy hover:text-navy/70"
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -139,7 +139,7 @@ export function Navbar() {
             </div>
 
             <Link
-              href="#services"
+              href="/#services"
               className="block py-2 text-sm font-medium text-navy hover:text-navy/70"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -153,7 +153,7 @@ export function Navbar() {
               Partners
             </Link>
             <Link
-              href="#leadership"
+              href="/#leadership"
               className="block py-2 text-sm font-medium text-navy hover:text-navy/70"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -167,7 +167,7 @@ export function Navbar() {
               Careers
             </Link>
             <Link
-              href="#contact"
+              href="/#contact"
               className="block py-2 text-sm font-medium text-navy hover:text-navy/70"
               onClick={() => setMobileMenuOpen(false)}
             >

@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Poppins, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { FloatingSupport } from "@/components/partners/floating-support"
 import "./globals.css"
 
 const poppins = Poppins({
@@ -55,6 +56,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${poppins.variable} font-body antialiased`}>
         {children}
+        <FloatingSupport />
         <Analytics />
       </body>
     </html>

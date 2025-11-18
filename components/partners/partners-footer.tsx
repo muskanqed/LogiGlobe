@@ -38,7 +38,7 @@ export function PartnersFooter() {
                 <div className="text-sm text-cream/70">
                   1st Floor, VVT Avenue, Indira Nagar,
                   <br />
-                  Nashik, Maharashtra, India
+                  Nashik, Maharashtra, India - 422009
                 </div>
               </div>
               <div className="flex items-center gap-3">

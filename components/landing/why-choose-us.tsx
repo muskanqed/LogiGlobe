@@ -13,25 +13,60 @@ interface FeatureProps {
 
 const Feature = ({ icon, title, description, index }: FeatureProps) => {
   const containerVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, y: 50, scale: 0.8 },
     visible: {
       opacity: 1,
+      y: 0,
       scale: 1,
       transition: {
-        duration: 0.5,
-        delay: index * 0.2,
-        ease: [0.25, 0.4, 0.25, 1],
+        duration: 0.7,
+        delay: index * 0.15,
+        ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
   }
 
   const iconVariants = {
     hover: {
-      scale: 1.12,
+      scale: 1.15,
+      rotate: [0, -10, 10, -10, 0],
       transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 10,
+        scale: {
+          type: "spring",
+          stiffness: 400,
+          damping: 10,
+        },
+        rotate: {
+          duration: 0.5,
+          ease: "easeInOut",
+        },
+      },
+    },
+  }
+
+  const glowVariants = {
+    hover: {
+      boxShadow: [
+        "0 0 20px rgba(255,255,255,0.2)",
+        "0 0 40px rgba(255,255,255,0.4)",
+        "0 0 20px rgba(255,255,255,0.2)",
+      ],
+      transition: {
+        duration: 1.5,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  }
+
+  const floatingVariants = {
+    animate: {
+      y: [-5, 5, -5],
+      transition: {
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: index * 0.2,
       },
     },
   }
@@ -41,25 +76,57 @@ const Feature = ({ icon, title, description, index }: FeatureProps) => {
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-50px" }}
+      viewport={{ once: true, margin: "-100px" }}
       whileHover="hover"
       className="group relative flex flex-col items-center text-center"
     >
+      {/* Outer Circle Ring */}
       <motion.div
-        variants={iconVariants}
-        className="relative mb-6 w-24 h-24 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center shadow-lg group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-shadow duration-300"
+        variants={floatingVariants}
+        animate="animate"
+        className="relative"
       >
-        <div className="text-white w-10 h-10">{icon}</div>
+        {/* Background Glow Circle */}
+        <motion.div
+          variants={glowVariants}
+          className="absolute inset-0 rounded-full bg-white/5 blur-xl scale-110"
+        />
+
+        {/* Main Icon Circle */}
+        <motion.div
+          variants={iconVariants}
+          className="relative mb-6 w-32 h-32 rounded-full bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-md border-2 border-white/30 flex items-center justify-center shadow-2xl group-hover:border-white/50 transition-all duration-500"
+        >
+          {/* Inner circle glow */}
+          <div className="absolute inset-2 rounded-full bg-gradient-to-br from-white/10 to-transparent" />
+
+          {/* Animated pulse ring */}
+          <motion.div
+            className="absolute inset-0 rounded-full border-2 border-white/30"
+            animate={{
+              scale: [1, 1.1, 1],
+              opacity: [0.5, 0, 0.5],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: index * 0.3,
+            }}
+          />
+
+          <div className="relative text-white w-14 h-14 z-10">{icon}</div>
+        </motion.div>
       </motion.div>
 
       <motion.h3
-        className="text-xl font-bold text-white mb-3 font-heading group-hover:brightness-110 transition-all duration-300"
+        className="text-xl font-bold text-white mb-3 font-heading group-hover:scale-105 transition-all duration-300"
       >
         {title}
       </motion.h3>
 
       <motion.p
-        className="text-sm text-white/80 leading-relaxed max-w-[240px] group-hover:text-white transition-colors duration-300"
+        className="text-sm text-white/80 leading-relaxed max-w-[240px] group-hover:text-white/95 transition-colors duration-300"
       >
         {description}
       </motion.p>
@@ -73,25 +140,33 @@ interface CTACardProps {
 
 const CTACard = ({ href = "#contact" }: CTACardProps) => {
   const containerVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, y: 50, scale: 0.8 },
     visible: {
       opacity: 1,
+      y: 0,
       scale: 1,
       transition: {
-        duration: 0.5,
-        delay: 0.6,
-        ease: [0.25, 0.4, 0.25, 1],
+        duration: 0.7,
+        delay: 0.45,
+        ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
   }
 
-  const cardVariants = {
+  const iconVariants = {
     hover: {
-      y: -8,
+      scale: 1.15,
+      rotate: [0, -10, 10, -10, 0],
       transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 20,
+        scale: {
+          type: "spring",
+          stiffness: 400,
+          damping: 10,
+        },
+        rotate: {
+          duration: 0.5,
+          ease: "easeInOut",
+        },
       },
     },
   }
@@ -107,17 +182,37 @@ const CTACard = ({ href = "#contact" }: CTACardProps) => {
     },
   }
 
-  const pulseVariants = {
-    pulse: {
+  const glowVariants = {
+    hover: {
       boxShadow: [
-        "0 0 0 0 rgba(255, 255, 255, 0.4)",
-        "0 0 0 20px rgba(255, 255, 255, 0)",
+        "0 0 20px rgba(255,255,255,0.3)",
+        "0 0 50px rgba(255,255,255,0.5)",
+        "0 0 20px rgba(255,255,255,0.3)",
       ],
       transition: {
-        duration: 2,
+        duration: 1.5,
         repeat: Infinity,
-        repeatDelay: 6,
+        ease: "easeInOut",
       },
+    },
+  }
+
+  const floatingVariants = {
+    animate: {
+      y: [-5, 5, -5],
+      transition: {
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 0.6,
+      },
+    },
+  }
+
+  const pulseRingVariants = {
+    animate: {
+      scale: [1, 1.2, 1],
+      opacity: [0.6, 0, 0.6],
     },
   }
 
@@ -126,42 +221,85 @@ const CTACard = ({ href = "#contact" }: CTACardProps) => {
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-50px" }}
+      viewport={{ once: true, margin: "-100px" }}
       whileHover="hover"
       className="group relative flex flex-col items-center text-center"
     >
       <motion.div
-        variants={cardVariants}
-        className="relative w-full max-w-[280px] p-8 rounded-2xl bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md border border-white/30 shadow-xl group-hover:border-white/50 transition-all duration-300"
+        variants={floatingVariants}
+        animate="animate"
+        className="relative"
       >
-        {/* Gradient border on hover */}
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/0 via-white/0 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
+        {/* Background Glow Circle */}
         <motion.div
-          className="relative mb-6 w-20 h-20 mx-auto rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center shadow-lg"
+          variants={glowVariants}
+          className="absolute inset-0 rounded-full bg-white/5 blur-xl scale-110"
+        />
+
+        {/* Main Icon Circle with enhanced styling */}
+        <motion.div
+          variants={iconVariants}
+          className="relative mb-6 w-32 h-32 rounded-full bg-gradient-to-br from-white/25 to-white/10 backdrop-blur-md border-2 border-white/40 flex items-center justify-center shadow-2xl group-hover:border-white/60 transition-all duration-500"
         >
-          <FileText className="text-white w-9 h-9" />
+          {/* Inner circle glow */}
+          <div className="absolute inset-2 rounded-full bg-gradient-to-br from-white/15 to-transparent" />
+
+          {/* Multiple Animated pulse rings */}
+          <motion.div
+            className="absolute inset-0 rounded-full border-2 border-white/40"
+            variants={pulseRingVariants}
+            animate="animate"
+            transition={{
+              duration: 2.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute inset-0 rounded-full border-2 border-white/30"
+            variants={pulseRingVariants}
+            animate="animate"
+            transition={{
+              duration: 2.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1.25,
+            }}
+          />
+
+          <FileText className="relative text-white w-14 h-14 z-10" />
         </motion.div>
-
-        <h3 className="text-2xl font-bold text-white mb-4 font-heading">
-          Get Detailed Quote
-        </h3>
-
-        <p className="text-sm text-white/90 mb-6 leading-relaxed">
-          Request a comprehensive quote tailored to your logistics needs
-        </p>
-
-        <Link href={href}>
-          <motion.button
-            variants={buttonVariants}
-            animate="pulse"
-            className="relative w-full px-6 py-3 rounded-lg bg-white text-navy font-bold text-sm hover:bg-white/95 transition-colors duration-200 shadow-lg"
-          >
-            <motion.div variants={pulseVariants} animate="pulse" className="absolute inset-0 rounded-lg" />
-            <span className="relative">Click here</span>
-          </motion.button>
-        </Link>
       </motion.div>
+
+      <motion.h3 className="text-xl font-bold text-white mb-3 font-heading group-hover:scale-105 transition-all duration-300">
+        Get Detailed Quote
+      </motion.h3>
+
+      <motion.p className="text-sm text-white/80 leading-relaxed max-w-[240px] mb-6 group-hover:text-white/95 transition-colors duration-300">
+        Request a comprehensive quote tailored to your logistics needs
+      </motion.p>
+
+      <Link href={href}>
+        <motion.button
+          variants={buttonVariants}
+          className="relative px-8 py-3 rounded-full bg-white text-navy font-bold text-sm hover:bg-white/95 transition-all duration-300 shadow-xl group-hover:shadow-2xl"
+        >
+          {/* Button pulse effect */}
+          <motion.div
+            className="absolute inset-0 rounded-full border-2 border-white"
+            animate={{
+              scale: [1, 1.1, 1],
+              opacity: [0.8, 0, 0.8],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <span className="relative">Click here</span>
+        </motion.button>
+      </Link>
     </motion.div>
   )
 }
@@ -187,12 +325,49 @@ export function WhyChooseUs({ ctaHref }: { ctaHref?: string }) {
 
   return (
     <section className="relative py-24 bg-navy overflow-hidden">
-      {/* World map dotted pattern background */}
+      {/* Top Separator Line */}
+      <div className="absolute top-0 left-0 right-0 h-px overflow-hidden">
+        <motion.div
+          className="h-full bg-gradient-to-r from-transparent via-white/30 to-transparent"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+        />
+      </div>
+
+      {/* Animated circular pattern background */}
       <div
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-5"
         style={{
-          backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)`,
-          backgroundSize: "30px 30px",
+          backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.2) 2px, transparent 2px)`,
+          backgroundSize: "40px 40px",
+        }}
+      />
+
+      {/* Large decorative circles */}
+      <motion.div
+        className="absolute top-20 left-10 w-64 h-64 rounded-full bg-white/5 blur-3xl"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.5, 0.3],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div
+        className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-white/5 blur-3xl"
+        animate={{
+          scale: [1.2, 1, 1.2],
+          opacity: [0.5, 0.3, 0.5],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
         }}
       />
 
@@ -206,9 +381,33 @@ export function WhyChooseUs({ ctaHref }: { ctaHref?: string }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <div className="w-16 h-[3px] bg-white/80 mx-auto mb-6" />
+          {/* Circular badge */}
+          <motion.div
+            className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/30 mx-auto mb-6"
+            animate={{
+              rotate: 360,
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          >
+            <motion.div
+              className="w-12 h-12 rounded-full bg-gradient-to-br from-white/30 to-white/10"
+              animate={{
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          </motion.div>
+
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 text-white font-heading">
             Why Choose <span className="text-gradient-light">ROLO FLEETS</span>
           </h2>
@@ -231,6 +430,17 @@ export function WhyChooseUs({ ctaHref }: { ctaHref?: string }) {
 
           <CTACard href={ctaHref} />
         </div>
+      </div>
+
+      {/* Bottom Separator Line */}
+      <div className="absolute bottom-0 left-0 right-0 h-px overflow-hidden">
+        <motion.div
+          className="h-full bg-gradient-to-r from-transparent via-white/30 to-transparent"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+        />
       </div>
     </section>
   )

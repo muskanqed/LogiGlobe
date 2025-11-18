@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter, Youtube } from "lucide-react"
+import { Mail, MapPin, Phone } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -21,7 +21,7 @@ export function CareersFooter() {
                 <div className="text-sm text-cream/70">
                   1st Floor, VVT Avenue, Indira Nagar,
                   <br />
-                  Nashik, Maharashtra, India
+                  Nashik, Maharashtra, India - 422009
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -36,10 +36,10 @@ export function CareersFooter() {
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-cream" />
                 <a
-                  href="mailto:info@rolofleets.com"
+                  href="mailto:support@rolofleets.com"
                   className="text-sm text-cream/70 hover:text-cream transition-colors"
                 >
-                  info@rolofleets.com
+                  support@rolofleets.com
                 </a>
               </div>
             </div>
@@ -51,7 +51,7 @@ export function CareersFooter() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="text-cream/70 hover:text-cream transition-colors text-sm"
                 >
                   Surface Transportation
@@ -59,7 +59,7 @@ export function CareersFooter() {
               </li>
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="text-cream/70 hover:text-cream transition-colors text-sm"
                 >
                   Air Logistics
@@ -67,7 +67,7 @@ export function CareersFooter() {
               </li>
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="text-cream/70 hover:text-cream transition-colors text-sm"
                 >
                   Supply Chain Solutions
@@ -75,7 +75,7 @@ export function CareersFooter() {
               </li>
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="text-cream/70 hover:text-cream transition-colors text-sm"
                 >
                   Vendor Management
@@ -83,7 +83,7 @@ export function CareersFooter() {
               </li>
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="text-cream/70 hover:text-cream transition-colors text-sm"
                 >
                   Technology Integration
@@ -91,7 +91,7 @@ export function CareersFooter() {
               </li>
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="text-cream/70 hover:text-cream transition-colors text-sm"
                 >
                   Warehousing
@@ -114,7 +114,7 @@ export function CareersFooter() {
               </li>
               <li>
                 <Link
-                  href="#history"
+                  href="/about"
                   className="text-cream/70 hover:text-cream transition-colors text-sm"
                 >
                   About Us
@@ -130,7 +130,7 @@ export function CareersFooter() {
               </li>
               <li>
                 <Link
-                  href="#contact"
+                  href="/#contact"
                   className="text-cream/70 hover:text-cream transition-colors text-sm"
                 >
                   Contact Us

@@ -20,7 +20,7 @@ export function Footer() {
                 <div className="text-sm text-cream/70">
                   1st Floor, VVT Avenue, Indira Nagar,
                   <br />
-                  Nashik, Maharashtra, India
+                  Nashik, Maharashtra, India - 422009
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -32,10 +32,10 @@ export function Footer() {
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-cream" />
                 <a
-                  href="mailto:info@rolofleets.com"
+                  href="mailto:support@rolofleets.com"
                   className="text-sm text-cream/70 hover:text-cream transition-colors"
                 >
-                  info@rolofleets.com
+                  support@rolofleets.com
                 </a>
               </div>
             </div>
@@ -46,17 +46,17 @@ export function Footer() {
             <h3 className="font-bold text-lg mb-5 text-cream font-heading">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="#about" className="text-cream/70 hover:text-cream transition-colors text-sm">
+                <Link href="/#about" className="text-cream/70 hover:text-cream transition-colors text-sm">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="text-cream/70 hover:text-cream transition-colors text-sm">
+                <Link href="/#services" className="text-cream/70 hover:text-cream transition-colors text-sm">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="#leadership" className="text-cream/70 hover:text-cream transition-colors text-sm">
+                <Link href="/#leadership" className="text-cream/70 hover:text-cream transition-colors text-sm">
                   Leadership
                 </Link>
               </li>

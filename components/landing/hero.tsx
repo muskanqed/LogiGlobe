@@ -1,4 +1,7 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
+import { AnimatedCounter } from "@/components/ui/animated-counter"
 import Link from "next/link"
 
 export function Hero() {
@@ -36,7 +39,7 @@ export function Hero() {
               size="lg"
               className="bg-cream hover:bg-cream/90 text-navy font-semibold text-base px-10 rounded-sm"
             >
-              <Link href="#services">Explore Our Services</Link>
+              <Link href="/#services">Explore Our Services</Link>
             </Button>
             <Button
               asChild
@@ -44,26 +47,42 @@ export function Hero() {
               variant="outline"
               className="border-2 border-cream/40 text-cream hover:bg-cream/10 font-semibold text-base px-10 bg-transparent rounded-sm"
             >
-              <Link href="#leadership">Track Shipment</Link>
+              <Link href="/#leadership">Track Shipment</Link>
             </Button>
           </div>
 
           {/* Quick Stats */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-16 pt-12 border-t border-cream/20">
             <div>
-              <div className="text-4xl font-bold text-cream mb-1 font-heading">40+</div>
+              <AnimatedCounter
+                end={40}
+                suffix="+"
+                className="text-4xl font-bold text-cream mb-1 font-heading"
+              />
               <div className="text-sm text-cream/60 uppercase tracking-wide">Years Legacy</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-cream mb-1 font-heading">500+</div>
+              <AnimatedCounter
+                end={500}
+                suffix="+"
+                className="text-4xl font-bold text-cream mb-1 font-heading"
+              />
               <div className="text-sm text-cream/60 uppercase tracking-wide">Partners</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-cream mb-1 font-heading">99%</div>
+              <AnimatedCounter
+                end={95}
+                suffix="%"
+                className="text-4xl font-bold text-cream mb-1 font-heading"
+              />
               <div className="text-sm text-cream/60 uppercase tracking-wide">On-Time</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-cream mb-1 font-heading">20K+</div>
+              <AnimatedCounter
+                end={20}
+                suffix="K+"
+                className="text-4xl font-bold text-cream mb-1 font-heading"
+              />
               <div className="text-sm text-cream/60 uppercase tracking-wide">Monthly</div>
             </div>
           </div>

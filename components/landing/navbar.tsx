@@ -4,12 +4,42 @@ import { Button } from "@/components/ui/button"
 import { ChevronDown, Menu, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false)
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false)
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const servicesDropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  const handleMouseEnter = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current)
+    }
+    setAboutDropdownOpen(true)
+  }
+
+  const handleMouseLeave = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setAboutDropdownOpen(false)
+    }, 300)
+  }
+
+  const handleServicesMouseEnter = () => {
+    if (servicesDropdownTimeoutRef.current) {
+      clearTimeout(servicesDropdownTimeoutRef.current)
+    }
+    setServicesDropdownOpen(true)
+  }
+
+  const handleServicesMouseLeave = () => {
+    servicesDropdownTimeoutRef.current = setTimeout(() => {
+      setServicesDropdownOpen(false)
+    }, 300)
+  }
 
   return (
     <nav className="sticky top-0 z-50 bg-cream/95 backdrop-blur border-b border-gray-200">
@@ -25,8 +55,8 @@ export function Navbar() {
             {/* About Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => setAboutDropdownOpen(true)}
-              onMouseLeave={() => setAboutDropdownOpen(false)}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               <button className="flex items-center gap-1 text-sm font-medium text-navy hover:text-navy/70 transition-colors">
                 About
@@ -34,27 +64,27 @@ export function Navbar() {
               </button>
 
               {aboutDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg py-2">
+                <div className="absolute top-full left-0 mt-1 w-56 bg-white border border-gray-200 rounded-md shadow-lg py-2">
                   <Link
-                    href="#history"
+                    href="/about"
                     className="block px-4 py-2 text-sm text-navy hover:bg-gray-50 transition-colors"
                   >
                     History
                   </Link>
                   <Link
-                    href="#leaders"
+                    href="/#leaders"
                     className="block px-4 py-2 text-sm text-navy hover:bg-gray-50 transition-colors"
                   >
                     Our Leaders
                   </Link>
                   <Link
-                    href="#vision"
+                    href="/#vision"
                     className="block px-4 py-2 text-sm text-navy hover:bg-gray-50 transition-colors"
                   >
                     Vision
                   </Link>
                   <Link
-                    href="#mission"
+                    href="/#mission"
                     className="block px-4 py-2 text-sm text-navy hover:bg-gray-50 transition-colors"
                   >
                     Mission & Purpose
@@ -63,19 +93,75 @@ export function Navbar() {
               )}
             </div>
 
-            <Link href="#services" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
-              Services
-            </Link>
+            {/* Services Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={handleServicesMouseEnter}
+              onMouseLeave={handleServicesMouseLeave}
+            >
+              <button className="flex items-center gap-1 text-sm font-medium text-navy hover:text-navy/70 transition-colors">
+                Services
+                <ChevronDown size={16} className={`transition-transform ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {servicesDropdownOpen && (
+                <div className="absolute top-full left-0 mt-1 w-64 bg-white border border-gray-200 rounded-md shadow-lg py-2">
+                  <Link
+                    href="/#services"
+                    className="block px-4 py-2 text-sm text-navy hover:bg-gray-50 transition-colors font-semibold"
+                  >
+                    All Services
+                  </Link>
+                  <div className="border-t border-gray-200 my-1"></div>
+                  <Link
+                    href="/#services"
+                    className="block px-4 py-2 text-sm text-navy hover:bg-gray-50 transition-colors"
+                  >
+                    Surface Transportation
+                  </Link>
+                  <Link
+                    href="/#services"
+                    className="block px-4 py-2 text-sm text-navy hover:bg-gray-50 transition-colors"
+                  >
+                    Air Logistics
+                  </Link>
+                  <Link
+                    href="/#services"
+                    className="block px-4 py-2 text-sm text-navy hover:bg-gray-50 transition-colors"
+                  >
+                    Supply Chain Solutions
+                  </Link>
+                  <Link
+                    href="/#services"
+                    className="block px-4 py-2 text-sm text-navy hover:bg-gray-50 transition-colors"
+                  >
+                    Vendor Management
+                  </Link>
+                  <Link
+                    href="/#services"
+                    className="block px-4 py-2 text-sm text-navy hover:bg-gray-50 transition-colors"
+                  >
+                    Technology Integration
+                  </Link>
+                  <Link
+                    href="/#services"
+                    className="block px-4 py-2 text-sm text-navy hover:bg-gray-50 transition-colors"
+                  >
+                    Warehousing
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link href="/partners" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
               Partners
             </Link>
-            <Link href="#leadership" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
+            <Link href="/#leadership" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
               Leadership
             </Link>
             <Link href="/careers" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
               Careers
             </Link>
-            <Link href="#contact" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
+            <Link href="/#contact" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
               Contact
             </Link>
             <Button asChild className="bg-navy hover:bg-navy/90 text-white font-semibold rounded-sm">
@@ -107,28 +193,28 @@ export function Navbar() {
               {mobileAboutOpen && (
                 <div className="pl-4 mt-2 space-y-2">
                   <Link
-                    href="#history"
+                    href="/about"
                     className="block py-2 text-sm text-navy hover:text-navy/70"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     HISTORY
                   </Link>
                   <Link
-                    href="#leaders"
+                    href="/#leaders"
                     className="block py-2 text-sm text-navy hover:text-navy/70"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     OUR LEADERS
                   </Link>
                   <Link
-                    href="#vision"
+                    href="/#vision"
                     className="block py-2 text-sm text-navy hover:text-navy/70"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     VISION
                   </Link>
                   <Link
-                    href="#mission"
+                    href="/#mission"
                     className="block py-2 text-sm text-navy hover:text-navy/70"
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -138,13 +224,70 @@ export function Navbar() {
               )}
             </div>
 
-            <Link
-              href="#services"
-              className="block py-2 text-sm font-medium text-navy hover:text-navy/70"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Services
-            </Link>
+            {/* Services Dropdown for Mobile */}
+            <div>
+              <button
+                className="flex items-center justify-between w-full py-2 text-sm font-medium text-navy hover:text-navy/70"
+                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+              >
+                Services
+                <ChevronDown size={16} className={`transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {mobileServicesOpen && (
+                <div className="pl-4 mt-2 space-y-2">
+                  <Link
+                    href="/#services"
+                    className="block py-2 text-sm text-navy hover:text-navy/70 font-semibold"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    All Services
+                  </Link>
+                  <Link
+                    href="/#services"
+                    className="block py-2 text-sm text-navy hover:text-navy/70"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Surface Transportation
+                  </Link>
+                  <Link
+                    href="/#services"
+                    className="block py-2 text-sm text-navy hover:text-navy/70"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Air Logistics
+                  </Link>
+                  <Link
+                    href="/#services"
+                    className="block py-2 text-sm text-navy hover:text-navy/70"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Supply Chain Solutions
+                  </Link>
+                  <Link
+                    href="/#services"
+                    className="block py-2 text-sm text-navy hover:text-navy/70"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Vendor Management
+                  </Link>
+                  <Link
+                    href="/#services"
+                    className="block py-2 text-sm text-navy hover:text-navy/70"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Technology Integration
+                  </Link>
+                  <Link
+                    href="/#services"
+                    className="block py-2 text-sm text-navy hover:text-navy/70"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Warehousing
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link
               href="/partners"
               className="block py-2 text-sm font-medium text-navy hover:text-navy/70"
@@ -153,7 +296,7 @@ export function Navbar() {
               Partners
             </Link>
             <Link
-              href="#leadership"
+              href="/#leadership"
               className="block py-2 text-sm font-medium text-navy hover:text-navy/70"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -167,7 +310,7 @@ export function Navbar() {
               Careers
             </Link>
             <Link
-              href="#contact"
+              href="/#contact"
               className="block py-2 text-sm font-medium text-navy hover:text-navy/70"
               onClick={() => setMobileMenuOpen(false)}
             >

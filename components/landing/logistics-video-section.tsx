@@ -15,34 +15,16 @@ const iconMap = {
 
 export function LogisticsVideoSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-  const [videoError, setVideoError] = useState(false)
 
   return (
     <section className="relative w-full py-24 md:py-32 overflow-hidden" id="services">
-      {/* Background Video */}
-      {!videoError ? (
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          onError={() => setVideoError(true)}
-        >
-          <source
-            src="https://videos.pexels.com/video-files/4439425/4439425-uhd_2560_1440_25fps.mp4"
-            type="video/mp4"
-          />
-        </video>
-      ) : (
-        // Fallback image if video fails
-        <div
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1920&h=1080&fit=crop')"
-          }}
-        />
-      )}
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 w-full h-full bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/images/warehouse.jpg')"
+        }}
+      />
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-navy/80" />

@@ -1,11 +1,20 @@
 "use client";
 
 import { stats } from "@/data/home";
+import { globeConfig, globeData } from "@/data/globe-data";
 import { TrendingUp } from "lucide-react";
-import { useRef } from "react";
+import dynamic from "next/dynamic";
+
+const World = dynamic(() => import("@/components/ui/globe").then((m) => m.World), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center h-full">
+      <div className="text-cream/50">Loading globe...</div>
+    </div>
+  ),
+});
 
 export function StatsSection() {
-  const mapContainerRef = useRef<HTMLDivElement>(null);
   return (
     <section className="py-24 bg-navy">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
@@ -17,32 +26,29 @@ export function StatsSection() {
           </p>
         </div>
 
-        <div className="relative w-full h-[500px] mb-16 rounded-lg overflow-hidden">
-          <div
-            id="map-container"
-            ref={mapContainerRef}
-            className="absolute inset-0 h-full w-full"
-          />
-        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Stats Grid - Left Side */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
+            {stats.map((stat, index) => (
+              <div key={index} className="relative group text-center">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-[2px] bg-cream opacity-0 group-hover:opacity-100 transition-opacity" />
 
-        <div className="text-center mb-16">
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-          {stats.map((stat, index) => (
-            <div key={index} className="relative group text-center">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-[2px] bg-cream opacity-0 group-hover:opacity-100 transition-opacity" />
-
-              <div className="pt-4">
-                <div className="flex items-center justify-center gap-2 mb-3">
-                  <TrendingUp className="text-cream w-6 h-6" />
-                  <div className="text-5xl lg:text-6xl font-black text-cream font-heading">{stat.value}</div>
+                <div className="pt-4">
+                  <div className="flex items-center justify-center gap-2 mb-3">
+                    <TrendingUp className="text-cream w-6 h-6" />
+                    <div className="text-5xl lg:text-6xl font-black text-cream font-heading">{stat.value}</div>
+                  </div>
+                  <div className="text-xl font-semibold text-cream/90 mb-2">{stat.label}</div>
+                  <div className="text-sm text-cream/50">{stat.sublabel}</div>
                 </div>
-                <div className="text-xl font-semibold text-cream/90 mb-2">{stat.label}</div>
-                <div className="text-sm text-cream/50">{stat.sublabel}</div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Globe - Right Side */}
+          <div className="relative w-full h-[500px] lg:h-[600px]">
+            <World globeConfig={globeConfig} data={globeData} />
+          </div>
         </div>
       </div>
     </section>

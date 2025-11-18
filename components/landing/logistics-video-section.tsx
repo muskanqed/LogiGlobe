@@ -44,7 +44,7 @@ export function LogisticsVideoSection() {
 
         {/* Services Grid - Horizontal on Desktop, Vertical on Mobile */}
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-0">
             {services.map((service, index) => {
               const Icon = iconMap[service.icon as keyof typeof iconMap]
               const isHovered = hoveredIndex === index

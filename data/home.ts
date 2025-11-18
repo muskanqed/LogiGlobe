@@ -47,11 +47,11 @@ export const services = [
     description: 'AI-powered logistics with blockchain transparency and automation',
     icon: 'cpu',
   },
-  {
-    title: 'Warehousing',
-    description: 'Secure storage facilities with inventory management systems',
-    icon: 'warehouse',
-  },
+  // {
+  //   title: 'Warehousing',
+  //   description: 'Secure storage facilities with inventory management systems',
+  //   icon: 'warehouse',
+  // },
 ]
 
 export const benefits = [

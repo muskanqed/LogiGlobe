@@ -4,7 +4,6 @@ import { Navbar } from "@/components/landing/navbar"
 import { BenefitsSection } from "@/components/landing/benefits-section"
 import { CTABanner } from "@/components/landing/cta-banner"
 import { Footer } from "@/components/landing/footer"
-import { LeadershipSection } from "@/components/landing/leadership-section"
 import { LogisticsVideoSection } from "@/components/landing/logistics-video-section"
 import { TrustedBy } from "@/components/landing/trusted-by"
 
@@ -16,7 +15,7 @@ export default function Home() {
       {/* <StatsSection /> */}
       <LogisticsVideoSection />
       <BenefitsSection />
-      <LeadershipSection />
+      {/* <Leader/shipSection /> */}
       <TrustedBy />
       <CTABanner />
       <Footer />

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ChevronDown, Menu, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { useState, useRef } from "react"
+import { useRef, useState } from "react"
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -72,19 +72,19 @@ export function Navbar() {
                     History
                   </Link>
                   <Link
-                    href="/#leaders"
+                    href="/about#leaders"
                     className="block px-4 py-2 text-sm text-navy hover:bg-gray-50 transition-colors"
                   >
                     Our Leaders
                   </Link>
                   <Link
-                    href="/#vision"
+                    href="/about#vision"
                     className="block px-4 py-2 text-sm text-navy hover:bg-gray-50 transition-colors"
                   >
                     Vision
                   </Link>
                   <Link
-                    href="/#mission"
+                    href="/about#mission"
                     className="block px-4 py-2 text-sm text-navy hover:bg-gray-50 transition-colors"
                   >
                     Mission & Purpose
@@ -155,9 +155,6 @@ export function Navbar() {
             <Link href="/partners" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
               Partners
             </Link>
-            <Link href="/#leadership" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
-              Leadership
-            </Link>
             <Link href="/careers" className="text-sm font-medium text-navy hover:text-navy/70 transition-colors">
               Careers
             </Link>
@@ -200,21 +197,21 @@ export function Navbar() {
                     HISTORY
                   </Link>
                   <Link
-                    href="/#leaders"
+                    href="/about#leaders"
                     className="block py-2 text-sm text-navy hover:text-navy/70"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     OUR LEADERS
                   </Link>
                   <Link
-                    href="/#vision"
+                    href="/about#vision"
                     className="block py-2 text-sm text-navy hover:text-navy/70"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     VISION
                   </Link>
                   <Link
-                    href="/#mission"
+                    href="/about#mission"
                     className="block py-2 text-sm text-navy hover:text-navy/70"
                     onClick={() => setMobileMenuOpen(false)}
                   >

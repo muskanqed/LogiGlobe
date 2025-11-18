@@ -114,7 +114,7 @@ export function CareersFooter() {
               </li>
               <li>
                 <Link
-                  href="/#history"
+                  href="/about"
                   className="text-cream/70 hover:text-cream transition-colors text-sm"
                 >
                   About Us

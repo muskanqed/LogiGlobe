@@ -4,12 +4,26 @@ import { Button } from "@/components/ui/button"
 import { ChevronDown, Menu, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false)
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false)
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  const handleMouseEnter = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current)
+    }
+    setAboutDropdownOpen(true)
+  }
+
+  const handleMouseLeave = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setAboutDropdownOpen(false)
+    }, 300)
+  }
 
   return (
     <nav className="sticky top-0 z-50 bg-cream/95 backdrop-blur border-b border-gray-200">
@@ -25,8 +39,8 @@ export function Navbar() {
             {/* About Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => setAboutDropdownOpen(true)}
-              onMouseLeave={() => setAboutDropdownOpen(false)}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               <button className="flex items-center gap-1 text-sm font-medium text-navy hover:text-navy/70 transition-colors">
                 About
@@ -34,9 +48,9 @@ export function Navbar() {
               </button>
 
               {aboutDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg py-2">
+                <div className="absolute top-full left-0 mt-1 w-56 bg-white border border-gray-200 rounded-md shadow-lg py-2">
                   <Link
-                    href="/#history"
+                    href="/about"
                     className="block px-4 py-2 text-sm text-navy hover:bg-gray-50 transition-colors"
                   >
                     History
@@ -107,7 +121,7 @@ export function Navbar() {
               {mobileAboutOpen && (
                 <div className="pl-4 mt-2 space-y-2">
                   <Link
-                    href="/#history"
+                    href="/about"
                     className="block py-2 text-sm text-navy hover:text-navy/70"
                     onClick={() => setMobileMenuOpen(false)}
                   >

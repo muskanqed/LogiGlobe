@@ -1,7 +1,6 @@
 import { Hero } from "@/components/landing/hero"
 import { Navbar } from "@/components/landing/navbar"
 // import { StatsSection } from "@/components/landing/stats-section"
-import { AdvantageSection } from "@/components/landing/advantage-section"
 import { BenefitsSection } from "@/components/landing/benefits-section"
 import { CTABanner } from "@/components/landing/cta-banner"
 import { Footer } from "@/components/landing/footer"
@@ -15,7 +14,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       {/* <StatsSection /> */}
-      <AdvantageSection />
       <LogisticsVideoSection />
       <BenefitsSection />
       <LeadershipSection />

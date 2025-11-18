@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card"
 import { services } from "@/data/home"
-import { Truck, Plane, Package, Users, Cpu, Warehouse } from "lucide-react"
+import { Cpu, Package, Plane, Truck, Users, Warehouse } from "lucide-react"
 
 const iconMap = {
   truck: Truck,
@@ -18,7 +18,7 @@ export function ServicesGrid() {
         <div className="text-center mb-16">
           <div className="w-16 h-[3px] bg-navy mx-auto mb-6" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 text-navy font-heading">
-            Integrated Logistics <span className="text-navy/70">Services</span>
+            Integrated Logistics <span className="text-gradient">Services</span>
           </h2>
           <p className="text-lg text-gray max-w-2xl mx-auto">
             End-to-end logistics services with visibility and efficiency across the supply chain

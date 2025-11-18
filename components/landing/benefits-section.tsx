@@ -8,7 +8,7 @@ export function BenefitsSection() {
         <div className="text-center mb-16">
           <div className="w-16 h-[3px] bg-navy mx-auto mb-6" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 text-navy font-heading">
-            Why Choose <span className="text-navy/70">ROLO FLEETS</span>
+            Why Choose <span className="text-gradient">ROLO FLEETS</span>
           </h2>
           <p className="text-xl text-navy max-w-2xl mx-auto font-semibold">
             Legacy You Can Trust. Systems You Can Scale.

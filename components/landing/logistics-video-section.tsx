@@ -1,7 +1,7 @@
 "use client"
 
 import { services } from "@/data/home"
-import { Truck, Plane, Package, Users, Cpu, Warehouse } from "lucide-react"
+import { Cpu, Package, Plane, Truck, Users, Warehouse } from "lucide-react"
 import { useState } from "react"
 
 const iconMap = {
@@ -35,7 +35,7 @@ export function LogisticsVideoSection() {
         <div className="text-center mb-16 px-6">
           <div className="w-16 h-[3px] bg-cream mx-auto mb-6" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 text-cream font-heading">
-            Integrated Logistics <span className="text-cream/70">Services</span>
+            Integrated Logistics <span className="text-gradient-light">Services</span>
           </h2>
           <p className="text-lg text-cream/80 max-w-2xl mx-auto">
             End-to-end logistics services with visibility and efficiency across the supply chain
@@ -44,7 +44,7 @@ export function LogisticsVideoSection() {
 
         {/* Services Grid - Horizontal on Desktop, Vertical on Mobile */}
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-0">
             {services.map((service, index) => {
               const Icon = iconMap[service.icon as keyof typeof iconMap]
               const isHovered = hoveredIndex === index
@@ -64,7 +64,7 @@ export function LogisticsVideoSection() {
                   {/* Service Card */}
                   <div
                     className={`
-                      relative p-8 min-h-[280px] flex flex-col items-center justify-center text-center
+                      relative p-8 h-[280px] flex flex-col items-center justify-center text-center
                       transition-all duration-500 ease-in-out cursor-pointer
                       ${isHovered ? 'bg-white/10' : 'bg-transparent'}
                       border border-cream/10 md:border-0

@@ -45,9 +45,9 @@ export function Hero() {
               asChild
               size="lg"
               variant="outline"
-              className="border-2 border-cream/40 text-cream hover:bg-cream/10 font-semibold text-base px-10 bg-transparent rounded-sm"
+              className="border-2 border-cream text-cream hover:bg-cream hover:text-navy font-semibold text-base px-10 bg-transparent rounded-sm transition-all"
             >
-              <Link href="/#leadership">Track Shipment</Link>
+              <Link href="/track">Track Shipment</Link>
             </Button>
           </div>
 

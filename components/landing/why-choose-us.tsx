@@ -95,7 +95,7 @@ const Feature = ({ icon, title, description, index }: FeatureProps) => {
         {/* Main Icon Circle */}
         <motion.div
           variants={iconVariants}
-          className="relative mb-6 w-32 h-32 rounded-full bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-md border-2 border-white/30 flex items-center justify-center shadow-2xl group-hover:border-white/50 transition-all duration-500"
+          className="relative mb-4 w-20 h-20 rounded-full bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-md border-2 border-white/30 flex items-center justify-center shadow-2xl group-hover:border-white/50 transition-all duration-500"
         >
           {/* Inner circle glow */}
           <div className="absolute inset-2 rounded-full bg-gradient-to-br from-white/10 to-transparent" />
@@ -115,12 +115,12 @@ const Feature = ({ icon, title, description, index }: FeatureProps) => {
             }}
           />
 
-          <div className="relative text-white w-14 h-14 z-10">{icon}</div>
+          <div className="relative text-white w-10 h-10 z-10">{icon}</div>
         </motion.div>
       </motion.div>
 
       <motion.h3
-        className="text-xl font-bold text-white mb-3 font-heading group-hover:scale-105 transition-all duration-300"
+        className="text-lg font-bold text-white mb-2 font-heading group-hover:scale-105 transition-all duration-300"
       >
         {title}
       </motion.h3>
@@ -239,7 +239,7 @@ const CTACard = ({ href = "#contact" }: CTACardProps) => {
         {/* Main Icon Circle with enhanced styling */}
         <motion.div
           variants={iconVariants}
-          className="relative mb-6 w-32 h-32 rounded-full bg-gradient-to-br from-white/25 to-white/10 backdrop-blur-md border-2 border-white/40 flex items-center justify-center shadow-2xl group-hover:border-white/60 transition-all duration-500"
+          className="relative mb-4 w-20 h-20 rounded-full bg-gradient-to-br from-white/25 to-white/10 backdrop-blur-md border-2 border-white/40 flex items-center justify-center shadow-2xl group-hover:border-white/60 transition-all duration-500"
         >
           {/* Inner circle glow */}
           <div className="absolute inset-2 rounded-full bg-gradient-to-br from-white/15 to-transparent" />
@@ -267,22 +267,22 @@ const CTACard = ({ href = "#contact" }: CTACardProps) => {
             }}
           />
 
-          <FileText className="relative text-white w-14 h-14 z-10" />
+          <FileText className="relative text-white w-10 h-10 z-10" />
         </motion.div>
       </motion.div>
 
-      <motion.h3 className="text-xl font-bold text-white mb-3 font-heading group-hover:scale-105 transition-all duration-300">
+      <motion.h3 className="text-lg font-bold text-white mb-2 font-heading group-hover:scale-105 transition-all duration-300">
         Get Detailed Quote
       </motion.h3>
 
-      <motion.p className="text-sm text-white/80 leading-relaxed max-w-[240px] mb-6 group-hover:text-white/95 transition-colors duration-300">
+      <motion.p className="text-sm text-white/80 leading-relaxed max-w-[240px] mb-4 group-hover:text-white/95 transition-colors duration-300">
         Request a comprehensive quote tailored to your logistics needs
       </motion.p>
 
       <Link href={href}>
         <motion.button
           variants={buttonVariants}
-          className="relative px-8 py-3 rounded-full bg-white text-navy font-bold text-sm hover:bg-white/95 transition-all duration-300 shadow-xl group-hover:shadow-2xl"
+          className="relative px-6 py-2.5 rounded-full bg-white text-navy font-bold text-sm hover:bg-white/95 transition-all duration-300 shadow-xl group-hover:shadow-2xl"
         >
           {/* Button pulse effect */}
           <motion.div
@@ -324,11 +324,11 @@ export function WhyChooseUs({ ctaHref }: { ctaHref?: string }) {
   ]
 
   return (
-    <section className="relative py-24 bg-navy overflow-hidden">
+    <section className="relative py-12 md:py-16 bg-gradient-to-br from-[#0a1628] via-navy to-[#0d1b2a] overflow-hidden">
       {/* Top Separator Line */}
       <div className="absolute top-0 left-0 right-0 h-px overflow-hidden">
         <motion.div
-          className="h-full bg-gradient-to-r from-transparent via-white/30 to-transparent"
+          className="h-full bg-gradient-to-r from-transparent via-cream/50 to-transparent"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
@@ -336,21 +336,35 @@ export function WhyChooseUs({ ctaHref }: { ctaHref?: string }) {
         />
       </div>
 
-      {/* Animated circular pattern background */}
+      {/* Diagonal lines pattern background */}
       <div
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.2) 2px, transparent 2px)`,
-          backgroundSize: "40px 40px",
+          backgroundImage: `repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 35px,
+            rgba(255,255,255,0.1) 35px,
+            rgba(255,255,255,0.1) 70px
+          )`,
         }}
       />
 
-      {/* Large decorative circles */}
+      {/* Animated circular pattern background */}
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `radial-gradient(circle, rgba(232,213,183,0.3) 2px, transparent 2px)`,
+          backgroundSize: "50px 50px",
+        }}
+      />
+
+      {/* Large decorative circles with cream tint */}
       <motion.div
-        className="absolute top-20 left-10 w-64 h-64 rounded-full bg-white/5 blur-3xl"
+        className="absolute top-10 left-10 w-48 h-48 rounded-full bg-cream/5 blur-3xl"
         animate={{
           scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
+          opacity: [0.2, 0.4, 0.2],
         }}
         transition={{
           duration: 8,
@@ -359,10 +373,10 @@ export function WhyChooseUs({ ctaHref }: { ctaHref?: string }) {
         }}
       />
       <motion.div
-        className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-white/5 blur-3xl"
+        className="absolute bottom-10 right-10 w-56 h-56 rounded-full bg-cream/5 blur-3xl"
         animate={{
           scale: [1.2, 1, 1.2],
-          opacity: [0.5, 0.3, 0.5],
+          opacity: [0.4, 0.2, 0.4],
         }}
         transition={{
           duration: 10,
@@ -371,8 +385,11 @@ export function WhyChooseUs({ ctaHref }: { ctaHref?: string }) {
         }}
       />
 
-      {/* Subtle gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy/50 via-transparent to-navy/30" />
+      {/* Gradient overlays with more contrast */}
+      <div className="absolute inset-0 bg-gradient-to-br from-navy/60 via-transparent to-[#0a1628]/40" />
+
+      {/* Additional diagonal gradient for depth */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-cream/[0.02] to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         {/* Section Header */}
@@ -381,11 +398,11 @@ export function WhyChooseUs({ ctaHref }: { ctaHref?: string }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-10 md:mb-12"
         >
           {/* Circular badge */}
           <motion.div
-            className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/30 mx-auto mb-6"
+            className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/30 mx-auto mb-4"
             animate={{
               rotate: 360,
             }}
@@ -396,7 +413,7 @@ export function WhyChooseUs({ ctaHref }: { ctaHref?: string }) {
             }}
           >
             <motion.div
-              className="w-12 h-12 rounded-full bg-gradient-to-br from-white/30 to-white/10"
+              className="w-8 h-8 rounded-full bg-gradient-to-br from-white/30 to-white/10"
               animate={{
                 scale: [1, 1.1, 1],
               }}
@@ -408,16 +425,16 @@ export function WhyChooseUs({ ctaHref }: { ctaHref?: string }) {
             />
           </motion.div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 text-white font-heading">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black mb-2 text-white font-heading">
             Why Choose <span className="text-gradient-light">ROLO FLEETS</span>
           </h2>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto font-semibold">
+          <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto font-semibold">
             Legacy You Can Trust. Systems You Can Scale.
           </p>
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5">
           {features.map((feature, index) => (
             <Feature
               key={index}

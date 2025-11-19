@@ -1,26 +1,10 @@
 "use client"
 
 import { trustedByLogos } from "@/data/home"
-import { useEffect, useState } from "react"
 
 export function TrustedBy() {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const logosPerSlide = 8
-  const totalSlides = Math.ceil(trustedByLogos.length / logosPerSlide)
-
-  // Auto-play carousel
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % totalSlides)
-    }, 5000) // Change slide every 5 seconds
-
-    return () => clearInterval(interval)
-  }, [totalSlides])
-
-  const getCurrentLogos = () => {
-    const start = currentSlide * logosPerSlide
-    return trustedByLogos.slice(start, start + logosPerSlide)
-  }
+  // Duplicate logos for seamless infinite scroll
+  const duplicatedLogos = [...trustedByLogos, ...trustedByLogos]
 
   return (
     <section className="py-24 bg-white">
@@ -34,13 +18,13 @@ export function TrustedBy() {
           <p className="text-gray text-lg">Delivering excellence for India's most respected brands</p>
         </div>
 
-        <div className="relative overflow-hidden mb-12">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12 items-center justify-items-center transition-all duration-500 ease-in-out">
-            {getCurrentLogos().map((logo, index) => (
+        <div className="relative overflow-hidden mb-16">
+          {/* Autoscroll Banner */}
+          <div className="flex gap-12 lg:gap-16 animate-scroll hover:pause-scroll">
+            {duplicatedLogos.map((logo, index) => (
               <div
-                key={`${currentSlide}-${index}`}
-                className="flex items-center justify-center w-full h-28 p-4 transition-all duration-300 hover:scale-110 animate-in fade-in slide-in-from-right-4"
-                style={{ animationDelay: `${index * 50}ms` }}
+                key={index}
+                className="flex items-center justify-center min-w-[150px] sm:min-w-[180px] lg:min-w-[200px] h-24 px-4 transition-transform duration-300 hover:scale-110"
               >
                 <img
                   src={logo.image || "/placeholder.svg"}
@@ -52,20 +36,27 @@ export function TrustedBy() {
           </div>
         </div>
 
-        <div className="flex items-center justify-end gap-3 mb-16">
-          {Array.from({ length: totalSlides }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`h-1 rounded-full transition-all duration-300 ${index === currentSlide ? "w-12 bg-navy" : "w-8 bg-navy/30 hover:bg-navy/50"
-                }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
-
         <div className="w-full h-[2px] bg-navy" />
       </div>
+
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .animate-scroll {
+          animation: scroll 40s linear infinite;
+        }
+
+        .pause-scroll:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   )
 }

@@ -34,7 +34,7 @@ export function TrustedBy() {
                 <img
                   src={logo.image}
                   alt={logo.name}
-                  className="max-h-full max-w-full w-auto h-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-500 opacity-70 hover:opacity-100"
+                  className="max-h-full max-w-full w-auto h-auto object-contain filter transition-all duration-500 opacity-70 hover:opacity-100"
                   title={logo.name}
                 />
               </div>

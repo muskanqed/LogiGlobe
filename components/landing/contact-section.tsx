@@ -79,8 +79,8 @@ export function ContactSection() {
   return (
     <section className="py-24 bg-white" id="contact">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-        <div className="text-center mb-16">
-          <div className="w-16 h-[3px] bg-navy mx-auto mb-6" />
+        <div className="text-center mb-12">
+          <div className="w-16 h-1 bg-navy mx-auto mb-6" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy mb-4 font-heading">
             Get In <span className="text-gradient">Touch</span>
           </h2>

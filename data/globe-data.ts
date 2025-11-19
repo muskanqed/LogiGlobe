@@ -13,7 +13,7 @@ export const globeData = [
     order: 2,
     startLat: 28.6139, // Delhi
     startLng: 77.2090,
-    endLat: 13.0827, // Bangalore
+    endLat: 13.0827, // Bengalore
     endLng: 77.5877,
     arcAlt: 0.2,
     color: "#3b82f6", // blue

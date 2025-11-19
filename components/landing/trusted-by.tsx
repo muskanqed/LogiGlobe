@@ -43,7 +43,7 @@ export function TrustedBy() {
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 <img
-                  src={logo.image || "/placeholder.svg"}
+                  src={logo.image}
                   alt={logo.name}
                   className="max-h-full max-w-full w-auto h-auto object-contain filter transition-all duration-300"
                 />

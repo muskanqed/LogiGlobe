@@ -83,7 +83,7 @@ export function LeadershipSection() {
                 <Card className="bg-white border-gray-200 hover:border-navy/30 hover:shadow-lg transition-all overflow-hidden group rounded-md h-full">
                   <div className="aspect-square overflow-hidden bg-gray-100">
                     <img
-                      src={leader.image || "/placeholder.svg"}
+                      src={leader.image}
                       alt={leader.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />

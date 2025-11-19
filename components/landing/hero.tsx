@@ -1,12 +1,11 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { AnimatedCounter } from "@/components/ui/animated-counter"
 import Link from "next/link"
 
 export function Hero() {
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-cream">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-cream">
       {/* Background Image with Navy Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -20,70 +19,49 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20">
         <div className="max-w-3xl">
-          <div className="w-24 h-[3px] bg-cream mb-8" />
+          <div className="w-24 h-1 bg-cream mb-8" />
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-cream mb-6 leading-tight tracking-tight font-heading">
-            40 YEARS OF LEGACY.
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-cream mb-6 leading-[1.1] tracking-tight font-heading">
+            India's Most Trusted
             <br />
-            <span className="text-cream/80">ONE VISION FOR THE FUTURE.</span>
+            <span className="text-gradient-light">Logistics Partner</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-cream/70 mb-10 max-w-2xl leading-relaxed">
-            From a family-run transport business to a technology-driven logistics organization, ROLO Fleets blends
-            tradition, innovation, and transparency to redefine how goods move across India and beyond.
+          <p className="text-xl sm:text-2xl text-cream/90 mb-4 font-semibold leading-snug">
+            Deliver Anywhere. Anytime. On Budget.
+          </p>
+
+          <p className="text-base sm:text-lg text-cream/70 mb-10 max-w-2xl leading-relaxed">
+            40+ years of proven excellence. 500+ vendor partners. 20,000+ monthly shipments.
+            Get real-time tracking, transparent pricing, and guaranteed on-time delivery across India.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
               asChild
               size="lg"
-              className="bg-cream hover:bg-cream/90 text-navy font-semibold text-base px-10 rounded-sm"
+              className="bg-cream hover:bg-white text-navy font-bold text-lg px-12 py-6 rounded-md shadow-2xl hover:shadow-cream/50 hover:scale-105 transition-all duration-300"
             >
-              <Link href="/#services">Explore Our Services</Link>
+              <Link href="/#contact">Get Instant Quote →</Link>
             </Button>
             <Button
               asChild
               size="lg"
               variant="outline"
-              className="border-2 border-cream text-cream hover:bg-cream hover:text-navy font-semibold text-base px-10 bg-transparent rounded-sm transition-all"
+              className="border-2 border-cream text-cream hover:bg-cream/10 backdrop-blur-sm font-bold text-lg px-12 py-6 bg-transparent rounded-md transition-all duration-300 hover:scale-105"
             >
-              <Link href="/track">Track Shipment</Link>
+              <Link href="/track">Book a Truck Now</Link>
             </Button>
           </div>
 
-          {/* Quick Stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-16 pt-12 border-t border-cream/20">
-            <div>
-              <AnimatedCounter
-                end={40}
-                suffix="+"
-                className="text-4xl font-bold text-cream mb-1 font-heading"
-              />
-              <div className="text-sm text-cream/60 uppercase tracking-wide">Years Legacy</div>
+          <div className="mt-10 flex items-center gap-6 text-cream/80 text-sm">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <span>Available 24/7</span>
             </div>
-            <div>
-              <AnimatedCounter
-                end={500}
-                suffix="+"
-                className="text-4xl font-bold text-cream mb-1 font-heading"
-              />
-              <div className="text-sm text-cream/60 uppercase tracking-wide">Partners</div>
-            </div>
-            <div>
-              <AnimatedCounter
-                end={95}
-                suffix="%"
-                className="text-4xl font-bold text-cream mb-1 font-heading"
-              />
-              <div className="text-sm text-cream/60 uppercase tracking-wide">On-Time</div>
-            </div>
-            <div>
-              <AnimatedCounter
-                end={20}
-                suffix="K+"
-                className="text-4xl font-bold text-cream mb-1 font-heading"
-              />
-              <div className="text-sm text-cream/60 uppercase tracking-wide">Monthly</div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <span>95% On-Time Delivery</span>
             </div>
           </div>
         </div>

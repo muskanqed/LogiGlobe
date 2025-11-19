@@ -1,29 +1,13 @@
 "use client"
 
 import { trustedByLogos } from "@/data/home"
-import { useEffect, useState } from "react"
 
 export function TrustedBy() {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const logosPerSlide = 8
-  const totalSlides = Math.ceil(trustedByLogos.length / logosPerSlide)
-
-  // Auto-play carousel
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % totalSlides)
-    }, 5000) // Change slide every 5 seconds
-
-    return () => clearInterval(interval)
-  }, [totalSlides])
-
-  const getCurrentLogos = () => {
-    const start = currentSlide * logosPerSlide
-    return trustedByLogos.slice(start, start + logosPerSlide)
-  }
+  // Duplicate logos for seamless infinite scroll
+  const duplicatedLogos = [...trustedByLogos, ...trustedByLogos]
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         <div className="w-full h-[2px] bg-navy mb-16" />
 
@@ -34,38 +18,51 @@ export function TrustedBy() {
           <p className="text-gray text-lg">Delivering excellence for India's most respected brands</p>
         </div>
 
-        <div className="relative overflow-hidden mb-12">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12 items-center justify-items-center transition-all duration-500 ease-in-out">
-            {getCurrentLogos().map((logo, index) => (
+        {/* Infinite horizontal scroll banner */}
+        <div className="relative w-full overflow-hidden py-8">
+          {/* Gradient overlays for fade effect */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
+
+          {/* Scrolling container */}
+          <div className="flex gap-16 animate-scroll hover:pause-animation">
+            {duplicatedLogos.map((logo, index) => (
               <div
-                key={`${currentSlide}-${index}`}
-                className="flex items-center justify-center w-full h-28 p-4 transition-all duration-300 hover:scale-110 animate-in fade-in slide-in-from-right-4"
-                style={{ animationDelay: `${index * 50}ms` }}
+                key={`logo-${index}`}
+                className="flex-shrink-0 flex items-center justify-center w-48 h-24 group transition-transform duration-300 hover:scale-110"
               >
                 <img
                   src={logo.image}
                   alt={logo.name}
-                  className="max-h-full max-w-full w-auto h-auto object-contain filter transition-all duration-300"
+                  className="max-h-full max-w-full w-auto h-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-500 opacity-70 hover:opacity-100"
+                  title={logo.name}
                 />
               </div>
             ))}
           </div>
         </div>
 
-        <div className="flex items-center justify-end gap-3 mb-16">
-          {Array.from({ length: totalSlides }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`h-1 rounded-full transition-all duration-300 ${index === currentSlide ? "w-12 bg-navy" : "w-8 bg-navy/30 hover:bg-navy/50"
-                }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
-
-        <div className="w-full h-[2px] bg-navy" />
+        <div className="w-full h-[2px] bg-navy mt-16" />
       </div>
+
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .animate-scroll {
+          animation: scroll 40s linear infinite;
+        }
+
+        .pause-animation:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   )
 }

@@ -1,8 +1,8 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Poppins, Inter } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
 import { FloatingSupport } from "@/components/partners/floating-support"
+import { Analytics } from "@vercel/analytics/next"
+import type { Metadata } from "next"
+import { Inter, Poppins } from "next/font/google"
+import type React from "react"
 import "./globals.css"
 
 const poppins = Poppins({
@@ -22,23 +22,9 @@ export const metadata: Metadata = {
     "Trusted logistics partner with 40+ years of legacy. Offering air, surface, and supply chain logistics solutions with transparency and technology integration.",
   keywords:
     "logistics India, fleet management, trucking, air logistics, supply chain solutions, transport services, ROLO Fleets",
-  generator: "v0.app",
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
+    icon: "/icon.svg",
+    apple: "/apple-icon.svg",
   },
   openGraph: {
     title: "ROLO Fleets - Wheels of Trust",

@@ -1,0 +1,11 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simplified ROLO truck icon for favicon -->
+  <rect width="32" height="32" fill="#1A2332" rx="4"/>
+  <!-- Truck body -->
+  <path d="M8 10C8 10 9.5 8 13 8C14.5 8 15 9 15 10V16H18L22 18V22H21C21 24 19.5 25 18 25C16.5 25 15 24 15 22H11C11 24 9.5 25 8 25C6.5 25 5 24 5 22H4V13C4 11.5 6 10 8 10Z" fill="#F5F3E8"/>
+  <!-- Wheels -->
+  <circle cx="8" cy="22" r="2" fill="#E53935"/>
+  <circle cx="18" cy="22" r="2" fill="#E53935"/>
+  <!-- Cargo area -->
+  <path d="M15 11H18V16H15V11Z" fill="#F5F3E8"/>
+</svg>

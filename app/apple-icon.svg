@@ -1,0 +1,13 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Apple touch icon with ROLO truck -->
+  <rect width="180" height="180" fill="#1A2332" rx="40"/>
+  <!-- Truck body -->
+  <path d="M45 55C45 55 52.5 45 72.5 45C80 45 83 49 83 55V90H100L122 100V125H117C117 135 107.5 142 100 142C92.5 142 83 135 83 125H62C62 135 52.5 142 45 142C37.5 142 28 135 28 125H22V70C22 62.5 35 55 45 55Z" fill="#F5F3E8"/>
+  <!-- Wheels -->
+  <circle cx="45" cy="125" r="11" fill="#E53935"/>
+  <circle cx="100" cy="125" r="11" fill="#E53935"/>
+  <!-- Cargo area -->
+  <path d="M83 62H100V90H83V62Z" fill="#F5F3E8"/>
+  <!-- Text ROLO -->
+  <text x="45" y="165" font-family="Arial, sans-serif" font-size="28" font-weight="900" fill="#F5F3E8" letter-spacing="3">ROLO</text>
+</svg>

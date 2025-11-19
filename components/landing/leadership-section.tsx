@@ -62,6 +62,26 @@ export function LeadershipSection() {
             Experienced leadership combining corporate expertise and technical innovation in logistics
           </p>
         </div>
+
+<<<<<<< HEAD
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-4">
+            {leaders.map((leader, index) => (
+              <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                <Card className="bg-white border-gray-200 hover:border-navy/30 hover:shadow-lg transition-all overflow-hidden group rounded-md h-full">
+                  <div className="aspect-square overflow-hidden bg-gray-100">
+                    <img
+                      src={leader.image}
+                      alt={leader.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+=======
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {leaders.map((leader, index) => (
             <Card
@@ -82,6 +102,7 @@ export function LeadershipSection() {
                       {leader.name}
                     </h3>
                     <div className="text-sm font-medium text-navy/50 tracking-wide">{leader.title}</div>
+>>>>>>> e8b9ec671cbc10e5589e2542b0a4c44ee2a4d2f8
                   </div>
                   <Link
                     href={leader.linkedin}

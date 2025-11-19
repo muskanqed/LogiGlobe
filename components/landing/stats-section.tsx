@@ -32,7 +32,7 @@ export function StatsSection() {
     <section className="py-16 bg-navy">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         <div className="text-center mb-12">
-          <div className="w-16 h-0.5 bg-cream mx-auto mb-4" />
+          <div className="w-16 h-1 bg-cream mx-auto mb-4" />
           <h2 className="text-4xl font-black text-cream mb-4 font-heading">OUR SCALE & REACH</h2>
           <p className="text-cream/70 text-lg max-w-2xl mx-auto">
             Numbers that reflect our commitment to excellence and reliability

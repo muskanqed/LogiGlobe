@@ -5,7 +5,7 @@ export function AdvantageSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Text Content */}
           <div>
-            <div className="w-16 h-[3px] bg-navy mb-6" />
+            <div className="w-16 h-1 bg-navy mb-6" />
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-6 leading-tight text-navy font-heading">
               The ROLO FLEETS
               <br />

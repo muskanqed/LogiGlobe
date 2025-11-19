@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export function CTABanner() {
   return (
@@ -16,7 +16,7 @@ export function CTABanner() {
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 lg:px-20 text-center">
-        <div className="w-16 h-[3px] bg-cream mx-auto mb-8" />
+        <div className="w-16 h-1 bg-cream mx-auto mb-8" />
         <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-cream mb-6 leading-tight font-heading">
           Ready to Transform Your
           <br />

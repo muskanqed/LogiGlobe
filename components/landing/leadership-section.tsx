@@ -52,7 +52,7 @@ export function LeadershipSection() {
     <section className="py-20 bg-cream" id="leadership">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         <div className="text-center mb-12">
-          <div className="w-16 h-0.5 bg-navy mx-auto mb-6" />
+          <div className="w-16 h-1 bg-navy mx-auto mb-6" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy mb-4 font-heading">
             Leadership <span className="text-gradient">Team</span>
           </h2>

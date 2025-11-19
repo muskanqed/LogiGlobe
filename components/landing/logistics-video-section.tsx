@@ -33,7 +33,7 @@ export function LogisticsVideoSection() {
       <div className="relative z-10">
         {/* Section Heading */}
         <div className="text-center mb-16 px-6">
-          <div className="w-16 h-[3px] bg-cream mx-auto mb-6" />
+          <div className="w-16 h-1 bg-cream mx-auto mb-6" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 text-cream font-heading">
             Integrated Logistics <span className="text-gradient-light">Services</span>
           </h2>

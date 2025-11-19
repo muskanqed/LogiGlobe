@@ -16,8 +16,8 @@ export function ServicesGrid() {
     <section className="py-24 bg-cream" id="services">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         <div className="text-center mb-16">
-          <div className="w-16 h-[3px] bg-navy mx-auto mb-6" />
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 text-navy font-heading">
+          <div className="w-16 h-1 bg-navy mx-auto mb-6" />
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy mb-4 font-heading">
             Integrated Logistics <span className="text-gradient">Services</span>
           </h2>
           <p className="text-lg text-gray max-w-2xl mx-auto">

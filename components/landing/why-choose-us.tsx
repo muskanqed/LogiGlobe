@@ -20,7 +20,7 @@ const Feature = ({ icon, title, description, index }: FeatureProps) => {
       transition: {
         duration: 0.7,
         delay: index * 0.15,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        ease: [0.25, 0.46, 0.45, 0.94] as const,
       },
     },
   }
@@ -31,13 +31,13 @@ const Feature = ({ icon, title, description, index }: FeatureProps) => {
       rotate: [0, -10, 10, -10, 0],
       transition: {
         scale: {
-          type: "spring",
+          type: "spring" as const,
           stiffness: 400,
           damping: 10,
         },
         rotate: {
           duration: 0.5,
-          ease: "easeInOut",
+          ease: "easeInOut" as const,
         },
       },
     },
@@ -53,7 +53,7 @@ const Feature = ({ icon, title, description, index }: FeatureProps) => {
       transition: {
         duration: 1.5,
         repeat: Infinity,
-        ease: "easeInOut",
+        ease: "easeInOut" as const,
       },
     },
   }
@@ -64,7 +64,7 @@ const Feature = ({ icon, title, description, index }: FeatureProps) => {
       transition: {
         duration: 3,
         repeat: Infinity,
-        ease: "easeInOut",
+        ease: "easeInOut" as const,
         delay: index * 0.2,
       },
     },
@@ -147,7 +147,7 @@ const CTACard = ({ href = "#contact" }: CTACardProps) => {
       transition: {
         duration: 0.7,
         delay: 0.45,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        ease: [0.25, 0.46, 0.45, 0.94] as const,
       },
     },
   }
@@ -158,13 +158,13 @@ const CTACard = ({ href = "#contact" }: CTACardProps) => {
       rotate: [0, -10, 10, -10, 0],
       transition: {
         scale: {
-          type: "spring",
+          type: "spring" as const,
           stiffness: 400,
           damping: 10,
         },
         rotate: {
           duration: 0.5,
-          ease: "easeInOut",
+          ease: "easeInOut" as const,
         },
       },
     },
@@ -191,7 +191,7 @@ const CTACard = ({ href = "#contact" }: CTACardProps) => {
       transition: {
         duration: 1.5,
         repeat: Infinity,
-        ease: "easeInOut",
+        ease: "easeInOut" as const,
       },
     },
   }
@@ -202,7 +202,7 @@ const CTACard = ({ href = "#contact" }: CTACardProps) => {
       transition: {
         duration: 3,
         repeat: Infinity,
-        ease: "easeInOut",
+        ease: "easeInOut" as const,
         delay: 0.6,
       },
     },

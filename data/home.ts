@@ -10,7 +10,7 @@ export const stats = [
     sublabel: 'Pan-India Network',
   },
   {
-    value: '99%',
+    value: '95%',
     label: 'On-Time Delivery',
     sublabel: 'Reliability Guaranteed',
   },

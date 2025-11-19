@@ -1,7 +1,8 @@
 "use client";
 
-import { stats } from "@/data/home";
+import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { globeConfig, globeData } from "@/data/globe-data";
+import { stats } from "@/data/home";
 import { TrendingUp } from "lucide-react";
 import dynamic from "next/dynamic";
 
@@ -14,12 +15,24 @@ const World = dynamic(() => import("@/components/ui/globe").then((m) => m.World)
   ),
 });
 
+// Helper function to parse stat values
+function parseStatValue(value: string) {
+  const match = value.match(/^(\d+)(.*)$/);
+  if (match) {
+    return {
+      number: parseInt(match[1]),
+      suffix: match[2] || "",
+    };
+  }
+  return { number: 0, suffix: value };
+}
+
 export function StatsSection() {
   return (
     <section className="py-16 bg-navy">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         <div className="text-center mb-12">
-          <div className="w-16 h-[3px] bg-cream mx-auto mb-4" />
+          <div className="w-16 h-0.5 bg-cream mx-auto mb-4" />
           <h2 className="text-4xl font-black text-cream mb-4 font-heading">OUR SCALE & REACH</h2>
           <p className="text-cream/70 text-lg max-w-2xl mx-auto">
             Numbers that reflect our commitment to excellence and reliability
@@ -29,20 +42,29 @@ export function StatsSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Stats Grid - Left Side */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="relative group text-center">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-[2px] bg-cream opacity-0 group-hover:opacity-100 transition-opacity" />
+            {stats.map((stat, index) => {
+              const { number, suffix } = parseStatValue(stat.value);
 
-                <div className="pt-4">
-                  <div className="flex items-center justify-center gap-2 mb-3">
-                    <TrendingUp className="text-cream w-6 h-6" />
-                    <div className="text-5xl lg:text-6xl font-black text-cream font-heading">{stat.value}</div>
+              return (
+                <div key={index} className="relative group text-center">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-[2px] bg-cream opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                  <div className="pt-4">
+                    <div className="flex items-center justify-center gap-2 mb-3">
+                      <TrendingUp className="text-cream w-6 h-6 animate-pulse" />
+                      <AnimatedCounter
+                        end={number}
+                        suffix={suffix}
+                        duration={2500}
+                        className="text-5xl lg:text-6xl font-black text-cream font-heading"
+                      />
+                    </div>
+                    <div className="text-xl font-semibold text-cream/90 mb-2">{stat.label}</div>
+                    <div className="text-sm text-cream/50">{stat.sublabel}</div>
                   </div>
-                  <div className="text-xl font-semibold text-cream/90 mb-2">{stat.label}</div>
-                  <div className="text-sm text-cream/50">{stat.sublabel}</div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Globe - Right Side */}

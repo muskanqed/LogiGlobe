@@ -1,8 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Clock, MapPin, Shield, FileText } from "lucide-react"
-import Link from "next/link"
+import { Clock, FileText, MapPin, Shield } from "lucide-react"
 
 interface FeatureProps {
   icon: React.ReactNode
@@ -279,27 +278,6 @@ const CTACard = ({ href = "#contact" }: CTACardProps) => {
         Request a comprehensive quote tailored to your logistics needs
       </motion.p>
 
-      <Link href={href}>
-        <motion.button
-          variants={buttonVariants}
-          className="relative px-6 py-2.5 rounded-full bg-white text-navy font-bold text-sm hover:bg-white/95 transition-all duration-300 shadow-xl group-hover:shadow-2xl"
-        >
-          {/* Button pulse effect */}
-          <motion.div
-            className="absolute inset-0 rounded-full border-2 border-white"
-            animate={{
-              scale: [1, 1.1, 1],
-              opacity: [0.8, 0, 0.8],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <span className="relative">Click here</span>
-        </motion.button>
-      </Link>
     </motion.div>
   )
 }
@@ -309,7 +287,7 @@ export function WhyChooseUs({ ctaHref }: { ctaHref?: string }) {
     {
       icon: <Clock className="w-full h-full" />,
       title: "On Time Delivery",
-      description: "99% on-time delivery rate with real-time status updates",
+      description: "95% on-time delivery rate with real-time status updates",
     },
     {
       icon: <MapPin className="w-full h-full" />,
@@ -400,31 +378,6 @@ export function WhyChooseUs({ ctaHref }: { ctaHref?: string }) {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 md:mb-12"
         >
-          {/* Circular badge */}
-          <motion.div
-            className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/30 mx-auto mb-4"
-            animate={{
-              rotate: 360,
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          >
-            <motion.div
-              className="w-8 h-8 rounded-full bg-gradient-to-br from-white/30 to-white/10"
-              animate={{
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-          </motion.div>
-
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black mb-2 text-white font-heading">
             Why Choose <span className="text-gradient-light">ROLO FLEETS</span>
           </h2>

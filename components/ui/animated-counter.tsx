@@ -8,7 +8,6 @@ interface AnimatedCounterProps {
   suffix?: string
   prefix?: string
   className?: string
-  decimals?: number
 }
 
 export function AnimatedCounter({
@@ -17,7 +16,6 @@ export function AnimatedCounter({
   suffix = "",
   prefix = "",
   className = "",
-  decimals = 0,
 }: AnimatedCounterProps) {
   const [count, setCount] = useState(0)
   const [isVisible, setIsVisible] = useState(false)
@@ -72,20 +70,10 @@ export function AnimatedCounter({
     }
   }, [isVisible, end, duration])
 
-  // Format the display value based on whether we need to show K/M notation
-  const formatDisplayValue = (value: number) => {
-    if (suffix.includes("K")) {
-      return (value / 1000).toFixed(decimals);
-    } else if (suffix.includes("M")) {
-      return (value / 1000000).toFixed(decimals);
-    }
-    return value.toFixed(decimals);
-  };
-
   return (
     <div ref={counterRef} className={className}>
       {prefix}
-      {formatDisplayValue(count)}
+      {count}
       {suffix}
     </div>
   )

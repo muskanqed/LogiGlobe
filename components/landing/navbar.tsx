@@ -183,12 +183,6 @@ export function Navbar() {
               >
                 <Link href="/#contact">Get a Quote</Link>
               </Button>
-              <Button
-                asChild
-                className="bg-navy hover:bg-navy/90 text-white font-semibold rounded-md shadow-lg hover:shadow-xl transition-all"
-              >
-                <Link href="/track">Book a Truck</Link>
-              </Button>
             </div>
           </div>
 
@@ -356,12 +350,6 @@ export function Navbar() {
                 className="w-full border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold rounded-md"
               >
                 <Link href="/#contact">Get a Quote</Link>
-              </Button>
-              <Button
-                asChild
-                className="w-full bg-navy hover:bg-navy/90 text-white font-semibold rounded-md"
-              >
-                <Link href="/track">Book a Truck</Link>
               </Button>
             </div>
           </div>

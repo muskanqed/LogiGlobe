@@ -5,12 +5,12 @@ import Link from "next/link"
 export function Footer() {
   return (
     <footer className="bg-navy text-cream" id="contact">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 py-12 sm:py-16 md:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-14 md:mb-16">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <Image src="/dark-logo.png" alt="Rolo Fleet" width={200} height={80} className="h-14 w-auto mb-6" />
-            <p className="text-cream/70 mb-6 max-w-md leading-relaxed">
+            <Image src="/dark-logo.png" alt="Rolo Fleet" width={200} height={80} className="h-12 sm:h-14 w-auto mb-4 sm:mb-6" />
+            <p className="text-sm sm:text-base text-cream/70 mb-4 sm:mb-6 max-w-md leading-relaxed">
               ROLO Fleets – Wheels of Trust. Over 40 years of legacy in logistics, now powered by modern technology and
               transparent operations.
             </p>
@@ -43,8 +43,8 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-bold text-lg mb-5 text-cream font-heading">Quick Links</h3>
-            <ul className="space-y-3">
+            <h3 className="font-bold text-base sm:text-lg mb-4 sm:mb-5 text-cream font-heading">Quick Links</h3>
+            <ul className="space-y-2 sm:space-y-3">
               <li>
                 <Link href="/#about" className="text-cream/70 hover:text-cream transition-colors text-sm">
                   About Us
@@ -65,8 +65,8 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-bold text-lg mb-5 text-cream font-heading">Services</h3>
-            <ul className="space-y-3">
+            <h3 className="font-bold text-base sm:text-lg mb-4 sm:mb-5 text-cream font-heading">Services</h3>
+            <ul className="space-y-2 sm:space-y-3">
               <li className="text-cream/70 text-sm">Surface Transportation</li>
               <li className="text-cream/70 text-sm">Air Logistics</li>
               <li className="text-cream/70 text-sm">Supply Chain Solutions</li>
@@ -77,9 +77,9 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-cream/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-cream/50">© 2025 ROLO Fleets Pvt. Ltd. All Rights Reserved.</p>
-          <div className="flex gap-6">
+        <div className="border-t border-cream/10 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
+          <p className="text-xs sm:text-sm text-cream/50 text-center sm:text-left">© 2025 ROLO Fleets Pvt. Ltd. All Rights Reserved.</p>
+          <div className="flex gap-4 sm:gap-6">
             <Link href="#" className="text-cream/50 hover:text-cream transition-colors text-sm">
               LinkedIn
             </Link>

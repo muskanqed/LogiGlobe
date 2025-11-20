@@ -74,30 +74,30 @@ export function LeadershipSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-20 bg-cream relative overflow-hidden" id="leadership">
+    <section ref={sectionRef} className="py-12 sm:py-16 md:py-20 bg-cream relative overflow-hidden" id="leadership">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-navy/5 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange/5 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-20 left-10 w-48 sm:w-72 h-48 sm:h-72 bg-navy/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-64 sm:w-96 h-64 sm:h-96 bg-orange/5 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
           <div
-            className={`w-16 h-1 bg-navy mx-auto mb-6 transition-all duration-1000 ${
+            className={`w-12 sm:w-16 h-1 bg-navy mx-auto mb-4 sm:mb-6 transition-all duration-1000 ${
               isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
             }`}
           />
           <h2
-            className={`text-3xl sm:text-4xl lg:text-5xl font-black text-navy mb-4 font-heading transition-all duration-1000 delay-200 ${
+            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-navy mb-3 sm:mb-4 font-heading transition-all duration-1000 delay-200 px-4 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
             Leadership <span className="text-gradient">Team</span>
           </h2>
           <p
-            className={`text-lg text-navy/70 max-w-2xl mx-auto transition-all duration-1000 delay-300 ${
+            className={`text-sm sm:text-base md:text-lg text-navy/70 max-w-2xl mx-auto transition-all duration-1000 delay-300 px-4 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
@@ -105,8 +105,8 @@ export function LeadershipSection() {
           </p>
         </div>
 
-        {/* Leaders Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        {/* Leaders Grid - responsive */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
           {leaders.map((leader, index) => (
             <div
               key={index}
@@ -119,9 +119,9 @@ export function LeadershipSection() {
                 transitionDelay: `${400 + index * 150}ms`
               }}
             >
-              <Card className="bg-white border-none shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group rounded-3xl h-full">
-                {/* Image Container */}
-                <div className="relative w-full h-80 overflow-hidden bg-gradient-to-br from-navy/5 via-orange/5 to-navy/5">
+              <Card className="bg-white border-none shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group rounded-2xl sm:rounded-3xl h-full">
+                {/* Image Container - responsive height */}
+                <div className="relative w-full h-64 sm:h-72 md:h-80 overflow-hidden bg-gradient-to-br from-navy/5 via-orange/5 to-navy/5">
                   {/* Animated Border on Hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-navy via-orange to-navy opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                        style={{ padding: '2px' }}>
@@ -140,21 +140,21 @@ export function LeadershipSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
-                {/* Content Container */}
-                <div className="p-6 bg-white relative">
+                {/* Content Container - responsive padding */}
+                <div className="p-4 sm:p-5 md:p-6 bg-white relative">
                   {/* Decorative Element */}
-                  <div className="absolute top-0 left-6 w-12 h-1 bg-gradient-to-r from-navy to-orange transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute top-0 left-4 sm:left-6 w-10 sm:w-12 h-1 bg-gradient-to-r from-navy to-orange transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                  <div className="space-y-3">
+                  <div className="space-y-2 sm:space-y-3">
                     <div>
-                      <h3 className="text-xl font-black text-navy leading-tight mb-2 font-heading group-hover:text-gradient transition-all duration-300">
+                      <h3 className="text-base sm:text-lg md:text-xl font-black text-navy leading-tight mb-1 sm:mb-2 font-heading group-hover:text-gradient transition-all duration-300">
                         {leader.name}
                       </h3>
-                      <div className="text-sm font-bold text-orange tracking-wide uppercase">
+                      <div className="text-xs sm:text-sm font-bold text-orange tracking-wide uppercase">
                         {leader.title}
                       </div>
                     </div>
-                    <p className="text-sm text-navy/70 leading-relaxed group-hover:text-navy/90 transition-colors duration-300">
+                    <p className="text-xs sm:text-sm text-navy/70 leading-relaxed group-hover:text-navy/90 transition-colors duration-300">
                       {leader.bio}
                     </p>
                   </div>

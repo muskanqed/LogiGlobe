@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export function CTABanner() {
   return (
-    <section className="py-28 bg-gradient-to-br from-navy via-[#141E27] to-navy relative overflow-hidden">
+    <section className="py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-br from-navy via-[#141E27] to-navy relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
@@ -15,14 +15,15 @@ export function CTABanner() {
         />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 lg:px-20 text-center">
-        <div className="w-16 h-1 bg-cream mx-auto mb-8" />
-        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-cream mb-6 leading-tight font-heading">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 text-center">
+        <div className="w-12 sm:w-16 h-1 bg-cream mx-auto mb-6 sm:mb-8" />
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-cream mb-4 sm:mb-6 leading-tight font-heading px-4">
           Ready to Transform Your
-          <br />
+          <br className="hidden sm:block" />
+          <span className="sm:block"> </span>
           <span className="text-cream/80">Logistics Operations?</span>
         </h2>
-        <p className="text-lg sm:text-xl text-cream/70 mb-10 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-cream/70 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-4">
           Join industry leaders who trust ROLO Fleets for reliable, transparent, and technology-driven logistics
           solutions.
         </p>

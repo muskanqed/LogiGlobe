@@ -77,34 +77,34 @@ export function ContactSection() {
   }
 
   return (
-    <section className="py-24 bg-white" id="contact">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-        <div className="text-center mb-12">
-          <div className="w-16 h-1 bg-navy mx-auto mb-6" />
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy mb-4 font-heading">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white" id="contact">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <div className="w-12 sm:w-16 h-1 bg-navy mx-auto mb-4 sm:mb-6" />
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-navy mb-3 sm:mb-4 font-heading px-4">
             Get In <span className="text-gradient">Touch</span>
           </h2>
-          <p className="text-lg text-navy/70 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-navy/70 max-w-2xl mx-auto px-4">
             Have a question or need a quote? Reach out to us and we'll respond promptly
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start">
           {/* Left: Contact Info */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-navy mb-6 font-heading">
+              <h3 className="text-xl sm:text-2xl font-bold text-navy mb-4 sm:mb-6 font-heading">
                 Let's Work Together
               </h3>
-              <p className="text-gray leading-relaxed mb-8">
+              <p className="text-sm sm:text-base text-gray leading-relaxed mb-6 sm:mb-8">
                 Whether you need surface transportation, air logistics, or complete supply chain solutions,
                 our team is ready to help you optimize your logistics operations.
               </p>
             </div>
 
-            <div className="bg-cream p-6 rounded-md border border-gray-200 mt-8">
-              <h4 className="font-bold text-navy mb-2">Business Hours</h4>
-              <div className="space-y-1 text-sm text-gray">
+            <div className="bg-cream p-4 sm:p-6 rounded-md border border-gray-200 mt-6 sm:mt-8">
+              <h4 className="font-bold text-navy mb-2 text-sm sm:text-base">Business Hours</h4>
+              <div className="space-y-1 text-xs sm:text-sm text-gray">
                 <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
                 <p>Saturday: 9:00 AM - 2:00 PM</p>
                 <p>Sunday: Closed</p>
@@ -113,7 +113,7 @@ export function ContactSection() {
           </div>
 
           {/* Right: Contact Form */}
-          <div className="bg-cream p-8 rounded-md border border-gray-200">
+          <div className="bg-cream p-4 sm:p-6 md:p-8 rounded-md border border-gray-200">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">

@@ -1,5 +1,3 @@
-import { Footer } from "@/components/landing/footer"
-import { Navbar } from "@/components/landing/navbar"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search } from "lucide-react"
@@ -7,8 +5,6 @@ import { Search } from "lucide-react"
 export default function TrackPage() {
   return (
     <main className="min-h-screen flex flex-col">
-      <Navbar />
-
       <section className="flex-1 py-20 bg-gradient-to-b from-background to-muted/30">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -55,8 +51,6 @@ export default function TrackPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   )
 }

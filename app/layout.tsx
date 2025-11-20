@@ -1,4 +1,6 @@
 import { FloatingSupport } from "@/components/partners/floating-support"
+import { Footer } from "@/components/landing/footer"
+import { Navbar } from "@/components/landing/navbar"
 import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next"
 import { Inter, Poppins } from "next/font/google"
@@ -41,7 +43,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${poppins.variable} font-body antialiased`}>
+        <Navbar />
         {children}
+        <Footer />
         <FloatingSupport />
         <Analytics />
       </body>

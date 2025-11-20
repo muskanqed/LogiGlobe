@@ -19,8 +19,8 @@ const leaders = [
   },
   {
     name: "Anup Jagganath Gosavi",
-    title: "Co-Founder & COO",
-    bio: "MBA in International Business with 11+ years of operational excellence and business development expertise.",
+    title: "Co-Founder",
+    bio: "20+ years in corporate & entrepreneurial experience with expertise in operations and technology.",
     image: "/images/teams/anup-jaggannath-gosavi.png",
     linkedin: "https://linkedin.com",
   },
@@ -33,7 +33,7 @@ const leaders = [
   },
   {
     name: "Dnyaneshwar Sahebrao Tanpure",
-    title: "Director – Supply Chain",
+    title: "Director – Supply Chain & Logistics",
     bio: "25+ years in trucking and logistics; drives supply-chain efficiency and reliability.",
     image: "/images/teams/dnyaneshwar-sahebrao-tanpure.png",
     linkedin: "https://linkedin.com",

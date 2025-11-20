@@ -145,14 +145,6 @@ export function PartnersFooter() {
                   Careers
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/track"
-                  className="text-cream/70 hover:text-cream transition-colors text-sm hover:underline"
-                >
-                  Track Shipment
-                </Link>
-              </li>
             </ul>
           </div>
 

@@ -2,20 +2,20 @@ import { Compass, Shield, Users, Zap } from "lucide-react"
 
 export function MissionSection() {
   return (
-    <section className="py-24 bg-cream" id="mission">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-        <div className="text-center mb-16">
-          <div className="w-16 h-1 bg-navy mx-auto mb-6" />
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy mb-4 font-heading">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-cream" id="mission">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <div className="w-12 sm:w-16 h-1 bg-navy mx-auto mb-4 sm:mb-6" />
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-navy mb-3 sm:mb-4 font-heading px-4">
             Mission & <span className="text-gradient">Purpose</span>
           </h2>
-          <p className="text-lg text-navy/70 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-navy/70 max-w-2xl mx-auto px-4">
             Bridging tradition with innovation to transform Indian logistics
           </p>
         </div>
 
         {/* Mission Statement */}
-        <div className="bg-white p-10 rounded-md border border-gray-200 mb-12 max-w-4xl mx-auto">
+        <div className="bg-white p-6 sm:p-8 md:p-10 rounded-md border border-gray-200 mb-8 sm:mb-10 md:mb-12 max-w-4xl mx-auto">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-16 h-16 rounded-full bg-navy flex items-center justify-center flex-shrink-0">
               <Compass className="w-8 h-8 text-white" />

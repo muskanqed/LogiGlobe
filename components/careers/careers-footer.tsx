@@ -136,14 +136,6 @@ export function CareersFooter() {
                   Contact Us
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/track"
-                  className="text-cream/70 hover:text-cream transition-colors text-sm"
-                >
-                  Track Shipment
-                </Link>
-              </li>
             </ul>
           </div>
 

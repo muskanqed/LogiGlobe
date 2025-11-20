@@ -36,14 +36,6 @@ export function CTABanner() {
               Get Started Today <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
           </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="border-2 border-cream/40 text-cream hover:bg-cream/10 font-semibold text-base px-10 bg-transparent rounded-sm"
-          >
-            <Link href="/track">Track Your Shipment</Link>
-          </Button>
         </div>
       </div>
     </section>

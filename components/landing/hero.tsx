@@ -1,7 +1,5 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
 
 export function Hero() {
   return (
@@ -36,7 +34,7 @@ export function Hero() {
             Get real-time tracking, transparent pricing, and guaranteed on-time delivery across India.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          {/* <div className="flex flex-col sm:flex-row gap-4">
             <Button
               asChild
               size="lg"
@@ -44,15 +42,7 @@ export function Hero() {
             >
               <Link href="/#contact">Get Instant Quote →</Link>
             </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-2 border-cream text-cream hover:bg-cream/10 backdrop-blur-sm font-bold text-lg px-12 py-6 bg-transparent rounded-md transition-all duration-300 hover:scale-105"
-            >
-              <Link href="/track">Book a Truck Now</Link>
-            </Button>
-          </div>
+          </div> */}
 
           <div className="mt-10 flex items-center gap-6 text-cream/80 text-sm">
             <div className="flex items-center gap-2">

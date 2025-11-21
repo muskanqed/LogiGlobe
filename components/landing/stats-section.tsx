@@ -1,6 +1,8 @@
 "use client";
 
 import { AnimatedCounter } from "@/components/ui/animated-counter";
+import { CircularOrbit } from "@/components/ui/circular-orbit";
+import { featureCards } from "@/data/feature-cards";
 import { globeConfig, globeData } from "@/data/globe-data";
 import { stats } from "@/data/home";
 import { TrendingUp } from "lucide-react";
@@ -67,9 +69,24 @@ export function StatsSection() {
             })}
           </div>
 
-          {/* Globe - Right Side - responsive height */}
-          <div className="relative w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-[500px] mt-8 lg:mt-0">
-            <World globeConfig={globeConfig} data={globeData} />
+          {/* Globe with Orbiting Feature Cards - Right Side */}
+          <div className="relative w-full h-[600px] sm:h-[700px] md:h-[750px] lg:h-[800px] mt-8 lg:mt-0">
+            <CircularOrbit
+              cards={featureCards}
+              radius={280}
+              globeSize={400}
+            >
+              {/* Globe Component */}
+              <div className="relative w-full h-full">
+                {/* Glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-indigo-500/10 blur-3xl rounded-full -z-10" />
+
+                {/* 3D Globe */}
+                <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl">
+                  <World globeConfig={globeConfig} data={globeData} />
+                </div>
+              </div>
+            </CircularOrbit>
           </div>
         </div>
       </div>

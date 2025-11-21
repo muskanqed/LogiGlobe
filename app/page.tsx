@@ -1,6 +1,7 @@
 'use client'
 import { ContactSection } from "@/components/landing/contact-section"
 import { CTABanner } from "@/components/landing/cta-banner"
+import { DigitalTwinSection } from "@/components/landing/digital-twin"
 import { LeadershipSection } from "@/components/landing/leadership-section"
 import { LogisticsVideoSection } from "@/components/landing/logistics-video-section"
 import { RealPredictiveConnected } from "@/components/landing/real-predictive-connected"
@@ -33,7 +34,10 @@ export default function Home() {
       {/* 1. Hero - Strong first impression with clear value proposition */}
       <Hero />
 
-      {/* 3. Stats - Quantifiable credibility reinforces trust */}
+      {/* 2. Digital Twin - India's only digital-twin-enabled logistics network */}
+      <DigitalTwinSection />
+
+      {/* 3. Stats & Globe Orbit - Scale, reach, and feature showcase */}
       <StatsSection />
 
       {/* Real. Predictive. Connected. - Brand statement */}

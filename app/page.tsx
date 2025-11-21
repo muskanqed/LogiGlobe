@@ -32,11 +32,11 @@ export default function Home() {
       {/* 1. Hero - Strong first impression with clear value proposition */}
       <Hero />
 
-      {/* 2. Trusted By - Immediate social proof builds credibility */}
-      <TrustedBy />
-
       {/* 3. Stats - Quantifiable credibility reinforces trust */}
       <StatsSection />
+
+      {/* 2. Trusted By - Immediate social proof builds credibility */}
+      <TrustedBy />
 
       {/* 6. Video - Deeper engagement for interested users */}
       <LogisticsVideoSection />

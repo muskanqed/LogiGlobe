@@ -1,6 +1,6 @@
 "use client"
 
-import { MessageCircle, Phone } from "lucide-react"
+import { MessageCircle } from "lucide-react"
 import Link from "next/link"
 
 export function FloatingSupport() {
@@ -15,15 +15,6 @@ export function FloatingSupport() {
         aria-label="Contact on WhatsApp"
       >
         <MessageCircle className="w-7 h-7" />
-      </Link>
-
-      {/* Call Button */}
-      <Link
-        href="tel:+919307921926"
-        className="w-14 h-14 bg-navy hover:bg-navy/90 text-cream rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110"
-        aria-label="Call Us"
-      >
-        <Phone className="w-7 h-7" />
       </Link>
     </div>
   )

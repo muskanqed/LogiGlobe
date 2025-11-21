@@ -12,35 +12,35 @@ const leaders = [
     linkedin: "https://linkedin.com",
   },
   {
-    name: "Vishal Ramesh Bidve",
+    name: "Vishal Bidve",
     title: "Co-Founder & CTO",
     bio: "IIT Bombay alumnus; specializes in AI, ML & blockchain-enabled logistics.",
     image: "/images/teams/vishal-ramesh-bidve.png",
     linkedin: "https://linkedin.com",
   },
   {
-    name: "Anup Jagganath Gosavi",
+    name: "Anup Gosavi",
     title: "Co-Founder & COO",
     bio: "20+ years in corporate & entrepreneurial experience with expertise in operations and technology.",
     image: "/images/teams/anup-jaggannath-gosavi.png",
     linkedin: "https://linkedin.com",
   },
   {
-    name: "Sandip Vitthal Mandhare",
+    name: "Sandip Mandhare",
     title: "Director – Operations",
     bio: "10+ years in operations; ensures process discipline and ground execution excellence.",
     image: "/images/teams/sandip-vitthal-mandhare.png",
     linkedin: "https://linkedin.com",
   },
   {
-    name: "Dnyaneshwar Sahebrao Tanpure",
+    name: "Dnyaneshwar Tanpure",
     title: "Director – Supply Chain & Logistics",
     bio: "25+ years in trucking and logistics; drives supply-chain efficiency and reliability.",
     image: "/images/teams/dnyaneshwar-sahebrao-tanpure.png",
     linkedin: "https://linkedin.com",
   },
   {
-    name: "Arvind Dattatray Chavan",
+    name: "Arvind Chavan",
     title: "Director – Vendor Management",
     bio: "20+ years in vendor relations; ensures transparent and dependable partnerships.",
     image: "/images/teams/arvind-dattatrya-chavan.png",
@@ -108,8 +108,8 @@ export function LeadershipSection() {
             <div
               key={index}
               className={`transition-all duration-700 ${isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-12"
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-12"
                 }`}
               style={{
                 transitionDelay: `${400 + index * 150}ms`

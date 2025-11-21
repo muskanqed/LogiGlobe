@@ -1,7 +1,8 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { Clock, FileText, MapPin, Shield } from "lucide-react"
+import { motion } from "framer-motion";
+import { BadgePercent, BarChart3, Boxes, Gauge } from "lucide-react";
+
 
 interface FeatureProps {
   icon: React.ReactNode
@@ -137,169 +138,31 @@ interface CTACardProps {
   href?: string
 }
 
-const CTACard = ({ href = "#contact" }: CTACardProps) => {
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.7,
-        delay: 0.45,
-        ease: [0.25, 0.46, 0.45, 0.94] as const,
-      },
-    },
-  }
-
-  const iconVariants = {
-    hover: {
-      scale: 1.15,
-      rotate: [0, -10, 10, -10, 0],
-      transition: {
-        scale: {
-          type: "spring" as const,
-          stiffness: 400,
-          damping: 10,
-        },
-        rotate: {
-          duration: 0.5,
-          ease: "easeInOut" as const,
-        },
-      },
-    },
-  }
-
-  const buttonVariants = {
-    hover: {
-      scale: 1.05,
-      transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 10,
-      },
-    },
-  }
-
-  const glowVariants = {
-    hover: {
-      boxShadow: [
-        "0 0 20px rgba(255,255,255,0.3)",
-        "0 0 50px rgba(255,255,255,0.5)",
-        "0 0 20px rgba(255,255,255,0.3)",
-      ],
-      transition: {
-        duration: 1.5,
-        repeat: Infinity,
-        ease: "easeInOut" as const,
-      },
-    },
-  }
-
-  const floatingVariants = {
-    animate: {
-      y: typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : [-5, 5, -5],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut" as const,
-        delay: 0.6,
-      },
-    },
-  }
-
-  const pulseRingVariants = {
-    animate: {
-      scale: [1, 1.2, 1],
-      opacity: [0.6, 0, 0.6],
-    },
-  }
-
-  return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-      whileHover="hover"
-      className="group relative flex flex-col items-center text-center"
-    >
-      <motion.div
-        variants={floatingVariants}
-        animate="animate"
-        className="relative"
-      >
-        {/* Background Glow Circle */}
-        <motion.div
-          variants={glowVariants}
-          className="absolute inset-0 rounded-full bg-white/5 blur-xl scale-110"
-        />
-
-        {/* Main Icon Circle with enhanced styling - responsive sizing */}
-        <motion.div
-          variants={iconVariants}
-          className="relative mb-3 sm:mb-4 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-white/25 to-white/10 backdrop-blur-md border-2 border-white/40 flex items-center justify-center shadow-2xl group-hover:border-white/60 transition-all duration-500"
-        >
-          {/* Inner circle glow */}
-          <div className="absolute inset-2 rounded-full bg-gradient-to-br from-white/15 to-transparent" />
-
-          {/* Multiple Animated pulse rings */}
-          <motion.div
-            className="absolute inset-0 rounded-full border-2 border-white/40"
-            variants={pulseRingVariants}
-            animate="animate"
-            transition={{
-              duration: 2.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute inset-0 rounded-full border-2 border-white/30"
-            variants={pulseRingVariants}
-            animate="animate"
-            transition={{
-              duration: 2.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1.25,
-            }}
-          />
-
-          <FileText className="relative text-white w-8 h-8 sm:w-10 sm:h-10 z-10" />
-        </motion.div>
-      </motion.div>
-
-      <motion.h3 className="text-base sm:text-lg font-bold text-white mb-2 font-heading group-hover:scale-105 transition-all duration-300">
-        Get Detailed Quote
-      </motion.h3>
-
-      <motion.p className="text-xs sm:text-sm text-white/80 leading-relaxed max-w-[280px] sm:max-w-[240px] px-2 sm:px-0 mb-4 group-hover:text-white/95 transition-colors duration-300">
-        Request a comprehensive quote tailored to your logistics needs
-      </motion.p>
-
-    </motion.div>
-  )
-}
-
 export function WhyChooseUs({ ctaHref }: { ctaHref?: string }) {
+
   const features = [
     {
-      icon: <Clock className="w-full h-full" />,
-      title: "On Time Delivery",
-      description: "95% on-time delivery rate with real-time status updates",
+      icon: <Gauge className="w-full h-full" />,
+      title: "Digital-Twin Accuracy",
+      description: "Predict delays. Avoid downtime. Deliver with precision.",
     },
     {
-      icon: <MapPin className="w-full h-full" />,
-      title: "Live Tracking",
-      description: "Track your shipments in real-time across the entire journey",
+      icon: <BadgePercent className="w-full h-full" />,
+      title: "Smart, Transparent Pricing",
+      description: "Fair, data-driven rates — zero surprises.",
     },
     {
-      icon: <Shield className="w-full h-full" />,
-      title: "Highly Secure",
-      description: "Advanced security measures to protect your valuable cargo",
+      icon: <Boxes className="w-full h-full" />,
+      title: "Total Supply Chain Control",
+      description: "One dashboard. Every shipment. Full visibility.",
     },
-  ]
+    {
+      icon: <BarChart3 className="w-full h-full" />,
+      title: "Measurable Performance",
+      description: "Real-time on-time %, route insights, and cost metrics.",
+    },
+  ];
+
 
   return (
     <section className="relative py-10 sm:py-12 md:py-16 bg-gradient-to-br from-[#0a1628] via-navy to-[#0d1b2a] overflow-hidden">
@@ -397,8 +260,6 @@ export function WhyChooseUs({ ctaHref }: { ctaHref?: string }) {
               index={index}
             />
           ))}
-
-          <CTACard href={ctaHref} />
         </div>
       </div>
 

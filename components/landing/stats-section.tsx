@@ -41,7 +41,7 @@ export function StatsSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Stats Grid - Left Side */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+          <div className="grid grid-cols-2 gap-6 sm:gap-8">
             {stats.map((stat, index) => {
               const { number, suffix } = parseStatValue(stat.value);
 

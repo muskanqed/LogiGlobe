@@ -62,7 +62,19 @@ export function LogisticsVideoSection() {
 
         {/* Services Grid - Horizontal on Desktop, Vertical on Mobile */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-4 md:gap-0">
+          <div
+            className="
+    grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 
+    gap-3 sm:gap-4 md:gap-0
+
+    [&>*:last-child]:col-span-2
+    [&>*:last-child]:justify-self-center
+
+    lg:[&>*:last-child]:col-span-3
+    xl:[&>*:last-child]:col-span-1
+  "
+          >
+            {/* items */}
             {services.map((service, index) => {
               const Icon = iconMap[service.icon as keyof typeof iconMap]
               const isHovered = hoveredIndex === index
@@ -138,6 +150,6 @@ export function LogisticsVideoSection() {
           </p>
         </div>
       </div>
-    </section>
+    </section >
   )
 }

@@ -43,9 +43,11 @@ export function Hero() {
             <div className="space-y-4 lg:space-y-6">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[3.5rem] font-bold text-gray-900 leading-[1.15] tracking-tight">
                 <span className="inline-block">40 Years of Legacy.</span>{" "}
+                <span className="inline-block">Now India's Only</span>{" "}
                 <span className="inline-block bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
-                  One Vision for the Future of Logistics.
-                </span>
+                  Digital-Twin–Enabled
+                </span>{" "}
+                <span className="inline-block">Logistics Supply Chain Network.</span>
               </h1>
 
               <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed font-light max-w-lg">

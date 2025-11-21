@@ -3,6 +3,7 @@ import { ContactSection } from "@/components/landing/contact-section"
 import { CTABanner } from "@/components/landing/cta-banner"
 import { LeadershipSection } from "@/components/landing/leadership-section"
 import { LogisticsVideoSection } from "@/components/landing/logistics-video-section"
+import { RealPredictiveConnected } from "@/components/landing/real-predictive-connected"
 import { StatsSection } from "@/components/landing/stats-section"
 import { TrustedBy } from "@/components/landing/trusted-by"
 import { WhyChooseUs } from "@/components/landing/why-choose-us"
@@ -34,6 +35,9 @@ export default function Home() {
 
       {/* 3. Stats - Quantifiable credibility reinforces trust */}
       <StatsSection />
+
+      {/* Real. Predictive. Connected. - Brand statement */}
+      <RealPredictiveConnected />
 
       {/* 2. Trusted By - Immediate social proof builds credibility */}
       <TrustedBy />

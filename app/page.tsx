@@ -33,11 +33,13 @@ export default function Home() {
       {/* 1. Hero - Strong first impression with clear value proposition */}
       <Hero />
 
-      {/* 3. Stats - Quantifiable credibility reinforces trust */}
-      <StatsSection />
 
       {/* Real. Predictive. Connected. - Brand statement */}
       <RealPredictiveConnected />
+
+      {/* 3. Stats - Quantifiable credibility reinforces trust */}
+      <StatsSection />
+
 
       {/* 6. Video - Deeper engagement for interested users */}
       <LogisticsVideoSection />

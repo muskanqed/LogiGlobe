@@ -7,7 +7,7 @@ const leaders = [
   {
     name: "Vrushabh Avinash Sonawane",
     title: "Founder & CEO",
-    bio: "MBA in International Business; expertise in growth strategy and marketing.",
+    bio: "An MBA in International Business and 10+ years of expertise in growth strategy and marketing across global markets.",
     image: "/images/teams/vrushabh-sonawane.png",
     linkedin: "https://linkedin.com",
   },

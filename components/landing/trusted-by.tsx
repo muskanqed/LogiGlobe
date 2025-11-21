@@ -2,7 +2,7 @@
 
 import { trustedByLogos } from "@/data/home"
 import { motion, useAnimationControls } from "framer-motion"
-import { useState, useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export function TrustedBy() {
   // Duplicate logos for seamless infinite scroll

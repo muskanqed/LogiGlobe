@@ -20,7 +20,7 @@ const leaders = [
   },
   {
     name: "Anup Jagganath Gosavi",
-    title: "Co-Founder",
+    title: "Co-Founder & COO",
     bio: "20+ years in corporate & entrepreneurial experience with expertise in operations and technology.",
     image: "/images/teams/anup-jaggannath-gosavi.png",
     linkedin: "https://linkedin.com",
@@ -85,21 +85,18 @@ export function LeadershipSection() {
         {/* Header */}
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
           <div
-            className={`w-12 sm:w-16 h-1 bg-navy mx-auto mb-4 sm:mb-6 transition-all duration-1000 ${
-              isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
-            }`}
+            className={`w-12 sm:w-16 h-1 bg-navy mx-auto mb-4 sm:mb-6 transition-all duration-1000 ${isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+              }`}
           />
           <h2
-            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-navy mb-3 sm:mb-4 font-heading transition-all duration-1000 delay-200 px-4 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-navy mb-3 sm:mb-4 font-heading transition-all duration-1000 delay-200 px-4 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             Leadership <span className="text-gradient">Team</span>
           </h2>
           <p
-            className={`text-sm sm:text-base md:text-lg text-navy/70 max-w-2xl mx-auto transition-all duration-1000 delay-300 px-4 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+            className={`text-sm sm:text-base md:text-lg text-navy/70 max-w-2xl mx-auto transition-all duration-1000 delay-300 px-4 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             Experienced leadership combining corporate expertise and technical innovation in logistics
           </p>
@@ -110,11 +107,10 @@ export function LeadershipSection() {
           {leaders.map((leader, index) => (
             <div
               key={index}
-              className={`transition-all duration-700 ${
-                isVisible
+              className={`transition-all duration-700 ${isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-12"
-              }`}
+                }`}
               style={{
                 transitionDelay: `${400 + index * 150}ms`
               }}
@@ -124,7 +120,7 @@ export function LeadershipSection() {
                 <div className="relative w-full h-64 sm:h-72 md:h-80 overflow-hidden bg-gradient-to-br from-navy/5 via-orange/5 to-navy/5">
                   {/* Animated Border on Hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-navy via-orange to-navy opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                       style={{ padding: '2px' }}>
+                    style={{ padding: '2px' }}>
                     <div className="w-full h-full bg-white" />
                   </div>
 

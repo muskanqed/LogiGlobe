@@ -16,7 +16,7 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 py-12 sm:py-16 md:py-20">
-        <div className="max-w-3xl">
+        <div className="max-w-6xl">
           <div className="w-16 sm:w-24 h-1 bg-cream mb-6 sm:mb-8 animate-[slideInLeft_0.6s_ease-out]" />
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-cream mb-4 sm:mb-6 leading-[1.15] sm:leading-[1.1] tracking-tight font-heading">
@@ -32,9 +32,10 @@ export function Hero() {
                   <span className="relative z-10 text-white font-extrabold">
                     Digital Twin–enabled
                   </span>
-                  <span className="absolute inset-0 blur-sm bg-white opacity-20 animate-pulse"></span>
+                  {/* <span className="absolute inset-0 blur-sm bg-white opacity-20 animate-pulse"></span> */}
                 </span>
-                {" "}logistics and supply chain network.
+                {" "}logistics
+                <br />and supply chain network.
               </span>
             </span>
             <span className="block mt-3 animate-[fadeInUp_0.8s_ease-out_forwards] opacity-0 [animation-delay:0.8s]">

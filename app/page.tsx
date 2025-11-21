@@ -39,14 +39,14 @@ export default function Home() {
       {/* Real. Predictive. Connected. - Brand statement */}
       <RealPredictiveConnected />
 
-      {/* 2. Trusted By - Immediate social proof builds credibility */}
-      <TrustedBy />
-
       {/* 6. Video - Deeper engagement for interested users */}
       <LogisticsVideoSection />
 
       {/* 5. Why Choose Us - Differentiation and unique value */}
       <WhyChooseUs ctaHref="#contact" />
+
+      {/* 2. Trusted By - Immediate social proof builds credibility */}
+      <TrustedBy />
 
       {/* 7. Leadership - Authority and expertise validation */}
       <LeadershipSection />

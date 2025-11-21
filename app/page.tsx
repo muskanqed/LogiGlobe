@@ -3,6 +3,7 @@ import { ContactSection } from "@/components/landing/contact-section"
 import { CTABanner } from "@/components/landing/cta-banner"
 import { LeadershipSection } from "@/components/landing/leadership-section"
 import { LogisticsVideoSection } from "@/components/landing/logistics-video-section"
+import { RealPredictiveConnected } from "@/components/landing/real-predictive-connected"
 import { StatsSection } from "@/components/landing/stats-section"
 import { TrustedBy } from "@/components/landing/trusted-by"
 import { WhyChooseUs } from "@/components/landing/why-choose-us"
@@ -32,17 +33,22 @@ export default function Home() {
       {/* 1. Hero - Strong first impression with clear value proposition */}
       <Hero />
 
-      {/* 2. Trusted By - Immediate social proof builds credibility */}
-      <TrustedBy />
+
+      {/* Real. Predictive. Connected. - Brand statement */}
+      <RealPredictiveConnected />
 
       {/* 3. Stats - Quantifiable credibility reinforces trust */}
       <StatsSection />
+
 
       {/* 6. Video - Deeper engagement for interested users */}
       <LogisticsVideoSection />
 
       {/* 5. Why Choose Us - Differentiation and unique value */}
       <WhyChooseUs ctaHref="#contact" />
+
+      {/* 2. Trusted By - Immediate social proof builds credibility */}
+      <TrustedBy />
 
       {/* 7. Leadership - Authority and expertise validation */}
       <LeadershipSection />

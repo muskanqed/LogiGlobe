@@ -2,7 +2,7 @@ export const stats = [
   {
     value: '40+',
     label: 'Years of Legacy',
-    sublabel: 'Trusted Since 1980s',
+    sublabel: 'Trusted since the 1980s',
   },
   {
     value: '500+',
@@ -24,34 +24,29 @@ export const stats = [
 export const services = [
   {
     title: 'Surface Transportation',
-    description: 'Reliable trucking and fleet solutions with real-time tracking across India',
+    description: 'Real-time routing and reliability',
     icon: 'truck',
   },
   {
     title: 'Air Logistics',
-    description: 'Fast air cargo services for time-sensitive shipments nationwide',
+    description: 'Fast, compliant, and predictable',
     icon: 'plane',
   },
   {
     title: 'Supply Chain Solutions',
-    description: 'End-to-end supply chain management with full visibility and control',
+    description: 'Data-driven planning and flow',
     icon: 'package',
   },
   {
     title: 'Vendor Management',
-    description: 'Transparent partnerships with 500+ vendors for seamless operations',
+    description: 'Centralized, transparent control',
     icon: 'users',
   },
   {
     title: 'Technology Integration',
-    description: 'AI-powered logistics with blockchain transparency and automation',
+    description: 'API-ready, digital-twin enabled',
     icon: 'cpu',
   },
-  // {
-  //   title: 'Warehousing',
-  //   description: 'Secure storage facilities with inventory management systems',
-  //   icon: 'warehouse',
-  // },
 ]
 
 export const benefits = [

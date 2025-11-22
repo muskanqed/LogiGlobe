@@ -11,7 +11,7 @@ export function AdvantageSection() {
               <br />
               <span className="text-gradient">Advantage</span>
             </h2>
-            <p className="text-sm sm:text-base md:text-lg text-gray mb-4 sm:mb-6 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray mb-4 sm:mb-6 leading-relaxed">
               ROLO Fleets carries forward a legacy of over four decades, originally founded by the grandfather of our
               current generation of leaders. Now led by the third generation, we combine real-world experience with
               modern intelligence to build a transparent, technology-integrated logistics ecosystem for the future.
@@ -25,13 +25,13 @@ export function AdvantageSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-6 sm:mt-8 md:mt-10">
               <div className="border-l-4 border-navy pl-3 sm:pl-4">
                 <h3 className="font-bold text-base sm:text-lg mb-1 sm:mb-2 text-navy font-heading">Mission</h3>
-                <p className="text-xs sm:text-sm text-gray leading-relaxed">
+                <p className="text-sm sm:text-base text-gray leading-relaxed">
                   To bridge traditional logistics with modern intelligence.
                 </p>
               </div>
               <div className="border-l-4 border-navy pl-3 sm:pl-4">
                 <h3 className="font-bold text-base sm:text-lg mb-1 sm:mb-2 text-navy font-heading">Vision</h3>
-                <p className="text-xs sm:text-sm text-gray leading-relaxed">
+                <p className="text-sm sm:text-base text-gray leading-relaxed">
                   To be India's most trusted and organized logistics ecosystem.
                 </p>
               </div>

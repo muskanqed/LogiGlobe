@@ -1,32 +1,18 @@
-'use client'
 import { ContactSection } from "@/components/landing/contact-section"
 import { CTABanner } from "@/components/landing/cta-banner"
+import { Hero } from '@/components/landing/hero'
 import { LeadershipSection } from "@/components/landing/leadership-section"
 import { LogisticsVideoSection } from "@/components/landing/logistics-video-section"
 import { RealPredictiveConnected } from "@/components/landing/real-predictive-connected"
 import { StatsSection } from "@/components/landing/stats-section"
 import { TrustedBy } from "@/components/landing/trusted-by"
 import { WhyChooseUs } from "@/components/landing/why-choose-us"
-import dynamic from "next/dynamic"
-import { useEffect, useState } from "react"
 
 
-
-const Hero = dynamic(() => import('@/components/landing/hero').then((mod) => mod.Hero), {
-  ssr: false,
-})
 
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
 
   return (
     <main className="min-h-screen">

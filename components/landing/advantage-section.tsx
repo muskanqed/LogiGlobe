@@ -38,7 +38,7 @@ export function AdvantageSection() {
             </div>
           </div>
 
-          {/* Right: Image */}
+          {/* Right: Imagine */}
           <div className="relative">
             <div className="aspect-[4/3] overflow-hidden rounded-md border border-gray-200 shadow-sm">
               <img

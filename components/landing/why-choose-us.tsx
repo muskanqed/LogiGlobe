@@ -165,7 +165,7 @@ export function WhyChooseUs({ ctaHref }: { ctaHref?: string }) {
 
 
   return (
-    <section className="relative py-10 sm:py-12 md:py-16 bg-gradient-to-br from-[#0a1628] via-navy to-[#0d1b2a] overflow-hidden">
+    <section className="relative py-10 sm:py-12 md:py-16 bg-gradient-to-br from-surface-dark via-navy to-surface-dark overflow-hidden">
       {/* Top Separator Line */}
       <div className="absolute top-0 left-0 right-0 h-px overflow-hidden">
         <motion.div
@@ -227,7 +227,7 @@ export function WhyChooseUs({ ctaHref }: { ctaHref?: string }) {
       />
 
       {/* Gradient overlays with more contrast */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy/60 via-transparent to-[#0a1628]/40" />
+      <div className="absolute inset-0 bg-gradient-to-br from-navy/60 via-transparent to-surface-dark/40" />
 
       {/* Additional diagonal gradient for depth */}
       <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-cream/[0.02] to-transparent" />
@@ -241,7 +241,7 @@ export function WhyChooseUs({ ctaHref }: { ctaHref?: string }) {
           transition={{ duration: 0.6 }}
           className="text-center mb-8 sm:mb-10 md:mb-12"
         >
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black mb-2 text-white font-heading px-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-black mb-2 text-white font-heading px-4">
             Why Choose <span className="text-gradient-light">ROLO FLEETS</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-2xl mx-auto font-semibold px-4">

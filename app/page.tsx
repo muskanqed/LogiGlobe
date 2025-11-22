@@ -1,3 +1,4 @@
+'use client'
 import { ContactSection } from "@/components/landing/contact-section"
 import { CTABanner } from "@/components/landing/cta-banner"
 import { Hero } from '@/components/landing/hero'
@@ -7,8 +8,12 @@ import { RealPredictiveConnected } from "@/components/landing/real-predictive-co
 import { StatsSection } from "@/components/landing/stats-section"
 import { TrustedBy } from "@/components/landing/trusted-by"
 import { WhyChooseUs } from "@/components/landing/why-choose-us"
+import dynamic from "next/dynamic"
 
 
+const DigitalTwinSection = dynamic(() => import('@/components/landing/digital-twin-section').then((mod) => mod.DigitalTwinSection), {
+  ssr: false,
+})
 
 
 export default function Home() {
@@ -18,6 +23,7 @@ export default function Home() {
     <main className="min-h-screen">
       {/* 1. Hero - Strong first impression with clear value proposition */}
       <Hero />
+      <DigitalTwinSection />
 
 
       {/* Real. Predictive. Connected. - Brand statement */}

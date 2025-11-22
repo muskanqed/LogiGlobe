@@ -143,7 +143,7 @@ export function WhyChooseUs({ ctaHref }: { ctaHref?: string }) {
   const features = [
     {
       icon: <Gauge className="w-full h-full" />,
-      title: "Digital-Twin Accuracy",
+      title: "Digital Twin Accuracy",
       description: "Predict delays. Avoid downtime. Deliver with precision.",
     },
     {

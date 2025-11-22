@@ -74,7 +74,7 @@ export function TrustedBy() {
           transition={{ duration: 0.6 }}
           className="text-center mb-8 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black mb-2 sm:mb-3 text-navy font-heading px-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-black mb-2 sm:mb-3 text-navy font-heading px-4">
             Trusted by <span className="text-gradient">Industry Leaders</span>
           </h2>
           <p className="text-gray text-sm sm:text-base md:text-lg px-4">

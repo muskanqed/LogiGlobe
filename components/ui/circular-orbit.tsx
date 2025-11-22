@@ -9,6 +9,7 @@ interface CircularOrbitProps {
   globeSize?: number
   children: React.ReactNode
   className?: string
+  cardClassName?: string
 }
 
 /**
@@ -25,6 +26,7 @@ export function CircularOrbit({
   globeSize = 500,
   children,
   className = "",
+  cardClassName = "bg-white/95 border-gray-200/50 text-gray-900",
 }: CircularOrbitProps) {
   // Calculate position for each card using polar coordinates
   const getCardPosition = (index: number, total: number) => {
@@ -53,7 +55,7 @@ export function CircularOrbit({
     <div className={`relative w-full h-full flex items-center justify-center ${className}`}>
       {/* Central globe - Fixed size, centered, z-10 to ensure visibility */}
       <div
-        className="absolute -right-44 top-20 inset-0 flex items-center justify-center z-10 pointer-events-none"
+        className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none"
       >
         <div
           className="relative pointer-events-auto"
@@ -66,8 +68,42 @@ export function CircularOrbit({
         </div>
       </div>
 
+      {/* Connecting lines - z-15 */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-15">
+        <svg className="w-full h-full absolute overflow-visible">
+          <defs>
+            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="rgba(255,255,255,0.1)" />
+              <stop offset="50%" stopColor="rgba(255,255,255,0.3)" />
+              <stop offset="100%" stopColor="rgba(255,255,255,0.1)" />
+            </linearGradient>
+          </defs>
+          {cards.map((_, index) => {
+            const { x, y } = getCardPosition(index, cards.length)
+            // Calculate start point (center of globe) and end point (center of card)
+            // Since we are in a centered 1x1 container, we need to offset by center coordinates
+            // But simpler: use a centered group in SVG
+            return (
+              <motion.line
+                key={`line-${index}`}
+                x1="50%"
+                y1="50%"
+                x2={`calc(50% + ${x}px)`}
+                y2={`calc(50% + ${y}px)`}
+                stroke="url(#lineGradient)"
+                strokeWidth="1"
+                strokeDasharray="4 4"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{ pathLength: 1, opacity: 1 }}
+                transition={{ duration: 1, delay: index * 0.15 + 0.5 }}
+              />
+            )
+          })}
+        </svg>
+      </div>
+
       {/* Circular orbit of cards - z-20 so they float above but don't hide globe */}
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className="absolute inset-0 flex right-52 -top-10 items-center justify-center">
         <div className="relative" style={{ width: '1px', height: '1px' }}>
           {cards.map((card, index) => {
             const { x, y } = getCardPosition(index, cards.length)
@@ -100,17 +136,17 @@ export function CircularOrbit({
                   },
                 }}
               >
-                <div className="bg-white/95 backdrop-blur-md rounded-xl px-3.5 py-2.5 shadow-lg border border-gray-200/50 hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer">
+                <div className={`backdrop-blur-md rounded-xl px-3.5 py-2.5 shadow-lg border hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer ${cardClassName}`}>
                   <div className="flex items-start gap-2">
                     <div className={`w-7 h-7 rounded-lg ${gradientClass} flex items-center justify-center shrink-0`}>
                       <span className="text-base">{card.icon}</span>
                     </div>
                     <div className="text-[11px] space-y-0.5 whitespace-nowrap">
-                      <div className="font-bold text-gray-900">{card.title}</div>
+                      <div className="font-bold text-inherit">{card.title}</div>
                       {card.subtitle && (
-                        <div className="text-gray-600 font-medium">{card.subtitle}</div>
+                        <div className="text-inherit opacity-80 font-medium">{card.subtitle}</div>
                       )}
-                      <div className="text-gray-500 text-[9px]">{card.description}</div>
+                      <div className="text-inherit opacity-60 text-[9px]">{card.description}</div>
                     </div>
                   </div>
                 </div>

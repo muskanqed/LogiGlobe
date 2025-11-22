@@ -25,11 +25,11 @@ export function VisionSection() {
                 India's Most Trusted Logistics Ecosystem
               </h3>
             </div>
-            <p className="text-lg text-gray leading-relaxed mb-6">
+            <p className="text-sm sm:text-base text-gray leading-relaxed mb-6">
               To be India's most trusted and organized logistics ecosystem, where transparency,
               technology, and reliability come together to transform how goods move across the nation.
             </p>
-            <p className="text-base text-gray leading-relaxed">
+            <p className="text-sm sm:text-base text-gray leading-relaxed">
               We envision a future where every stakeholder in the supply chain—from vendors to
               end customers—experiences seamless, efficient, and dependable logistics services
               powered by innovation and backed by decades of expertise.
@@ -46,7 +46,7 @@ export function VisionSection() {
                 <h4 className="text-xl font-bold text-navy mb-2 font-heading">
                   Excellence in Execution
                 </h4>
-                <p className="text-gray leading-relaxed">
+                <p className="text-sm sm:text-base text-gray leading-relaxed">
                   We strive for operational excellence in every delivery, ensuring that quality
                   and efficiency are never compromised.
                 </p>
@@ -61,7 +61,7 @@ export function VisionSection() {
                 <h4 className="text-xl font-bold text-navy mb-2 font-heading">
                   Innovation-Driven Growth
                 </h4>
-                <p className="text-gray leading-relaxed">
+                <p className="text-sm sm:text-base text-gray leading-relaxed">
                   Leveraging cutting-edge technology and data intelligence to continuously
                   improve and scale our logistics solutions.
                 </p>
@@ -76,7 +76,7 @@ export function VisionSection() {
                 <h4 className="text-xl font-bold text-navy mb-2 font-heading">
                   Transparent Operations
                 </h4>
-                <p className="text-gray leading-relaxed">
+                <p className="text-sm sm:text-base text-gray leading-relaxed">
                   Building trust through complete visibility and accountability in every
                   aspect of our service delivery.
                 </p>

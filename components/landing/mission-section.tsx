@@ -29,7 +29,7 @@ export function MissionSection() {
               </p>
             </div>
           </div>
-          <p className="text-lg text-gray leading-relaxed">
+          <p className="text-sm sm:text-base text-gray leading-relaxed">
             We are committed to transforming the logistics landscape by combining four decades of
             industry expertise with cutting-edge technology. Our mission is to create a transparent,
             efficient, and reliable logistics ecosystem that addresses real-world challenges and
@@ -42,7 +42,7 @@ export function MissionSection() {
           <h3 className="text-2xl font-bold text-navy mb-6 font-heading text-center">
             Our Purpose
           </h3>
-          <p className="text-lg text-gray leading-relaxed text-center mb-8">
+          <p className="text-sm sm:text-base text-gray leading-relaxed text-center mb-8">
             We've studied the majority of real-world use cases, loopholes, and inefficiencies across
             the logistics industry — and we're committed to bridging those gaps through innovation,
             organization, and accountability.
@@ -58,7 +58,7 @@ export function MissionSection() {
             <h4 className="text-lg font-bold text-navy mb-2 font-heading">
               Innovation First
             </h4>
-            <p className="text-sm text-gray leading-relaxed">
+            <p className="text-sm sm:text-base text-gray leading-relaxed">
               Leveraging AI, ML, and blockchain to build intelligent logistics solutions
             </p>
           </div>
@@ -70,7 +70,7 @@ export function MissionSection() {
             <h4 className="text-lg font-bold text-navy mb-2 font-heading">
               Transparency
             </h4>
-            <p className="text-sm text-gray leading-relaxed">
+            <p className="text-sm sm:text-base text-gray leading-relaxed">
               Complete visibility and accountability in every shipment and transaction
             </p>
           </div>
@@ -82,7 +82,7 @@ export function MissionSection() {
             <h4 className="text-lg font-bold text-navy mb-2 font-heading">
               Partnership
             </h4>
-            <p className="text-sm text-gray leading-relaxed">
+            <p className="text-sm sm:text-base text-gray leading-relaxed">
               Building lasting relationships with vendors and clients based on trust
             </p>
           </div>
@@ -94,7 +94,7 @@ export function MissionSection() {
             <h4 className="text-lg font-bold text-navy mb-2 font-heading">
               Excellence
             </h4>
-            <p className="text-sm text-gray leading-relaxed">
+            <p className="text-sm sm:text-base text-gray leading-relaxed">
               Maintaining highest standards in operations, safety, and service delivery
             </p>
           </div>

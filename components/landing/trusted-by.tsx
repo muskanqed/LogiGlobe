@@ -90,7 +90,7 @@ export function TrustedBy() {
 
           {/* Scrolling container with Framer Motion - now with drag support */}
           <motion.div
-            className="flex gap-8 sm:gap-12 md:gap-16 cursor-grab active:cursor-grabbing"
+            className="flex gap-5 cursor-grab active:cursor-grabbing"
             animate={controls}
             drag="x"
             dragConstraints={{ left: -1000, right: 100 }}

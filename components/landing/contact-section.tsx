@@ -4,39 +4,74 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/hooks/use-toast"
+import { contactFormSchema, type ContactFormData } from "@/lib/validation/contact-schema"
+import { zodResolver } from "@hookform/resolvers/zod"
 import { Loader2 } from "lucide-react"
-import { useState } from "react"
+import { useEffect } from "react"
+import { useForm } from "react-hook-form"
 
-interface ContactFormData {
-  name: string
-  email: string
-  phone: string
-  company: string
-  message: string
-}
+const RATE_LIMIT_KEY = "contact_form_last_submission"
+const RATE_LIMIT_DURATION = 60000 // 1 minute
 
 export function ContactSection() {
   const { toast } = useToast()
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [formData, setFormData] = useState<ContactFormData>({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    message: "",
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+      message: "",
+      website: "", // Honeypot field
+    },
   })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }))
-  }
+  // Show validation errors via toast
+  useEffect(() => {
+    if (Object.keys(errors).length > 0) {
+      const firstError = Object.values(errors)[0]
+      if (firstError?.message) {
+        toast({
+          title: "Validation Error",
+          description: firstError.message,
+          variant: "destructive",
+        })
+      }
+    }
+  }, [errors, toast])
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+  const onSubmit = async (data: ContactFormData) => {
+    // Check rate limiting
+    const lastSubmission = localStorage.getItem(RATE_LIMIT_KEY)
+    if (lastSubmission) {
+      const timeSinceLastSubmission = Date.now() - parseInt(lastSubmission)
+      if (timeSinceLastSubmission < RATE_LIMIT_DURATION) {
+        const waitTime = Math.ceil((RATE_LIMIT_DURATION - timeSinceLastSubmission) / 1000)
+        toast({
+          title: "Please wait",
+          description: `You can submit again in ${waitTime} seconds.`,
+          variant: "destructive",
+        })
+        return
+      }
+    }
+
+    // Check honeypot
+    if (data.website) {
+      toast({
+        title: "Error",
+        description: "Invalid submission detected.",
+        variant: "destructive",
+      })
+      return
+    }
 
     try {
       const response = await fetch("/api/contact", {
@@ -44,26 +79,26 @@ export function ContactSection() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(data),
       })
 
-      const data = await response.json()
+      const result = await response.json()
 
       if (response.ok) {
+        // Set rate limit
+        localStorage.setItem(RATE_LIMIT_KEY, Date.now().toString())
+
         toast({
-          title: "Message sent successfully!",
-          description: "We'll get back to you as soon as possible.",
+          title: "Message sent successfully! ✓",
+          description: result.referenceId
+            ? `Reference ID: ${result.referenceId}. We'll get back to you within 24-48 hours.`
+            : "We'll get back to you as soon as possible.",
         })
+
         // Reset form
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          company: "",
-          message: "",
-        })
+        reset()
       } else {
-        throw new Error(data.error || "Failed to send message")
+        throw new Error(result.error || "Failed to send message")
       }
     } catch (error) {
       toast({
@@ -71,8 +106,6 @@ export function ContactSection() {
         description: error instanceof Error ? error.message : "Failed to send message. Please try again.",
         variant: "destructive",
       })
-    } finally {
-      setIsSubmitting(false)
     }
   }
 
@@ -85,7 +118,7 @@ export function ContactSection() {
             Get In <span className="text-gradient">Touch</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-navy/70 max-w-2xl mx-auto px-4">
-            Have a question or need a quote? Reach out to us and we'll respond promptly
+            Have a question or need a quote? Reach out to us and we'll respond promptly.
           </p>
         </div>
 
@@ -101,32 +134,30 @@ export function ContactSection() {
                 our team is ready to help you optimize your logistics operations.
               </p>
             </div>
-
-            <div className="bg-cream p-4 sm:p-6 rounded-md border border-gray-200 mt-6 sm:mt-8">
-              <h4 className="font-bold text-navy mb-2 text-sm sm:text-base">Business Hours</h4>
-              <div className="space-y-1 text-xs sm:text-sm text-gray">
-                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                <p>Saturday: 9:00 AM - 2:00 PM</p>
-                <p>Sunday: Closed</p>
-              </div>
-            </div>
           </div>
 
           {/* Right: Contact Form */}
           <div className="bg-cream p-4 sm:p-6 md:p-8 rounded-md border border-gray-200">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              {/* Honeypot field - hidden from users, visible to bots */}
+              <div className="hidden" aria-hidden="true">
+                <Input
+                  {...register("website")}
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-semibold text-navy">
                     Name *
                   </label>
                   <Input
+                    {...register("name")}
                     id="name"
-                    name="name"
                     type="text"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
                     placeholder="Your full name"
                     className="bg-white border-gray-300 focus:border-navy"
                   />
@@ -137,12 +168,9 @@ export function ContactSection() {
                     Email *
                   </label>
                   <Input
+                    {...register("email")}
                     id="email"
-                    name="email"
                     type="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
                     placeholder="your@email.com"
                     className="bg-white border-gray-300 focus:border-navy"
                   />
@@ -155,12 +183,9 @@ export function ContactSection() {
                     Phone *
                   </label>
                   <Input
+                    {...register("phone")}
                     id="phone"
-                    name="phone"
                     type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={handleChange}
                     placeholder="+91 1234567890"
                     className="bg-white border-gray-300 focus:border-navy"
                   />
@@ -171,11 +196,9 @@ export function ContactSection() {
                     Company
                   </label>
                   <Input
+                    {...register("company")}
                     id="company"
-                    name="company"
                     type="text"
-                    value={formData.company}
-                    onChange={handleChange}
                     placeholder="Your company name"
                     className="bg-white border-gray-300 focus:border-navy"
                   />
@@ -187,11 +210,8 @@ export function ContactSection() {
                   Message *
                 </label>
                 <Textarea
+                  {...register("message")}
                   id="message"
-                  name="message"
-                  required
-                  value={formData.message}
-                  onChange={handleChange}
                   placeholder="Tell us about your logistics needs..."
                   rows={5}
                   className="bg-white border-gray-300 focus:border-navy resize-none"

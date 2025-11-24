@@ -71,6 +71,7 @@
     "@tailwindcss/postcss": "^4.1.9",
     "@types/mapbox-gl": "^3.4.0",
     "@types/node": "^22",
+    "@types/nodemailer": "^7.0.4",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/three": "^0.181.0",

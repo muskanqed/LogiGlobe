@@ -112,7 +112,7 @@ export function DigitalTwinSection() {
           <CircularOrbit
             cards={features}
             globeSize={530}
-            radius={280}
+            radius={310}
             cardClassName="bg-white/10 border-white/20 text-white backdrop-blur-md"
           >
             <World globeConfig={globeConfig} data={globeData} />

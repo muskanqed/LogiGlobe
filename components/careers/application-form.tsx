@@ -164,12 +164,6 @@ export function ApplicationForm() {
               <Label className="text-[#1A1A1A] font-semibold mb-2 block">
                 Verification *
               </Label>
-              <div className="border-2 border-[#D1D5DB] rounded-md p-6 bg-[#F4F5F7] flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-6 h-6 border-2 border-[#005EB8] rounded mx-auto mb-2"></div>
-                  <span className="text-sm text-[#1A1A1A]/60">I'm not a robot</span>
-                </div>
-              </div>
             </div>
 
             {/* Submit Button */}

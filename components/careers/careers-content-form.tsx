@@ -287,17 +287,6 @@ export function CareersContentForm() {
                   </div>
                 </div>
 
-                {/* reCAPTCHA Placeholder */}
-                <div>
-                  <div className="border-2 border-gray-300 rounded-md p-4 bg-cream/20 flex items-center justify-center">
-                    <div className="flex items-center gap-3">
-                      <div className="w-6 h-6 border-2 border-navy rounded"></div>
-                      <span className="text-sm text-navy/70">I'm not a robot</span>
-                    </div>
-                  </div>
-                  <p className="text-xs text-navy/50 mt-2">reCAPTCHA verification (to be implemented)</p>
-                </div>
-
                 {/* Submit Button */}
                 <Button
                   type="submit"

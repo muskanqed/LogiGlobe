@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react"
 
 const leaders = [
   {
-    name: "Vrushabh Avinash Sonawane",
+    name: "Vrushabh Sonawane",
     title: "Founder & CEO",
     bio: "An MBA in International Business and 10+ years of expertise in growth strategy and marketing across global markets.",
     image: "/images/teams/vrushabh-sonawane.png",

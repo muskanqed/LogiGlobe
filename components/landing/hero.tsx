@@ -1,5 +1,8 @@
 "use client"
 
+import Link from "next/link"
+import { Button } from "../ui/button"
+
 
 export function Hero() {
   return (
@@ -26,7 +29,7 @@ export function Hero() {
               </span>
             </span>
             <span className="block mt-2 animate-[fadeInUp_0.8s_ease-out_forwards] opacity-0 [animation-delay:0.5s]">
-              <span className="inline-block text-cream hover:scale-[1.02] transition-transform duration-300">
+              <span className="inline-block text-cream  transition-transform duration-300">
                 Powering India's only{" "}
                 <span className="relative inline-block">
                   <span className="relative z-10 text-white font-extrabold">
@@ -38,11 +41,6 @@ export function Hero() {
                 <br />and supply chain network.
               </span>
             </span>
-            <span className="block mt-3 animate-[fadeInUp_0.8s_ease-out_forwards] opacity-0 [animation-delay:0.8s]">
-              <span className="inline-block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gradient-light font-black tracking-tight hover:tracking-normal transition-all duration-500 drop-shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-                Logistics Partner
-              </span>
-            </span>
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl text-cream/90 mb-3 sm:mb-4 font-semibold leading-snug animate-[fadeInUp_0.8s_ease-out_forwards] opacity-0 [animation-delay:1.1s]">
@@ -50,20 +48,16 @@ export function Hero() {
             reliability across every mile.
           </p>
 
-          <p className="text-sm sm:text-base md:text-lg text-cream/80 sm:text-cream/70 mb-8 sm:mb-10 max-w-2xl leading-relaxed animate-[fadeInUp_0.8s_ease-out_forwards] opacity-0 [animation-delay:1.3s]">
-            40+ years of proven excellence. 500+ vendor partners. 20,000+ monthly shipments.
-            Get real-time tracking, transparent pricing, and guaranteed on-time delivery across India.
-          </p>
-
-          {/* <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <Button
               asChild
               size="lg"
-              className="bg-cream hover:bg-white text-navy font-bold text-lg px-12 py-6 rounded-md shadow-2xl hover:shadow-cream/50 hover:scale-105 transition-all duration-300"
+              variant={'outline'}
+              className="hover:text-cream"
             >
               <Link href="/#contact">Get Instant Quote →</Link>
             </Button>
-          </div> */}
+          </div>
 
           <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 text-cream/80 text-xs sm:text-sm animate-[fadeInUp_0.8s_ease-out_forwards] opacity-0 [animation-delay:1.5s]">
             <div className="flex items-center gap-2 hover:scale-105 transition-transform duration-300">
@@ -77,6 +71,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   )
 }

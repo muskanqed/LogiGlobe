@@ -1,5 +1,6 @@
 "use client"
 
+import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
@@ -107,6 +108,14 @@ export function PartnerRegistrationForm() {
               </RadioGroup>
             </div>
           </div>
+
+
+          <Button
+            type="submit"
+            className="w-full md:w-auto bg-navy hover:bg-navy/90 text-cream font-semibold px-16 py-6 text-base rounded-md"
+          >
+            Submit Now
+          </Button>
         </form>
       </div>
     </section>

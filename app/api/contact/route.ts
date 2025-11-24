@@ -1,195 +1,70 @@
-import { NextRequest, NextResponse } from "next/server"
-import nodemailer from "nodemailer"
-import type { ContactFormData } from "@/types/contact"
+import { NextResponse } from "next/server"
+import { ZodError } from "zod"
+import { contactFormSchema } from "@/lib/validation/contact-schema"
+import { createEmailTransporter } from "@/lib/email/config"
+import {
+  generateContactEmailHtml,
+  generateContactEmailText,
+  generateContactSubject,
+  generateConfirmationEmailHtml,
+  generateConfirmationEmailText,
+  generateConfirmationSubject,
+} from "@/lib/email/templates"
 
-// Email validation regex
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const CONTACT_EMAIL = process.env.CONTACT_EMAIL || process.env.SMTP_USER || "support@rolofleets.com"
+const FROM_EMAIL = process.env.SMTP_FROM || process.env.SMTP_USER || "support@rolofleets.com"
 
-// Phone validation (basic)
-const phoneRegex = /^[\d\s\-\+\(\)]+$/
-
-export async function POST(request: NextRequest) {
+export async function POST(request: Request) {
   try {
-    const body: ContactFormData = await request.json()
+    const body = await request.json()
 
-    // Validate required fields
-    if (!body.name || !body.email || !body.phone || !body.message) {
+    // Validate with Zod schema
+    const validatedData = contactFormSchema.parse(body)
+
+    // Check honeypot field
+    if (validatedData.website) {
       return NextResponse.json(
-        { error: "Missing required fields" },
+        { error: "Invalid submission detected" },
         { status: 400 }
       )
     }
 
-    // Validate email format
-    if (!emailRegex.test(body.email)) {
-      return NextResponse.json(
-        { error: "Invalid email format" },
-        { status: 400 }
-      )
-    }
+    // Create email transporter
+    const transporter = createEmailTransporter()
 
-    // Validate phone format
-    if (!phoneRegex.test(body.phone)) {
-      return NextResponse.json(
-        { error: "Invalid phone number format" },
-        { status: 400 }
-      )
-    }
+    // Generate email content for support team
+    const subject = generateContactSubject(validatedData.name)
+    const emailHtml = generateContactEmailHtml(validatedData)
+    const emailText = generateContactEmailText(validatedData)
 
-    // Validate message length
-    if (body.message.length < 10) {
-      return NextResponse.json(
-        { error: "Message must be at least 10 characters long" },
-        { status: 400 }
-      )
-    }
+    // Generate confirmation email content for user
+    const confirmationSubject = generateConfirmationSubject()
+    const confirmationHtml = generateConfirmationEmailHtml(validatedData.name)
+    const confirmationText = generateConfirmationEmailText(validatedData.name)
 
-    // Create nodemailer transporter
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: parseInt(process.env.SMTP_PORT || "587"),
-      secure: process.env.SMTP_SECURE === "true", // true for 465, false for other ports
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    })
-
-    // Email HTML template
-    const emailHtml = `
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <meta charset="utf-8">
-          <style>
-            body {
-              font-family: Arial, sans-serif;
-              line-height: 1.6;
-              color: #333;
-            }
-            .container {
-              max-width: 600px;
-              margin: 0 auto;
-              padding: 20px;
-            }
-            .header {
-              background-color: #1e3a5f;
-              color: #f5f5dc;
-              padding: 20px;
-              text-align: center;
-              border-radius: 5px 5px 0 0;
-            }
-            .content {
-              background-color: #f9f9f9;
-              padding: 30px;
-              border: 1px solid #ddd;
-              border-radius: 0 0 5px 5px;
-            }
-            .field {
-              margin-bottom: 20px;
-            }
-            .field-label {
-              font-weight: bold;
-              color: #1e3a5f;
-              margin-bottom: 5px;
-            }
-            .field-value {
-              padding: 10px;
-              background-color: white;
-              border-left: 3px solid #1e3a5f;
-              margin-top: 5px;
-            }
-            .footer {
-              text-align: center;
-              margin-top: 20px;
-              padding-top: 20px;
-              border-top: 1px solid #ddd;
-              color: #666;
-              font-size: 12px;
-            }
-          </style>
-        </head>
-        <body>
-          <div class="container">
-            <div class="header">
-              <h1>New Contact Form Submission</h1>
-              <p>ROLO Fleets - Landing Page</p>
-            </div>
-            <div class="content">
-              <div class="field">
-                <div class="field-label">Name:</div>
-                <div class="field-value">${body.name}</div>
-              </div>
-
-              <div class="field">
-                <div class="field-label">Email:</div>
-                <div class="field-value">
-                  <a href="mailto:${body.email}">${body.email}</a>
-                </div>
-              </div>
-
-              <div class="field">
-                <div class="field-label">Phone:</div>
-                <div class="field-value">
-                  <a href="tel:${body.phone}">${body.phone}</a>
-                </div>
-              </div>
-
-              ${body.company ? `
-              <div class="field">
-                <div class="field-label">Company:</div>
-                <div class="field-value">${body.company}</div>
-              </div>
-              ` : ''}
-
-              <div class="field">
-                <div class="field-label">Message:</div>
-                <div class="field-value">${body.message.replace(/\n/g, '<br>')}</div>
-              </div>
-
-              <div class="footer">
-                <p>Received on ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}</p>
-                <p>This email was sent from the ROLO Fleets contact form</p>
-              </div>
-            </div>
-          </div>
-        </body>
-      </html>
-    `
-
-    // Plain text version
-    const emailText = `
-New Contact Form Submission - ROLO Fleets
-
-Name: ${body.name}
-Email: ${body.email}
-Phone: ${body.phone}
-${body.company ? `Company: ${body.company}` : ''}
-
-Message:
-${body.message}
-
----
-Received on ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
-    `
-
-    // Send email
-    const info = await transporter.sendMail({
-      from: `"ROLO Fleets Contact Form" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
-      to: process.env.CONTACT_EMAIL || process.env.SMTP_USER,
-      replyTo: body.email,
-      subject: `New Contact Form Submission from ${body.name}`,
-      text: emailText,
+    // Send email to support team
+    await transporter.sendMail({
+      from: FROM_EMAIL,
+      to: CONTACT_EMAIL,
+      replyTo: validatedData.email,
+      subject: subject,
       html: emailHtml,
+      text: emailText,
     })
 
-    console.log("Message sent: %s", info.messageId)
+    // Send confirmation email to user
+    await transporter.sendMail({
+      from: FROM_EMAIL,
+      to: validatedData.email,
+      subject: confirmationSubject,
+      html: confirmationHtml,
+      text: confirmationText,
+    })
 
     return NextResponse.json(
       {
         success: true,
-        message: "Email sent successfully",
-        messageId: info.messageId
+        message: "Message sent successfully",
       },
       { status: 200 }
     )
@@ -197,11 +72,31 @@ Received on ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
   } catch (error) {
     console.error("Contact form error:", error)
 
+    // Handle Zod validation errors
+    if (error instanceof ZodError) {
+      const firstError = error.errors[0]
+      return NextResponse.json(
+        {
+          error: firstError?.message || "Validation failed",
+          field: firstError?.path?.join(".") || "unknown",
+        },
+        { status: 400 }
+      )
+    }
+
+    // Handle email sending errors
+    if (error instanceof Error) {
+      return NextResponse.json(
+        {
+          error: "Failed to send message. Please try again later.",
+          details: error.message,
+        },
+        { status: 500 }
+      )
+    }
+
     return NextResponse.json(
-      {
-        error: "Failed to send email. Please try again later.",
-        details: error instanceof Error ? error.message : "Unknown error"
-      },
+      { error: "An unexpected error occurred. Please try again." },
       { status: 500 }
     )
   }

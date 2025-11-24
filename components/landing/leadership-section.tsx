@@ -115,15 +115,9 @@ export function LeadershipSection() {
                 transitionDelay: `${400 + index * 150}ms`
               }}
             >
-              <Card className="bg-white border-none shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group rounded-2xl sm:rounded-3xl h-full">
+              <Card className="bg-white border-none shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group rounded-2xl sm:rounded-3xl h-full py-0">
                 {/* Image Container - responsive height */}
                 <div className="relative w-full h-64 sm:h-72 md:h-80 overflow-hidden bg-gradient-to-br from-navy/5 via-orange/5 to-navy/5">
-                  {/* Animated Border on Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-navy via-orange to-navy opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                    style={{ padding: '2px' }}>
-                    <div className="w-full h-full bg-white" />
-                  </div>
-
                   <div className="relative w-full h-full flex items-center justify-center p-4">
                     <img
                       src={leader.image}

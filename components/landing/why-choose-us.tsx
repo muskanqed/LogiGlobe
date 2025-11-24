@@ -159,7 +159,7 @@ export function WhyChooseUs({ ctaHref }: { ctaHref?: string }) {
     {
       icon: <BarChart3 className="w-full h-full" />,
       title: "Measurable Performance",
-      description: "Real-time on-time %, route insights, and cost metrics.",
+      description: "Real-time on-time, route insights, and cost metrics.",
     },
   ];
 

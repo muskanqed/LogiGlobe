@@ -28,14 +28,6 @@ export function HeroSection() {
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-cream mb-6 font-heading tracking-tight">
             JOIN US
           </h1>
-
-          {/* Subtitle Keywords */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-cream/80 text-sm md:text-base font-medium uppercase tracking-wider">
-            <span className="px-4 py-2 border border-cream/30 rounded-sm">Recruitment</span>
-            <span className="px-4 py-2 border border-cream/30 rounded-sm">Career</span>
-            <span className="px-4 py-2 border border-cream/30 rounded-sm">Business</span>
-            <span className="px-4 py-2 border border-cream/30 rounded-sm">Opportunities</span>
-          </div>
         </div>
       </div>
     </section>

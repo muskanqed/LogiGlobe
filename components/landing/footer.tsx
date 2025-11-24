@@ -9,7 +9,7 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-14 md:mb-16">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <Image src="/dark-logo.png" alt="Rolo Fleet" width={200} height={200} className="h-20 w-auto -ml-4" />
+            <Image src="/dark-logo.png" alt="Rolo Fleet" width={200} height={200} className="h-20 w-auto -ml-4 -mt-4" />
             <p className="text-sm sm:text-base text-cream/70 mb-4 sm:mb-6 max-w-md leading-relaxed">
               ROLO Fleets – Wheels of Trust. Over 40 years of legacy in logistics, now powered by modern technology and
               transparent operations.

@@ -1,22 +1,20 @@
 "use client"
 
-import { useState } from "react"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/hooks/use-toast"
-import { CheckCircle2, Upload } from "lucide-react"
 import { careersApplicationSchema, validateResumeFile, type CareersApplicationData } from "@/lib/validation/careers-schema"
-
+import { zodResolver } from "@hookform/resolvers/zod"
+import { CheckCircle2, Upload } from "lucide-react"
+import { useState } from "react"
+import { useForm } from "react-hook-form"
+import { toast } from 'sonner'
 const RATE_LIMIT_KEY = "careers-application-last-submission"
 const RATE_LIMIT_DURATION = 120000 // 120 seconds (2 minutes) - longer for job applications
 
 export function CareersContentForm() {
-  const { toast } = useToast()
   const [fileName, setFileName] = useState<string>("")
   const [resumeFile, setResumeFile] = useState<File | null>(null)
 
@@ -45,11 +43,7 @@ export function CareersContentForm() {
       // Validate file
       const validation = validateResumeFile(file)
       if (!validation.valid) {
-        toast({
-          title: "Invalid File",
-          description: validation.error,
-          variant: "destructive",
-        })
+        toast.error("Invalid File")
         e.target.value = "" // Clear the input
         setFileName("")
         setResumeFile(null)
@@ -65,11 +59,7 @@ export function CareersContentForm() {
     try {
       // Check if resume is uploaded
       if (!resumeFile) {
-        toast({
-          title: "Resume Required",
-          description: "Please upload your resume (PDF, DOC, or DOCX)",
-          variant: "destructive",
-        })
+        toast.error("Resume Required")
         return
       }
 
@@ -79,11 +69,7 @@ export function CareersContentForm() {
         const timeSinceLastSubmission = Date.now() - parseInt(lastSubmission)
         if (timeSinceLastSubmission < RATE_LIMIT_DURATION) {
           const waitTime = Math.ceil((RATE_LIMIT_DURATION - timeSinceLastSubmission) / 1000)
-          toast({
-            title: "Please wait",
-            description: `You can submit another application in ${waitTime} seconds.`,
-            variant: "destructive",
-          })
+          toast.error(`Please wait. You can submit another application in ${waitTime} seconds.`)
           return
         }
       }
@@ -116,10 +102,7 @@ export function CareersContentForm() {
       localStorage.setItem(RATE_LIMIT_KEY, Date.now().toString())
 
       // Show success message
-      toast({
-        title: "Application Submitted!",
-        description: "Thank you for applying. We'll review your application and get back to you within 3-5 business days.",
-      })
+      toast.success("Application Submitted! Thank you for applying. We'll review your application and get back to you within 3-5 business days.")
 
       // Reset form
       reset()
@@ -130,11 +113,7 @@ export function CareersContentForm() {
       if (fileInput) fileInput.value = ""
     } catch (error) {
       console.error("Form submission error:", error)
-      toast({
-        title: "Submission Failed",
-        description: error instanceof Error ? error.message : "Please try again later.",
-        variant: "destructive",
-      })
+      toast.error(error instanceof Error ? error.message : "Please try again later.")
     }
   }
 

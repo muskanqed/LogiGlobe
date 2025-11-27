@@ -1,20 +1,19 @@
 "use client"
 
-import { useState } from "react"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { useToast } from "@/hooks/use-toast"
 import { partnerRegistrationSchema, type PartnerRegistrationData } from "@/lib/validation/partner-schemas"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useState } from "react"
+import { useForm } from "react-hook-form"
+import { toast } from "sonner"
 
 const RATE_LIMIT_KEY = "partner-registration-last-submission"
 const RATE_LIMIT_DURATION = 60000 // 60 seconds
 
 export function PartnerRegistrationForm() {
-  const { toast } = useToast()
   const [msmeValue, setMsmeValue] = useState("no")
 
   const {
@@ -42,11 +41,7 @@ export function PartnerRegistrationForm() {
         const timeSinceLastSubmission = Date.now() - parseInt(lastSubmission)
         if (timeSinceLastSubmission < RATE_LIMIT_DURATION) {
           const waitTime = Math.ceil((RATE_LIMIT_DURATION - timeSinceLastSubmission) / 1000)
-          toast({
-            title: "Please wait",
-            description: `You can submit again in ${waitTime} seconds.`,
-            variant: "destructive",
-          })
+          toast.error(`Please wait. You can submit again in ${waitTime} seconds.`)
           return
         }
       }
@@ -73,21 +68,14 @@ export function PartnerRegistrationForm() {
       localStorage.setItem(RATE_LIMIT_KEY, Date.now().toString())
 
       // Show success message
-      toast({
-        title: "Partnership Inquiry Submitted!",
-        description: "Thank you for your interest. We'll get back to you within 24-48 hours.",
-      })
+      toast.success("Partnership Inquiry Submitted! Thank you for your interest. We'll get back to you within 24-48 hours.")
 
       // Reset form
       reset()
       setMsmeValue("no")
     } catch (error) {
       console.error("Form submission error:", error)
-      toast({
-        title: "Submission Failed",
-        description: error instanceof Error ? error.message : "Please try again later.",
-        variant: "destructive",
-      })
+      toast.error(error instanceof Error ? error.message : "Please try again later.")
     }
   }
 

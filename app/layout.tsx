@@ -1,10 +1,11 @@
-import { FloatingSupport } from "@/components/partners/floating-support"
 import { Footer } from "@/components/landing/footer"
 import { Navbar } from "@/components/landing/navbar"
+import { FloatingSupport } from "@/components/partners/floating-support"
 import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next"
 import { Inter, Poppins } from "next/font/google"
 import type React from "react"
+import { Toaster } from "sonner"
 import "./globals.css"
 
 const poppins = Poppins({
@@ -48,6 +49,7 @@ export default function RootLayout({
         <Footer />
         <FloatingSupport />
         <Analytics />
+        <Toaster richColors />
       </body>
     </html>
   )

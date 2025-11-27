@@ -1,18 +1,16 @@
 "use client"
 
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { useToast } from "@/hooks/use-toast"
 import { fleetDetailSchema, type FleetDetailData } from "@/lib/validation/partner-schemas"
-
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { toast } from 'sonner'
 const RATE_LIMIT_KEY = "fleet-detail-last-submission"
 const RATE_LIMIT_DURATION = 60000 // 60 seconds
 
 export function FleetDetailForm() {
-  const { toast } = useToast()
 
   const {
     register,
@@ -44,11 +42,7 @@ export function FleetDetailForm() {
         const timeSinceLastSubmission = Date.now() - parseInt(lastSubmission)
         if (timeSinceLastSubmission < RATE_LIMIT_DURATION) {
           const waitTime = Math.ceil((RATE_LIMIT_DURATION - timeSinceLastSubmission) / 1000)
-          toast({
-            title: "Please wait",
-            description: `You can submit again in ${waitTime} seconds.`,
-            variant: "destructive",
-          })
+          toast.error(`Please wait. You can submit again in ${waitTime} seconds.`)
           return
         }
       }
@@ -75,20 +69,13 @@ export function FleetDetailForm() {
       localStorage.setItem(RATE_LIMIT_KEY, Date.now().toString())
 
       // Show success message
-      toast({
-        title: "Fleet Registration Submitted!",
-        description: "Thank you for registering. Our team will contact you within 24-48 hours.",
-      })
+      toast.success("Fleet Registration Submitted! Thank you for registering. Our team will contact you within 24-48 hours.")
 
       // Reset form
       reset()
     } catch (error) {
       console.error("Form submission error:", error)
-      toast({
-        title: "Submission Failed",
-        description: error instanceof Error ? error.message : "Please try again later.",
-        variant: "destructive",
-      })
+      toast.error(error instanceof Error ? error.message : "Please try again later.")
     }
   }
 

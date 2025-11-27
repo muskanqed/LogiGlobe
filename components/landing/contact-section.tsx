@@ -3,18 +3,16 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/hooks/use-toast"
 import { contactFormSchema, type ContactFormData } from "@/lib/validation/contact-schema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Loader2 } from "lucide-react"
 import { useEffect } from "react"
 import { useForm } from "react-hook-form"
-
+import { toast } from "sonner"
 const RATE_LIMIT_KEY = "contact_form_last_submission"
 const RATE_LIMIT_DURATION = 60000 // 1 minute
 
 export function ContactSection() {
-  const { toast } = useToast()
 
   const {
     register,
@@ -38,11 +36,7 @@ export function ContactSection() {
     if (Object.keys(errors).length > 0) {
       const firstError = Object.values(errors)[0]
       if (firstError?.message) {
-        toast({
-          title: "Validation Error",
-          description: firstError.message,
-          variant: "destructive",
-        })
+        toast.error(firstError.message || "Validation Error")
       }
     }
   }, [errors, toast])
@@ -54,22 +48,14 @@ export function ContactSection() {
       const timeSinceLastSubmission = Date.now() - parseInt(lastSubmission)
       if (timeSinceLastSubmission < RATE_LIMIT_DURATION) {
         const waitTime = Math.ceil((RATE_LIMIT_DURATION - timeSinceLastSubmission) / 1000)
-        toast({
-          title: "Please wait",
-          description: `You can submit again in ${waitTime} seconds.`,
-          variant: "destructive",
-        })
+        toast.error(`Please wait. You can submit again in ${waitTime} seconds.`)
         return
       }
     }
 
     // Check honeypot
     if (data.website) {
-      toast({
-        title: "Error",
-        description: "Invalid submission detected.",
-        variant: "destructive",
-      })
+      toast.error("Invalid submission detected.")
       return
     }
 
@@ -88,12 +74,7 @@ export function ContactSection() {
         // Set rate limit
         localStorage.setItem(RATE_LIMIT_KEY, Date.now().toString())
 
-        toast({
-          title: "Message sent successfully! ✓",
-          description: result.referenceId
-            ? `Reference ID: ${result.referenceId}. We'll get back to you within 24-48 hours.`
-            : "We'll get back to you as soon as possible.",
-        })
+        toast.success("Message sent successfully! ✓")
 
         // Reset form
         reset()
@@ -101,11 +82,7 @@ export function ContactSection() {
         throw new Error(result.error || "Failed to send message")
       }
     } catch (error) {
-      toast({
-        title: "Error",
-        description: error instanceof Error ? error.message : "Failed to send message. Please try again.",
-        variant: "destructive",
-      })
+      toast.error(error instanceof Error ? error.message : "Failed to send message. Please try again.")
     }
   }
 

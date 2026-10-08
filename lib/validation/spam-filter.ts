@@ -120,7 +120,7 @@ export function isSpamMessage(data: {
 
 /**
  * Generate unique reference ID for email tracking
- * Format: ROLO-YYYYMMDD-XXXXX
+ * Format: LOGIGLOBE-YYYYMMDD-XXXXX
  */
 export function generateReferenceId(): string {
   const date = new Date()
@@ -131,5 +131,5 @@ export function generateReferenceId(): string {
   // Generate random 5-digit number
   const random = Math.floor(10000 + Math.random() * 90000)
 
-  return `ROLO-${year}${month}${day}-${random}`
+  return `LOGIGLOBE-${year}${month}${day}-${random}`
 }

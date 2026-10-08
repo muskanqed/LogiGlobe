@@ -9,9 +9,9 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-14 md:mb-16">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <Image src="/dark-logo.png" alt="Rolo Fleet" width={200} height={200} className="h-20 w-auto -ml-4 -mt-4" />
+            <Image src="/logiglobe-light.svg" alt="LogiGlobe" width={200} height={200} className="h-20 w-auto -ml-4 -mt-4" />
             <p className="text-sm sm:text-base text-cream/70 mb-4 sm:mb-6 max-w-md leading-relaxed">
-              ROLO Fleets – Wheels of Trust. Over 40 years of legacy in logistics, now powered by modern technology and
+              LogiGlobe – Wheels of Trust. Over 40 years of legacy in logistics, now powered by modern technology and
               transparent operations.
             </p>
             <div className="space-y-4">
@@ -32,10 +32,10 @@ export function Footer() {
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-cream" />
                 <a
-                  href="mailto:support@rolofleets.com"
+                  href="mailto:support@logiglobe.com"
                   className="text-sm text-cream/70 hover:text-cream transition-colors"
                 >
-                  support@rolofleets.com
+                  support@logiglobe.com
                 </a>
               </div>
             </div>
@@ -78,7 +78,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-cream/10 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
-          <p className="text-xs sm:text-sm text-cream/50 text-center sm:text-left">© 2025 ROLO Fleets Pvt. Ltd. All Rights Reserved.</p>
+          <p className="text-xs sm:text-sm text-cream/50 text-center sm:text-left">© 2025 LogiGlobe Pvt. Ltd. All Rights Reserved.</p>
           <div className="flex gap-4 sm:gap-6">
             <Link href="https://www.linkedin.com/company/rolo-fleets/" className="text-cream/50 hover:text-cream transition-colors text-sm">
               LinkedIn

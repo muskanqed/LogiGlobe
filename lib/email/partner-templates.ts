@@ -3,7 +3,7 @@ import type { PartnerRegistrationData, FleetDetailData } from "@/lib/validation/
 // ===== PARTNER REGISTRATION EMAIL TEMPLATES =====
 
 export function generatePartnerRegistrationSubject(name: string): string {
-  return `[ROLO-PARTNER] New Partnership Inquiry from ${name}`
+  return `[LOGIGLOBE-PARTNER] New Partnership Inquiry from ${name}`
 }
 
 export function generatePartnerRegistrationEmailHtml(data: PartnerRegistrationData): string {
@@ -30,7 +30,7 @@ export function generatePartnerRegistrationEmailHtml(data: PartnerRegistrationDa
       <h1>New Partnership Inquiry</h1>
     </div>
     <div class="content">
-      <p>You have received a new partnership inquiry through the ROLO Fleets partner registration form.</p>
+      <p>You have received a new partnership inquiry through the LogiGlobe partner registration form.</p>
 
       <div class="field">
         <div class="label">Name:</div>
@@ -58,7 +58,7 @@ export function generatePartnerRegistrationEmailHtml(data: PartnerRegistrationDa
       </div>
     </div>
     <div class="footer">
-      <p>This inquiry was submitted through the ROLO Fleets partner registration form.</p>
+      <p>This inquiry was submitted through the LogiGlobe partner registration form.</p>
       <p>Please respond within 24-48 hours to maintain partner engagement.</p>
     </div>
   </div>
@@ -72,7 +72,7 @@ export function generatePartnerRegistrationEmailText(data: PartnerRegistrationDa
 NEW PARTNERSHIP INQUIRY
 ========================
 
-You have received a new partnership inquiry through the ROLO Fleets partner registration form.
+You have received a new partnership inquiry through the LogiGlobe partner registration form.
 
 Name: ${data.name}
 Organisation: ${data.organisation}
@@ -81,7 +81,7 @@ Phone: ${data.phone}
 MSME Act 2006 Registered: ${data.msme === "yes" ? "Yes" : "No"}
 
 ---
-This inquiry was submitted through the ROLO Fleets partner registration form.
+This inquiry was submitted through the LogiGlobe partner registration form.
 Please respond within 24-48 hours to maintain partner engagement.
   `.trim()
 }
@@ -112,7 +112,7 @@ export function generatePartnerRegistrationConfirmationHtml(name: string): strin
       <p class="message">Dear <span class="highlight">${name}</span>,</p>
 
       <p class="message">
-        Thank you for expressing interest in partnering with ROLO Fleets. We have received your partnership inquiry
+        Thank you for expressing interest in partnering with LogiGlobe. We have received your partnership inquiry
         and are excited about the potential opportunity to work together.
       </p>
 
@@ -127,11 +127,11 @@ export function generatePartnerRegistrationConfirmationHtml(name: string): strin
 
       <p class="message">
         Best regards,<br>
-        <strong>ROLO Fleets Partnership Team</strong>
+        <strong>LogiGlobe Partnership Team</strong>
       </p>
     </div>
     <div class="footer">
-      <p>If you have any immediate questions, please don't hesitate to contact us at support@rolofleets.com</p>
+      <p>If you have any immediate questions, please don't hesitate to contact us at support@logiglobe.com</p>
     </div>
   </div>
 </body>
@@ -146,7 +146,7 @@ THANK YOU FOR YOUR INTEREST!
 
 Dear ${name},
 
-Thank you for expressing interest in partnering with ROLO Fleets. We have received your partnership inquiry
+Thank you for expressing interest in partnering with LogiGlobe. We have received your partnership inquiry
 and are excited about the potential opportunity to work together.
 
 Our partnership team will carefully review your information and get back to you within 24-48 hours
@@ -155,17 +155,17 @@ with the next steps.
 We look forward to exploring how we can grow together and create mutual success in the logistics industry.
 
 Best regards,
-ROLO Fleets Partnership Team
+LogiGlobe Partnership Team
 
 ---
-If you have any immediate questions, please don't hesitate to contact us at support@rolofleets.com
+If you have any immediate questions, please don't hesitate to contact us at support@logiglobe.com
   `.trim()
 }
 
 // ===== FLEET DETAIL EMAIL TEMPLATES =====
 
 export function generateFleetDetailSubject(fleetName: string): string {
-  return `[ROLO-FLEET] New Fleet Registration from ${fleetName}`
+  return `[LOGIGLOBE-FLEET] New Fleet Registration from ${fleetName}`
 }
 
 export function generateFleetDetailEmailHtml(data: FleetDetailData): string {
@@ -194,7 +194,7 @@ export function generateFleetDetailEmailHtml(data: FleetDetailData): string {
       <h1>New Fleet Partner Registration</h1>
     </div>
     <div class="content">
-      <p>You have received a new fleet partner registration through the ROLO Fleets fleet registration form.</p>
+      <p>You have received a new fleet partner registration through the LogiGlobe fleet registration form.</p>
 
       <div class="section">
         <div class="section-title">Contact Information</div>
@@ -259,7 +259,7 @@ export function generateFleetDetailEmailHtml(data: FleetDetailData): string {
       </div>
     </div>
     <div class="footer">
-      <p>This registration was submitted through the ROLO Fleets fleet partner registration form.</p>
+      <p>This registration was submitted through the LogiGlobe fleet partner registration form.</p>
       <p>Please respond within 24-48 hours to onboard this fleet partner.</p>
     </div>
   </div>
@@ -273,7 +273,7 @@ export function generateFleetDetailEmailText(data: FleetDetailData): string {
 NEW FLEET PARTNER REGISTRATION
 ===============================
 
-You have received a new fleet partner registration through the ROLO Fleets fleet registration form.
+You have received a new fleet partner registration through the LogiGlobe fleet registration form.
 
 CONTACT INFORMATION
 -------------------
@@ -295,7 +295,7 @@ Vehicle Type: ${data.vehicleType}
 Primary Routes: ${data.primaryRoutes}
 
 ---
-This registration was submitted through the ROLO Fleets fleet partner registration form.
+This registration was submitted through the LogiGlobe fleet partner registration form.
 Please respond within 24-48 hours to onboard this fleet partner.
   `.trim()
 }
@@ -322,13 +322,13 @@ export function generateFleetDetailConfirmationHtml(fleetName: string): string {
 <body>
   <div class="container">
     <div class="header">
-      <h1>Welcome to ROLO Fleets!</h1>
+      <h1>Welcome to LogiGlobe!</h1>
     </div>
     <div class="content">
       <p class="message">Dear <span class="highlight">${fleetName}</span>,</p>
 
       <p class="message">
-        Thank you for registering your fleet with ROLO Fleets. We have received your registration details
+        Thank you for registering your fleet with LogiGlobe. We have received your registration details
         and are thrilled to have you join our extensive network of trusted fleet partners.
       </p>
 
@@ -353,11 +353,11 @@ export function generateFleetDetailConfirmationHtml(fleetName: string): string {
 
       <p class="message">
         Best regards,<br>
-        <strong>ROLO Fleets Partnership Team</strong>
+        <strong>LogiGlobe Partnership Team</strong>
       </p>
     </div>
     <div class="footer">
-      <p>If you have any immediate questions, please don't hesitate to contact us at support@rolofleets.com</p>
+      <p>If you have any immediate questions, please don't hesitate to contact us at support@logiglobe.com</p>
     </div>
   </div>
 </body>
@@ -367,12 +367,12 @@ export function generateFleetDetailConfirmationHtml(fleetName: string): string {
 
 export function generateFleetDetailConfirmationText(fleetName: string): string {
   return `
-WELCOME TO ROLO FLEETS!
+WELCOME TO LogiGlobe!
 =======================
 
 Dear ${fleetName},
 
-Thank you for registering your fleet with ROLO Fleets. We have received your registration details
+Thank you for registering your fleet with LogiGlobe. We have received your registration details
 and are thrilled to have you join our extensive network of trusted fleet partners.
 
 Our fleet onboarding team will review your information and reach out to you within 24-48 hours
@@ -388,9 +388,9 @@ WHAT'S NEXT?
 We look forward to a long and prosperous partnership with you!
 
 Best regards,
-ROLO Fleets Partnership Team
+LogiGlobe Partnership Team
 
 ---
-If you have any immediate questions, please don't hesitate to contact us at support@rolofleets.com
+If you have any immediate questions, please don't hesitate to contact us at support@logiglobe.com
   `.trim()
 }

@@ -21,14 +21,14 @@ export function PartnersFooter() {
           {/* About */}
           <div className="lg:col-span-2">
             <Image
-              src="/logo-navy-cream.png"
-              alt="Rolo Fleet"
+              src="/logiglobe-light.svg"
+              alt="LogiGlobe"
               width={200}
-              height={80}
-              className="h-14 w-auto mb-6 brightness-0 invert"
+              height={200}
+              className="h-14 w-auto mb-6"
             />
             <p className="text-cream/80 mb-6 max-w-md leading-relaxed text-sm">
-              ROLO Fleets – Wheels of Trust. Over 40 years of legacy in logistics, now powered by
+              LogiGlobe – Wheels of Trust. Over 40 years of legacy in logistics, now powered by
               modern technology and transparent operations. Join our partner network and grow your
               business nationwide.
             </p>
@@ -53,10 +53,10 @@ export function PartnersFooter() {
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-cream" />
                 <a
-                  href="mailto:support@rolofleets.com"
+                  href="mailto:support@logiglobe.com"
                   className="text-sm text-cream/70 hover:text-cream transition-colors hover:underline"
                 >
-                  support@rolofleets.com
+                  support@logiglobe.com
                 </a>
               </div>
             </div>
@@ -192,7 +192,7 @@ export function PartnersFooter() {
         <div className="border-t border-cream/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-sm text-cream/60">
-              © 2025 ROLO Fleets Pvt. Ltd. All Rights Reserved.
+              © 2025 LogiGlobe Pvt. Ltd. All Rights Reserved.
             </p>
 
             {/* Social Icons */}

@@ -13,7 +13,7 @@ export function AboutCareers() {
 
             <div className="space-y-6 text-[#1A1A1A] text-lg leading-relaxed">
               <p>
-                At Rolo Fleet, we believe that our people are our greatest asset. We are committed to
+                At LogiGlobe, we believe that our people are our greatest asset. We are committed to
                 fostering a culture of innovation, collaboration, and continuous growth. Our team members
                 are passionate about transforming the logistics industry and delivering exceptional value
                 to our clients.
@@ -44,7 +44,7 @@ export function AboutCareers() {
           <div className="flex items-start lg:items-center">
             <div className="bg-white rounded-lg shadow-lg p-8 md:p-12 w-full">
               <h3 className="text-2xl font-bold text-[#005EB8] mb-8">
-                Why Choose Rolo Fleet?
+                Why Choose LogiGlobe?
               </h3>
 
               <ul className="space-y-6">

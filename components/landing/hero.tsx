@@ -11,7 +11,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         <img
           src="/modern-navy-blue-logistics-truck-on-highway--minim.jpg"
-          alt="Rolo Fleet Logistics"
+          alt="LogiGlobe Logistics"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/85 sm:via-navy/75 to-navy/60 sm:to-transparent" />

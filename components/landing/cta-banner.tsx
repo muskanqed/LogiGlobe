@@ -24,7 +24,7 @@ export function CTABanner() {
           <span className="text-cream/80">Logistics Operations?</span>
         </h2>
         <p className="text-sm sm:text-base md:text-lg lg:text-xl text-cream/70 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-4">
-          Join industry leaders who trust ROLO Fleets for reliable, transparent, and technology-driven logistics
+          Join industry leaders who trust LogiGlobe for reliable, transparent, and technology-driven logistics
           solutions.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

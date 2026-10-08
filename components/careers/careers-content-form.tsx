@@ -130,7 +130,7 @@ export function CareersContentForm() {
 
               <div className="space-y-5 text-navy/80 text-base leading-relaxed">
                 <p>
-                  At Rolo Fleet, we believe in empowering our people to drive innovation in India's
+                  At LogiGlobe, we believe in empowering our people to drive innovation in India's
                   logistics landscape. With over 40 years of industry leadership, we combine traditional
                   values with cutting-edge technology to create a workplace where excellence thrives.
                 </p>
@@ -145,7 +145,7 @@ export function CareersContentForm() {
                 <p>
                   Join a diverse team of logistics professionals, technology innovators, and industry
                   experts working together to transform supply chain solutions across the nation. Whether
-                  you're starting your career or seeking new challenges, Rolo Fleet offers the platform
+                  you're starting your career or seeking new challenges, LogiGlobe offers the platform
                   to achieve your professional aspirations.
                 </p>
               </div>
@@ -154,7 +154,7 @@ export function CareersContentForm() {
             {/* Benefits Card */}
             <Card className="bg-cream border-none shadow-md p-8">
               <h3 className="text-2xl font-bold text-navy mb-6 font-heading">
-                Why Join Rolo Fleet?
+                Why Join LogiGlobe?
               </h3>
 
               <ul className="space-y-5">

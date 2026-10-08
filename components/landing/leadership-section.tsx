@@ -5,45 +5,45 @@ import { useEffect, useRef, useState } from "react"
 
 const leaders = [
   {
-    name: "Vrushabh Sonawane",
-    title: "Founder & CEO",
-    bio: "An MBA in International Business and 10+ years of expertise in growth strategy and marketing across global markets.",
-    image: "/images/teams/vrushabh-sonawane.png",
+    name: "Maya Desai",
+    title: "Chief Executive Officer",
+    bio: "Sets the company’s strategic direction and builds partnerships that strengthen global supply chains.",
+    image: "/business-executive-portrait.png",
     linkedin: "https://linkedin.com",
   },
   {
-    name: "Vishal Bidve",
-    title: "Co-Founder & CTO",
-    bio: "IIT Bombay alumnus; specializes in AI, ML & blockchain-enabled logistics.",
-    image: "/images/teams/vishal-ramesh-bidve.png",
+    name: "Rohan Mehta",
+    title: "Chief Operating Officer",
+    bio: "Leads day-to-day operations with a focus on reliable service, safety, and continuous improvement.",
+    image: "/operations-director-portrait.jpg",
     linkedin: "https://linkedin.com",
   },
   {
-    name: "Anup Gosavi",
-    title: "Co-Founder & COO",
-    bio: "20+ years in corporate & entrepreneurial experience with expertise in operations and technology.",
-    image: "/images/teams/anup-jaggannath-gosavi.png",
+    name: "Priya Nair",
+    title: "Head of Global Logistics",
+    bio: "Coordinates international freight networks and helps customers move goods smoothly across borders.",
+    image: "/logistics-director-portrait.jpg",
     linkedin: "https://linkedin.com",
   },
   {
-    name: "Sandip Mandhare",
-    title: "Director – Operations",
-    bio: "10+ years in operations; ensures process discipline and ground execution excellence.",
-    image: "/images/teams/sandip-vitthal-mandhare.png",
+    name: "Kabir Shah",
+    title: "VP of Operations",
+    bio: "Oversees regional teams and develops practical processes for consistent, on-time delivery.",
+    image: "/senior-business-executive-portrait.jpg",
     linkedin: "https://linkedin.com",
   },
   {
-    name: "Dnyaneshwar Tanpure",
-    title: "Director – Supply Chain & Logistics",
-    bio: "25+ years in trucking and logistics; drives supply-chain efficiency and reliability.",
-    image: "/images/teams/dnyaneshwar-sahebrao-tanpure.png",
+    name: "Leena Kapoor",
+    title: "Head of Technology",
+    bio: "Guides digital tools that give customers and operations teams clearer, more timely shipment insights.",
+    image: "/tech-executive-portrait-cto.jpg",
     linkedin: "https://linkedin.com",
   },
   {
-    name: "Arvind Chavan",
-    title: "Director – Vendor Management",
-    bio: "20+ years in vendor relations; ensures transparent and dependable partnerships.",
-    image: "/images/teams/arvind-dattatrya-chavan.png",
+    name: "Arjun Malhotra",
+    title: "Head of Customer Experience",
+    bio: "Shapes responsive support and service standards around the changing needs of logistics customers.",
+    image: "/vendor-management-executive-portrait.jpg",
     linkedin: "https://linkedin.com",
   },
 ]
@@ -98,7 +98,7 @@ export function LeadershipSection() {
             className={`text-sm sm:text-base md:text-lg text-navy/70 max-w-2xl mx-auto transition-all duration-1000 delay-300 px-4 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
           >
-            Experienced leadership combining corporate expertise and technical innovation in logistics
+            Illustrative fictional profiles for demonstration only; these are not actual LogiGlobe employees.
           </p>
         </div>
 

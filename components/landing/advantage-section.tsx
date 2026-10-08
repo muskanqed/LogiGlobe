@@ -7,12 +7,12 @@ export function AdvantageSection() {
           <div>
             <div className="w-12 sm:w-16 h-1 bg-navy mb-4 sm:mb-6" />
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 sm:mb-6 leading-tight text-navy font-heading">
-              The ROLO FLEETS
+              The LogiGlobe
               <br />
               <span className="text-gradient">Advantage</span>
             </h2>
             <p className="text-sm sm:text-base text-gray mb-4 sm:mb-6 leading-relaxed">
-              ROLO Fleets carries forward a legacy of over four decades, originally founded by the grandfather of our
+              LogiGlobe carries forward a legacy of over four decades, originally founded by the grandfather of our
               current generation of leaders. Now led by the third generation, we combine real-world experience with
               modern intelligence to build a transparent, technology-integrated logistics ecosystem for the future.
             </p>
@@ -43,7 +43,7 @@ export function AdvantageSection() {
             <div className="aspect-[4/3] overflow-hidden rounded-md border border-gray-200 shadow-sm">
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-BOjhQ6fXRSzBeWYWsBMNz8EH6Kx911.png"
-                alt="Rolo Fleets Legacy - Vintage trucks"
+                alt="LogiGlobe Legacy - Vintage trucks"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
               />
             </div>

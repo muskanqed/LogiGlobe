@@ -20,17 +20,17 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "ROLO Fleets Pvt. Ltd. | Logistics & Fleet Solutions in India",
+  title: "LogiGlobe Pvt. Ltd. | Logistics & Fleet Solutions in India",
   description:
     "Trusted logistics partner with 40+ years of legacy. Offering air, surface, and supply chain logistics solutions with transparency and technology integration.",
   keywords:
-    "logistics India, fleet management, trucking, air logistics, supply chain solutions, transport services, ROLO Fleets",
+    "logistics India, fleet management, trucking, air logistics, supply chain solutions, transport services, LogiGlobe",
   icons: {
     icon: "/icon.svg",
     apple: "/apple-icon.svg",
   },
   openGraph: {
-    title: "ROLO Fleets - Wheels of Trust",
+    title: "LogiGlobe - Wheels of Trust",
     description: "40+ years of logistics legacy with modern technology integration",
     type: "website",
   },

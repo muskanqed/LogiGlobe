@@ -14,8 +14,8 @@ import {
   generateCareersApplicationConfirmationText,
 } from "@/lib/email/careers-templates"
 
-const CONTACT_EMAIL = process.env.CONTACT_EMAIL || process.env.SMTP_USER || "support@rolofleets.com"
-const FROM_EMAIL = process.env.SMTP_FROM || process.env.SMTP_USER || "support@rolofleets.com"
+const CONTACT_EMAIL = process.env.CONTACT_EMAIL || process.env.SMTP_USER || "support@logiglobe.com"
+const FROM_EMAIL = process.env.SMTP_FROM || process.env.SMTP_USER || "support@logiglobe.com"
 
 export async function POST(request: Request) {
   try {
@@ -97,7 +97,7 @@ export async function POST(request: Request) {
     await transporter.sendMail({
       from: FROM_EMAIL,
       to: validatedData.email,
-      subject: `Thank You for Your Application to ROLO Fleets`,
+      subject: `Thank You for Your Application to LogiGlobe`,
       html: confirmationHtml,
       text: confirmationText,
     })

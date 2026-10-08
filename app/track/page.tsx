@@ -42,8 +42,8 @@ export default function TrackPage() {
                     Call: +91 93079 21926
                   </a>
                   <span className="hidden sm:inline text-muted-foreground">|</span>
-                  <a href="mailto:support@rolofleets.com" className="text-sm font-medium text-navy hover:underline">
-                    Email: support@rolofleets.com
+                  <a href="mailto:support@logiglobe.com" className="text-sm font-medium text-navy hover:underline">
+                    Email: support@logiglobe.com
                   </a>
                 </div>
               </div>

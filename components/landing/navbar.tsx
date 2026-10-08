@@ -49,10 +49,10 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0">
             <Image
-              src="/logo-navy-cream.png"
-              alt="Rolo Fleet"
+              src="/logiglobe-dark.svg"
+              alt="LogiGlobe"
               width={240}
-              height={96}
+              height={240}
               className="h-16 md:h-20 w-auto"
               priority
             />

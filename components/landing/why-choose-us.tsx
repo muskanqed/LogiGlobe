@@ -242,7 +242,7 @@ export function WhyChooseUs({ ctaHref }: { ctaHref?: string }) {
           className="text-center mb-8 sm:mb-10 md:mb-12"
         >
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-black mb-2 text-white font-heading px-4">
-            Why Choose <span className="text-gradient-light">ROLO FLEETS</span>
+            Why Choose <span className="text-gradient-light">LogiGlobe</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-2xl mx-auto font-semibold px-4">
             Legacy You Can Trust. Systems You Can Scale.

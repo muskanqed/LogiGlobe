@@ -31,7 +31,7 @@ export function ApplicationForm() {
             Apply Now
           </h2>
           <p className="text-lg text-[#1A1A1A]/70 mb-12">
-            Take the first step towards an exciting career with Rolo Fleet. Fill out the form below
+            Take the first step towards an exciting career with LogiGlobe. Fill out the form below
             and we'll get back to you soon.
           </p>
 
@@ -129,7 +129,7 @@ export function ApplicationForm() {
                 id="message"
                 rows={5}
                 className="w-full border-[#D1D5DB] focus:border-[#005EB8] focus:ring-[#005EB8] resize-none"
-                placeholder="Tell us why you'd like to join Rolo Fleet..."
+                placeholder="Tell us why you'd like to join LogiGlobe..."
               />
             </div>
 

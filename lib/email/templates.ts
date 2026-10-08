@@ -61,7 +61,7 @@ export function generateContactEmailHtml(data: ContactFormData): string {
         <div class="container">
           <div class="header">
             <h1>New Contact Form Submission</h1>
-            <p>ROLO Fleets - Landing Page</p>
+            <p>LogiGlobe - Landing Page</p>
           </div>
           <div class="content">
             <div class="field">
@@ -97,7 +97,7 @@ export function generateContactEmailHtml(data: ContactFormData): string {
 
             <div class="footer">
               <p>Received on ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}</p>
-              <p>This email was sent from the ROLO Fleets contact form</p>
+              <p>This email was sent from the LogiGlobe contact form</p>
             </div>
           </div>
         </div>
@@ -111,7 +111,7 @@ export function generateContactEmailHtml(data: ContactFormData): string {
  */
 export function generateContactEmailText(data: ContactFormData): string {
   return `
-New Contact Form Submission - ROLO Fleets
+New Contact Form Submission - LogiGlobe
 
 Name: ${data.name}
 Email: ${data.email}
@@ -128,10 +128,10 @@ Received on ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
 
 /**
  * Generates email subject line for contact form
- * Includes [ROLO-CONTACT] tag for easy filtering in inbox
+ * Includes [LOGIGLOBE-CONTACT] tag for easy filtering in inbox
  */
 export function generateContactSubject(name: string): string {
-  return `[ROLO-CONTACT] New Inquiry from ${name}`
+  return `[LOGIGLOBE-CONTACT] New Inquiry from ${name}`
 }
 
 /**
@@ -221,7 +221,7 @@ export function generateConfirmationEmailHtml(name: string): string {
         <div class="container">
           <div class="header">
             <h1>Thank You for Contacting Us!</h1>
-            <p>ROLO Fleets - Your Trusted Logistics Partner</p>
+            <p>LogiGlobe - Your Trusted Logistics Partner</p>
           </div>
           <div class="content">
             <div class="checkmark">✓</div>
@@ -232,7 +232,7 @@ export function generateConfirmationEmailHtml(name: string): string {
 
             <div class="message">
               <p style="margin-top: 0;">
-                Thank you for reaching out to ROLO Fleets! We have received your message
+                Thank you for reaching out to LogiGlobe! We have received your message
                 and our team will review it shortly.
               </p>
               <p>
@@ -247,17 +247,17 @@ export function generateConfirmationEmailHtml(name: string): string {
             <div class="contact-info">
               <h3>Need Immediate Assistance?</h3>
               <div class="contact-item">
-                <strong>Email:</strong> <a href="mailto:support@rolofleets.com">support@rolofleets.com</a>
+                <strong>Email:</strong> <a href="mailto:support@logiglobe.com">support@logiglobe.com</a>
               </div>
               <div class="contact-item">
-                <strong>Website:</strong> <a href="https://rolofleets.com">www.rolofleets.com</a>
+                <strong>Website:</strong> <a href="https://logiglobe.com">www.logiglobe.com</a>
               </div>
             </div>
 
             <div class="footer">
-              <p>This is an automated confirmation email from ROLO Fleets.</p>
-              <p>Please do not reply to this email. For any queries, contact us at support@rolofleets.com</p>
-              <p style="margin-top: 15px;">&copy; ${new Date().getFullYear()} ROLO Fleets. All rights reserved.</p>
+              <p>This is an automated confirmation email from LogiGlobe.</p>
+              <p>Please do not reply to this email. For any queries, contact us at support@logiglobe.com</p>
+              <p style="margin-top: 15px;">&copy; ${new Date().getFullYear()} LogiGlobe. All rights reserved.</p>
             </div>
           </div>
         </div>
@@ -273,21 +273,21 @@ export function generateConfirmationEmailText(name: string): string {
   return `
 Hi ${name},
 
-Thank you for contacting ROLO Fleets!
+Thank you for contacting LogiGlobe!
 
 We have received your message and our team will review it shortly. One of our logistics specialists will get back to you within 24-48 hours to discuss your requirements and how we can help optimize your logistics operations.
 
 We appreciate your interest in our services and look forward to partnering with you.
 
 Need Immediate Assistance?
-Email: support@rolofleets.com
-Website: www.rolofleets.com
+Email: support@logiglobe.com
+Website: www.logiglobe.com
 
 ---
-This is an automated confirmation email from ROLO Fleets.
-Please do not reply to this email. For any queries, contact us at support@rolofleets.com
+This is an automated confirmation email from LogiGlobe.
+Please do not reply to this email. For any queries, contact us at support@logiglobe.com
 
-© ${new Date().getFullYear()} ROLO Fleets. All rights reserved.
+© ${new Date().getFullYear()} LogiGlobe. All rights reserved.
   `.trim()
 }
 
@@ -295,5 +295,5 @@ Please do not reply to this email. For any queries, contact us at support@rolofl
  * Generates subject line for confirmation email
  */
 export function generateConfirmationSubject(): string {
-  return "Thank You for Contacting ROLO Fleets - We'll Be In Touch Soon!"
+  return "Thank You for Contacting LogiGlobe - We'll Be In Touch Soon!"
 }

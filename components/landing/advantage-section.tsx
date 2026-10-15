@@ -7,14 +7,14 @@ export function AdvantageSection() {
           <div>
             <div className="w-12 sm:w-16 h-1 bg-navy mb-4 sm:mb-6" />
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 sm:mb-6 leading-tight text-navy font-heading">
-              The LogiGlobe
+              The XYZ Logistics
               <br />
               <span className="text-gradient">Advantage</span>
             </h2>
             <p className="text-sm sm:text-base text-gray mb-4 sm:mb-6 leading-relaxed">
-              LogiGlobe carries forward a legacy of over four decades, originally founded by the grandfather of our
-              current generation of leaders. Now led by the third generation, we combine real-world experience with
-              modern intelligence to build a transparent, technology-integrated logistics ecosystem for the future.
+              XYZ Logistics combines deep operational experience with modern intelligence to build a
+              transparent, technology-integrated logistics ecosystem. Our approach is grounded in
+              practical industry knowledge and a commitment to closing the gaps in today's supply chains.
             </p>
             <p className="text-sm sm:text-base text-gray leading-relaxed">
               <strong className="text-navy">Our Purpose:</strong> We've studied the majority of real-world use cases,
@@ -32,7 +32,7 @@ export function AdvantageSection() {
               <div className="border-l-4 border-navy pl-3 sm:pl-4">
                 <h3 className="font-bold text-base sm:text-lg mb-1 sm:mb-2 text-navy font-heading">Vision</h3>
                 <p className="text-sm sm:text-base text-gray leading-relaxed">
-                  To be India's most trusted and organized logistics ecosystem.
+                  To be a trusted and organized logistics ecosystem built on transparency and performance.
                 </p>
               </div>
             </div>
@@ -43,7 +43,7 @@ export function AdvantageSection() {
             <div className="aspect-[4/3] overflow-hidden rounded-md border border-gray-200 shadow-sm">
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-BOjhQ6fXRSzBeWYWsBMNz8EH6Kx911.png"
-                alt="LogiGlobe Legacy - Vintage trucks"
+                alt="Logistics Legacy - Vintage trucks"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
               />
             </div>

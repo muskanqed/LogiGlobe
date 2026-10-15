@@ -10,7 +10,7 @@ export function MissionSection() {
             Mission & <span className="text-gradient">Purpose</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-navy/70 max-w-2xl mx-auto px-4">
-            Bridging tradition with innovation to transform Indian logistics
+            Bridging tradition with innovation to transform modern logistics
           </p>
         </div>
 
@@ -30,7 +30,7 @@ export function MissionSection() {
             </div>
           </div>
           <p className="text-sm sm:text-base text-gray leading-relaxed">
-            We are committed to transforming the logistics landscape by combining four decades of
+            We are committed to transforming the logistics landscape by combining deep
             industry expertise with cutting-edge technology. Our mission is to create a transparent,
             efficient, and reliable logistics ecosystem that addresses real-world challenges and
             delivers measurable value to every stakeholder.

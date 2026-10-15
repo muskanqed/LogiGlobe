@@ -8,10 +8,10 @@ export function BenefitsSection() {
         <div className="text-center mb-16">
           <div className="w-16 h-1 bg-navy mx-auto mb-6" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy mb-4 font-heading">
-            Why Choose <span className="text-gradient">LogiGlobe</span>
+            Why Choose <span className="text-gradient">XYZ Logistics</span>
           </h2>
           <p className="text-xl text-navy max-w-2xl mx-auto font-semibold">
-            Legacy You Can Trust. Systems You Can Scale.
+            Reliable Systems. Transparent Operations. Measurable Results.
           </p>
         </div>
 

@@ -20,8 +20,8 @@ import {
   generateFleetDetailConfirmationText,
 } from "@/lib/email/partner-templates"
 
-const CONTACT_EMAIL = process.env.CONTACT_EMAIL || process.env.SMTP_USER || "support@logiglobe.com"
-const FROM_EMAIL = process.env.SMTP_FROM || process.env.SMTP_USER || "support@logiglobe.com"
+const CONTACT_EMAIL = process.env.CONTACT_EMAIL || process.env.SMTP_USER || "contact@example.com"
+const FROM_EMAIL = process.env.SMTP_FROM || process.env.SMTP_USER || "contact@example.com"
 
 export async function POST(request: Request) {
   try {
@@ -103,7 +103,7 @@ export async function POST(request: Request) {
     await transporter.sendMail({
       from: FROM_EMAIL,
       to: recipientEmail,
-      subject: `Thank You for Your Interest in LogiGlobe`,
+      subject: `Thank You for Your Interest in XYZ Logistics`,
       html: confirmationHtml,
       text: confirmationText,
     })

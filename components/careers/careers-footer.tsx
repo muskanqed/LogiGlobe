@@ -9,37 +9,36 @@ export function CareersFooter() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* About the Company */}
           <div className="lg:col-span-2">
-            <Image src="/logiglobe-light.svg" alt="LogiGlobe" width={200} height={200} className="h-14 w-auto mb-6" />
+            <Image src="/logiglobe-light.svg" alt="XYZ Logistics" width={200} height={200} className="h-14 w-auto mb-6" />
             <p className="text-cream/70 mb-6 max-w-md leading-relaxed text-sm">
-              LogiGlobe – Wheels of Trust. Over 40 years of legacy in logistics, now powered by
-              modern technology and transparent operations. Leading the way in supply chain innovation
-              and excellence.
+              XYZ Logistics — a technology-integrated logistics provider committed to transparent,
+              reliable supply chain operations.
             </p>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-cream flex-shrink-0 mt-0.5" />
                 <div className="text-sm text-cream/70">
-                  1st Floor, VVT Avenue, Indira Nagar,
+                  123 Example Street,
                   <br />
-                  Nashik, Maharashtra, India - 422009
+                  Sample City
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-cream" />
                 <a
-                  href="tel:+919307921926"
+                  href="tel:+00-000-000-0000"
                   className="text-sm text-cream/70 hover:text-cream transition-colors"
                 >
-                  +91 93079 21926
+                  +00-000-000-0000
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-cream" />
                 <a
-                  href="mailto:support@logiglobe.com"
+                  href="mailto:contact@example.com"
                   className="text-sm text-cream/70 hover:text-cream transition-colors"
                 >
-                  support@logiglobe.com
+                  contact@example.com
                 </a>
               </div>
             </div>
@@ -191,7 +190,7 @@ export function CareersFooter() {
         <div className="border-t border-cream/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-sm text-cream/50">
-              © 2025 LogiGlobe Pvt. Ltd. All Rights Reserved.
+              © 2025 XYZ Logistics. All Rights Reserved.
             </p>
 
             {/* Social Icons */}

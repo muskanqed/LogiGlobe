@@ -1,13 +1,8 @@
 export const stats = [
   {
-    value: '40+',
-    label: 'Years of Legacy',
-    sublabel: 'Trusted since the 1980s',
-  },
-  {
     value: '500+',
     label: 'Vendor Partners',
-    sublabel: 'Pan-India Network',
+    sublabel: 'Nationwide Network',
   },
   {
     value: '95%',
@@ -18,6 +13,11 @@ export const stats = [
     value: '20K+',
     label: 'Shipments Monthly',
     sublabel: 'Scale & Efficiency',
+  },
+  {
+    value: '100+',
+    label: 'Active Routes',
+    sublabel: 'Multi-Modal Coverage',
   },
 ]
 
@@ -51,33 +51,33 @@ export const services = [
 
 export const benefits = [
   {
-    title: 'Legacy You Can Trust',
-    description: 'Over 40 years of proven excellence in Indian logistics',
-    items: ['Multi-generational expertise', 'Industry reputation', 'Proven track record'],
+    title: 'Expertise You Can Trust',
+    description: 'Proven excellence in logistics operations built on deep industry knowledge',
+    items: ['Multi-domain expertise', 'Industry reputation', 'Proven track record'],
   },
   {
     title: 'Technology-Driven',
-    description: 'Modern intelligence meets traditional reliability',
+    description: 'Modern intelligence meets operational reliability',
     items: ['Real-time tracking', 'AI-powered routing', 'Blockchain transparency'],
   },
   {
     title: 'Scalable Solutions',
     description: 'From startups to enterprises, we grow with you',
-    items: ['Flexible capacity', 'Pan-India coverage', 'Multi-modal options'],
+    items: ['Flexible capacity', 'Wide geographic coverage', 'Multi-modal options'],
   },
 ]
 
 export const trustedByLogos = [
-  { name: 'Exide Batteries', image: '/images/clients/exide.png' },
-  { name: 'Berger Paints', image: '/images/clients/berger.png' },
-  { name: 'Colgate', image: '/images/clients/colgate.png' },
-  { name: 'Carlsberg India', image: '/images/clients/carlsberg.png' },
-  { name: 'United Breweries Limited', image: '/images/clients/united-breweries.png' },
-  { name: 'Patanjali (Ruchi Gold)', image: '/images/clients/patanjali.png' },
-  { name: 'Fortune (Adani)', image: '/images/clients/fortune.png' },
-  { name: 'Canpack India', image: '/images/clients/canpack.png' },
-  { name: 'Pramod India Pvt Ltd', image: '/images/clients/pramod.png' },
-  { name: 'Hindustan National Glass Limited (HNGIL)', image: '/images/clients/hngil.png' },
-  { name: 'AB InBev India', image: '/images/clients/abinbev.png' },
-  { name: 'Fresenius Kabi India Pvt Ltd', image: '/images/clients/fresenius kabi.png' },
+  { name: 'Partner Network', image: '/images/clients/exide.png' },
+  { name: 'Supply Partner', image: '/images/clients/berger.png' },
+  { name: 'Enterprise Client', image: '/images/clients/colgate.png' },
+  { name: 'Logistics Partner', image: '/images/clients/carlsberg.png' },
+  { name: 'Retail Partner', image: '/images/clients/united-breweries.png' },
+  { name: 'FMCG Client', image: '/images/clients/patanjali.png' },
+  { name: 'Commercial Partner', image: '/images/clients/fortune.png' },
+  { name: 'Manufacturing Client', image: '/images/clients/canpack.png' },
+  { name: 'Industrial Partner', image: '/images/clients/pramod.png' },
+  { name: 'Distribution Partner', image: '/images/clients/hngil.png' },
+  { name: 'Beverage Partner', image: '/images/clients/abinbev.png' },
+  { name: 'Healthcare Client', image: '/images/clients/fresenius kabi.png' },
 ]

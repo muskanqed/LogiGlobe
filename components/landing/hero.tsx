@@ -11,7 +11,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         <img
           src="/modern-navy-blue-logistics-truck-on-highway--minim.jpg"
-          alt="LogiGlobe Logistics"
+          alt="Logistics"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/85 sm:via-navy/75 to-navy/60 sm:to-transparent" />
@@ -25,12 +25,12 @@ export function Hero() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-cream mb-4 sm:mb-6 leading-[1.15] sm:leading-[1.1] tracking-tight font-heading">
             <span className="block animate-[fadeInUp_0.8s_ease-out_forwards] opacity-0 [animation-delay:0.2s]">
               <span className="inline-block bg-gradient-to-r from-cream via-white to-cream bg-clip-text text-transparent animate-[shimmer_3s_ease-in-out_infinite]">
-                Built on 40 years of legacy.
+                Built on experience.
               </span>
             </span>
             <span className="block mt-2 animate-[fadeInUp_0.8s_ease-out_forwards] opacity-0 [animation-delay:0.5s]">
               <span className="inline-block text-cream  transition-transform duration-300">
-                Powering India's only{" "}
+                Powering next-generation{" "}
                 <span className="relative inline-block">
                   <span className="relative z-10 text-white font-extrabold">
                     Digital Twin–enabled
@@ -38,7 +38,7 @@ export function Hero() {
                   {/* <span className="absolute inset-0 blur-sm bg-white opacity-20 animate-pulse"></span> */}
                 </span>
                 {" "}logistics
-                <br />and supply chain network.
+                <br />and supply chain solutions.
               </span>
             </span>
           </h1>

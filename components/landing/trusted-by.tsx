@@ -78,7 +78,7 @@ export function TrustedBy() {
             Trusted by <span className="text-gradient">Industry Leaders</span>
           </h2>
           <p className="text-gray text-sm sm:text-base md:text-lg px-4">
-            Delivering excellence for India's most respected brands
+            Delivering excellence for industry-leading brands
           </p>
         </motion.div>
 

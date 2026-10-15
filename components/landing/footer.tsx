@@ -9,33 +9,33 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-14 md:mb-16">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <Image src="/logiglobe-light.svg" alt="LogiGlobe" width={200} height={200} className="h-20 w-auto -ml-4 -mt-4" />
+            <Image src="/logiglobe-light.svg" alt="XYZ Logistics" width={200} height={200} className="h-20 w-auto -ml-4 -mt-4" />
             <p className="text-sm sm:text-base text-cream/70 mb-4 sm:mb-6 max-w-md leading-relaxed">
-              LogiGlobe – Wheels of Trust. Over 40 years of legacy in logistics, now powered by modern technology and
-              transparent operations.
+              XYZ Logistics — a technology-integrated logistics provider committed to transparent,
+              reliable supply chain operations.
             </p>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-cream flex-shrink-0 mt-0.5" />
                 <div className="text-sm text-cream/70">
-                  1st Floor, VVT Avenue, Indira Nagar,
+                  123 Example Street,
                   <br />
-                  Nashik, Maharashtra, India - 422009
+                  Sample City
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-cream" />
-                <a href="tel:+919307921926" className="text-sm text-cream/70 hover:text-cream transition-colors">
-                  +91 93079 21926
+                <a href="tel:+00-000-000-0000" className="text-sm text-cream/70 hover:text-cream transition-colors">
+                  +00-000-000-0000
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-cream" />
                 <a
-                  href="mailto:support@logiglobe.com"
+                  href="mailto:contact@example.com"
                   className="text-sm text-cream/70 hover:text-cream transition-colors"
                 >
-                  support@logiglobe.com
+                  contact@example.com
                 </a>
               </div>
             </div>
@@ -78,15 +78,15 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-cream/10 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
-          <p className="text-xs sm:text-sm text-cream/50 text-center sm:text-left">© 2025 LogiGlobe Pvt. Ltd. All Rights Reserved.</p>
+          <p className="text-xs sm:text-sm text-cream/50 text-center sm:text-left">© 2025 XYZ Logistics. All Rights Reserved.</p>
           <div className="flex gap-4 sm:gap-6">
-            <Link href="https://www.linkedin.com/company/rolo-fleets/" className="text-cream/50 hover:text-cream transition-colors text-sm">
+            <Link href="#" className="text-cream/50 hover:text-cream transition-colors text-sm">
               LinkedIn
             </Link>
-            <Link href="https://www.instagram.com/rolofleets" className="text-cream/50 hover:text-cream transition-colors text-sm">
+            <Link href="#" className="text-cream/50 hover:text-cream transition-colors text-sm">
               Instagram
             </Link>
-            <Link href="https://www.youtube.com/@rolofleets" className="text-cream/50 hover:text-cream transition-colors text-sm">
+            <Link href="#" className="text-cream/50 hover:text-cream transition-colors text-sm">
               YouTube
             </Link>
           </div>

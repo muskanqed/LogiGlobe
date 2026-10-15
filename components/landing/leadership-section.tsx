@@ -98,7 +98,7 @@ export function LeadershipSection() {
             className={`text-sm sm:text-base md:text-lg text-navy/70 max-w-2xl mx-auto transition-all duration-1000 delay-300 px-4 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
           >
-            Illustrative fictional profiles for demonstration only; these are not actual LogiGlobe employees.
+            Illustrative fictional profiles for demonstration only; these are not actual XYZ Logistics employees.
           </p>
         </div>
 

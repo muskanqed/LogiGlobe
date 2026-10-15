@@ -20,18 +20,18 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "LogiGlobe Pvt. Ltd. | Logistics & Fleet Solutions in India",
+  title: "XYZ Logistics | Logistics & Fleet Solutions",
   description:
-    "Trusted logistics partner with 40+ years of legacy. Offering air, surface, and supply chain logistics solutions with transparency and technology integration.",
+    "A trusted logistics provider offering air, surface, and supply chain logistics solutions with transparency and technology integration.",
   keywords:
-    "logistics India, fleet management, trucking, air logistics, supply chain solutions, transport services, LogiGlobe",
+    "logistics, fleet management, trucking, air logistics, supply chain solutions, transport services, XYZ Logistics",
   icons: {
     icon: "/icon.svg",
     apple: "/apple-icon.svg",
   },
   openGraph: {
-    title: "LogiGlobe - Wheels of Trust",
-    description: "40+ years of logistics legacy with modern technology integration",
+    title: "XYZ Logistics - Trusted Logistics Provider",
+    description: "Technology-integrated logistics and supply chain solutions",
     type: "website",
   },
 }

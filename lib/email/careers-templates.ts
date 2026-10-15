@@ -3,7 +3,7 @@ import type { CareersApplicationData } from "@/lib/validation/careers-schema"
 // ===== CAREERS APPLICATION EMAIL TEMPLATES =====
 
 export function generateCareersApplicationSubject(firstName: string, lastName: string): string {
-  return `[LOGIGLOBE-CAREERS] New Job Application from ${firstName} ${lastName}`
+  return `[XYZ-CAREERS] New Job Application from ${firstName} ${lastName}`
 }
 
 export function generateCareersApplicationEmailHtml(
@@ -36,7 +36,7 @@ export function generateCareersApplicationEmailHtml(
       <h1>New Job Application</h1>
     </div>
     <div class="content">
-      <p>You have received a new job application through the LogiGlobe careers page.</p>
+      <p>You have received a new job application through the XYZ Logistics careers page.</p>
 
       <div class="section">
         <div class="section-title">Personal Information</div>
@@ -83,7 +83,7 @@ export function generateCareersApplicationEmailHtml(
       </div>
     </div>
     <div class="footer">
-      <p>This application was submitted through the LogiGlobe careers page.</p>
+      <p>This application was submitted through the XYZ Logistics careers page.</p>
       <p>Please review the resume and respond within 3-5 business days.</p>
     </div>
   </div>
@@ -100,7 +100,7 @@ export function generateCareersApplicationEmailText(
 NEW JOB APPLICATION
 ===================
 
-You have received a new job application through the LogiGlobe careers page.
+You have received a new job application through the XYZ Logistics careers page.
 
 PERSONAL INFORMATION
 --------------------
@@ -122,7 +122,7 @@ ${data.message}
 ${resumeFileName}
 
 ---
-This application was submitted through the LogiGlobe careers page.
+This application was submitted through the XYZ Logistics careers page.
 Please review the resume and respond within 3-5 business days.
   `.trim()
 }
@@ -155,12 +155,12 @@ export function generateCareersApplicationConfirmationHtml(firstName: string): s
       <p class="message">Dear <span class="highlight">${firstName}</span>,</p>
 
       <p class="message">
-        Thank you for applying to join the LogiGlobe team. We have successfully received your
+        Thank you for applying to join the XYZ Logistics team. We have successfully received your
         application and resume.
       </p>
 
       <p class="message">
-        Your interest in contributing to India's leading logistics company is greatly appreciated.
+        Your interest in contributing to our team is greatly appreciated.
         Our HR team will carefully review your qualifications and experience.
       </p>
 
@@ -181,11 +181,11 @@ export function generateCareersApplicationConfirmationHtml(firstName: string): s
 
       <p class="message">
         Best regards,<br>
-        <strong>LogiGlobe HR Team</strong>
+        <strong>XYZ Logistics HR Team</strong>
       </p>
     </div>
     <div class="footer">
-      <p>If you have any questions, please contact us at support@logiglobe.com</p>
+      <p>If you have any questions, please contact us at contact@example.com</p>
     </div>
   </div>
 </body>
@@ -200,10 +200,10 @@ APPLICATION RECEIVED!
 
 Dear ${firstName},
 
-Thank you for applying to join the LogiGlobe team. We have successfully received your
+Thank you for applying to join the XYZ Logistics team. We have successfully received your
 application and resume.
 
-Your interest in contributing to India's leading logistics company is greatly appreciated.
+Your interest in contributing to our team is greatly appreciated.
 Our HR team will carefully review your qualifications and experience.
 
 WHAT HAPPENS NEXT?
@@ -217,9 +217,9 @@ We appreciate your patience during the review process. If your qualifications al
 our current openings, we will reach out to you soon.
 
 Best regards,
-LogiGlobe HR Team
+XYZ Logistics HR Team
 
 ---
-If you have any questions, please contact us at support@logiglobe.com
+If you have any questions, please contact us at contact@example.com
   `.trim()
 }

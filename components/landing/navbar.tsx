@@ -50,7 +50,7 @@ export function Navbar() {
           <Link href="/" className="flex items-center shrink-0">
             <Image
               src="/logiglobe-dark.svg"
-              alt="LogiGlobe"
+              alt="XYZ Logistics"
               width={240}
               height={240}
               className="h-16 md:h-20 w-auto"

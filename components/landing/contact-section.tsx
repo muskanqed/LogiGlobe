@@ -163,7 +163,7 @@ export function ContactSection() {
                     {...register("phone")}
                     id="phone"
                     type="tel"
-                    placeholder="+91 1234567890"
+                    placeholder="+00-000-000-0000"
                     className="bg-white border-gray-300 focus:border-navy"
                   />
                 </div>

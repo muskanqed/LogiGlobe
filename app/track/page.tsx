@@ -38,12 +38,12 @@ export default function TrackPage() {
                   Contact our support team for assistance with tracking or shipment inquiries.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <a href="tel:+919307921926" className="text-sm font-medium text-navy hover:underline">
-                    Call: +91 93079 21926
+                  <a href="tel:+00-000-000-0000" className="text-sm font-medium text-navy hover:underline">
+                    Call: +00-000-000-0000
                   </a>
                   <span className="hidden sm:inline text-muted-foreground">|</span>
-                  <a href="mailto:support@logiglobe.com" className="text-sm font-medium text-navy hover:underline">
-                    Email: support@logiglobe.com
+                  <a href="mailto:contact@example.com" className="text-sm font-medium text-navy hover:underline">
+                    Email: contact@example.com
                   </a>
                 </div>
               </div>

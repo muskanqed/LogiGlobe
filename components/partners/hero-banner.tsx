@@ -16,9 +16,9 @@ export function HeroBanner() {
       <div className="relative z-10 h-full flex items-center justify-center">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-cream mb-4 font-heading leading-tight">
-            Partner With India's
+            Partner With A
             <br />
-            Leading Logistics Network
+            Trusted Logistics Network
           </h1>
           <p className="text-lg md:text-xl text-cream/90 max-w-3xl mx-auto">
             Join our trusted network of transport partners and grow your business with guaranteed

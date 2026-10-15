@@ -164,7 +164,7 @@ export function FleetDetailForm() {
                 type="tel"
                 {...register("phone")}
                 className="w-full border-gray-300 focus:border-navy focus:ring-navy bg-white h-11"
-                placeholder="+91 98765 43210"
+                placeholder="+00-000-000-0000"
               />
               {errors.phone && (
                 <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>

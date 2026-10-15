@@ -61,7 +61,7 @@ export function generateContactEmailHtml(data: ContactFormData): string {
         <div class="container">
           <div class="header">
             <h1>New Contact Form Submission</h1>
-            <p>LogiGlobe - Landing Page</p>
+            <p>XYZ Logistics - Landing Page</p>
           </div>
           <div class="content">
             <div class="field">
@@ -97,7 +97,7 @@ export function generateContactEmailHtml(data: ContactFormData): string {
 
             <div class="footer">
               <p>Received on ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}</p>
-              <p>This email was sent from the LogiGlobe contact form</p>
+              <p>This email was sent from the XYZ Logistics contact form</p>
             </div>
           </div>
         </div>
@@ -111,7 +111,7 @@ export function generateContactEmailHtml(data: ContactFormData): string {
  */
 export function generateContactEmailText(data: ContactFormData): string {
   return `
-New Contact Form Submission - LogiGlobe
+New Contact Form Submission - XYZ Logistics
 
 Name: ${data.name}
 Email: ${data.email}
@@ -128,10 +128,10 @@ Received on ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
 
 /**
  * Generates email subject line for contact form
- * Includes [LOGIGLOBE-CONTACT] tag for easy filtering in inbox
+ * Includes [XYZ-CONTACT] tag for easy filtering in inbox
  */
 export function generateContactSubject(name: string): string {
-  return `[LOGIGLOBE-CONTACT] New Inquiry from ${name}`
+  return `[XYZ-CONTACT] New Inquiry from ${name}`
 }
 
 /**
@@ -221,7 +221,7 @@ export function generateConfirmationEmailHtml(name: string): string {
         <div class="container">
           <div class="header">
             <h1>Thank You for Contacting Us!</h1>
-            <p>LogiGlobe - Your Trusted Logistics Partner</p>
+            <p>XYZ Logistics - Your Trusted Logistics Partner</p>
           </div>
           <div class="content">
             <div class="checkmark">✓</div>
@@ -232,7 +232,7 @@ export function generateConfirmationEmailHtml(name: string): string {
 
             <div class="message">
               <p style="margin-top: 0;">
-                Thank you for reaching out to LogiGlobe! We have received your message
+                Thank you for reaching out to XYZ Logistics! We have received your message
                 and our team will review it shortly.
               </p>
               <p>
@@ -247,17 +247,17 @@ export function generateConfirmationEmailHtml(name: string): string {
             <div class="contact-info">
               <h3>Need Immediate Assistance?</h3>
               <div class="contact-item">
-                <strong>Email:</strong> <a href="mailto:support@logiglobe.com">support@logiglobe.com</a>
+                <strong>Email:</strong> <a href="mailto:contact@example.com">contact@example.com</a>
               </div>
               <div class="contact-item">
-                <strong>Website:</strong> <a href="https://logiglobe.com">www.logiglobe.com</a>
+                <strong>Website:</strong> <a href="https://example.com">www.example.com</a>
               </div>
             </div>
 
             <div class="footer">
-              <p>This is an automated confirmation email from LogiGlobe.</p>
-              <p>Please do not reply to this email. For any queries, contact us at support@logiglobe.com</p>
-              <p style="margin-top: 15px;">&copy; ${new Date().getFullYear()} LogiGlobe. All rights reserved.</p>
+              <p>This is an automated confirmation email from XYZ Logistics.</p>
+              <p>Please do not reply to this email. For any queries, contact us at contact@example.com</p>
+              <p style="margin-top: 15px;">&copy; ${new Date().getFullYear()} XYZ Logistics. All rights reserved.</p>
             </div>
           </div>
         </div>
@@ -273,21 +273,21 @@ export function generateConfirmationEmailText(name: string): string {
   return `
 Hi ${name},
 
-Thank you for contacting LogiGlobe!
+Thank you for contacting XYZ Logistics!
 
 We have received your message and our team will review it shortly. One of our logistics specialists will get back to you within 24-48 hours to discuss your requirements and how we can help optimize your logistics operations.
 
 We appreciate your interest in our services and look forward to partnering with you.
 
 Need Immediate Assistance?
-Email: support@logiglobe.com
-Website: www.logiglobe.com
+Email: contact@example.com
+Website: www.example.com
 
 ---
-This is an automated confirmation email from LogiGlobe.
-Please do not reply to this email. For any queries, contact us at support@logiglobe.com
+This is an automated confirmation email from XYZ Logistics.
+Please do not reply to this email. For any queries, contact us at contact@example.com
 
-© ${new Date().getFullYear()} LogiGlobe. All rights reserved.
+© ${new Date().getFullYear()} XYZ Logistics. All rights reserved.
   `.trim()
 }
 
@@ -295,5 +295,5 @@ Please do not reply to this email. For any queries, contact us at support@logigl
  * Generates subject line for confirmation email
  */
 export function generateConfirmationSubject(): string {
-  return "Thank You for Contacting LogiGlobe - We'll Be In Touch Soon!"
+  return "Thank You for Contacting XYZ Logistics - We'll Be In Touch Soon!"
 }

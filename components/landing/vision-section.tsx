@@ -10,7 +10,7 @@ export function VisionSection() {
             Our <span className="text-gradient">Vision</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-navy/70 max-w-2xl mx-auto px-4">
-            Building the future of logistics in India
+            Building the future of logistics
           </p>
         </div>
 
@@ -22,17 +22,17 @@ export function VisionSection() {
                 <Eye className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-navy font-heading">
-                India's Most Trusted Logistics Ecosystem
+                A Trusted Logistics Ecosystem
               </h3>
             </div>
             <p className="text-sm sm:text-base text-gray leading-relaxed mb-6">
-              To be India's most trusted and organized logistics ecosystem, where transparency,
-              technology, and reliability come together to transform how goods move across the nation.
+              To be a trusted and organized logistics ecosystem, where transparency,
+              technology, and reliability come together to transform how goods move across supply networks.
             </p>
             <p className="text-sm sm:text-base text-gray leading-relaxed">
               We envision a future where every stakeholder in the supply chain—from vendors to
               end customers—experiences seamless, efficient, and dependable logistics services
-              powered by innovation and backed by decades of expertise.
+              powered by innovation and supported by proven operational expertise.
             </p>
           </div>
 

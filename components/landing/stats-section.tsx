@@ -67,8 +67,8 @@ export function StatsSection() {
             })}
           </div>
 
-          {/* Globe - Right Side - responsive height */}
-          <div className="relative w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-[500px] mt-8 lg:mt-0">
+          {/* Globe - Right Side - responsive square container */}
+          <div className="relative w-full aspect-square max-w-[500px] mx-auto mt-8 lg:mt-0 flex items-center justify-center">
             <World globeConfig={globeConfig} data={globeData} />
           </div>
         </div>

@@ -7,6 +7,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Three.js](https://img.shields.io/badge/Three.js-3D_Globe-black?style=flat-square&logo=threedotjs)](https://threejs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+[![Vercel Deployment](https://img.shields.io/badge/Live_Deployment-Vercel-black?style=flat-square&logo=vercel)](https://logi-globe.vercel.app/)
 
 ---
 
@@ -16,23 +17,20 @@ Experience LogiGlobe in action — from interactive 3D digital-twin globe visual
 
 <div align="center">
 
-### 📹 [▶ Click to Watch Full Demo Video](docs/assets/logiglobe-demo.mp4)
-
-<br/>
-
-<video src="docs/assets/logiglobe-demo.mp4" controls="controls" width="100%" style="max-width: 800px; border-radius: 8px;">
-  <p>Your browser does not support the video tag. You can view or download the recording directly: <a href="docs/assets/logiglobe-demo.mp4"><code>docs/assets/logiglobe-demo.mp4</code></a>.</p>
-</video>
-
 <p>
-  📁 <strong>Local Repository File:</strong> <a href="docs/assets/logiglobe-demo.mp4"><code>docs/assets/logiglobe-demo.mp4</code></a> (~10 MB)
+  🌐 <strong>Live Website:</strong> <a href="https://logi-globe.vercel.app/"><strong>https://logi-globe.vercel.app/</strong></a>
 </p>
+
+<a href="https://logi-globe.vercel.app/">
+  <img src="https://img.shields.io/badge/🚀_Visit_Live_Website-logi--globe.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Visit Live Website on Vercel" />
+</a>
 
 </div>
 
+---
+
 ## 📖 Table of Contents
 - [Project Preview & Demo](#-project-preview--demo)
-- [Enabling Inline Video Playback on GitHub](#-enabling-inline-video-playback-on-github)
 - [Key Features](#-key-features)
 - [Tech Stack](#-tech-stack)
 - [Project Structure](#-project-structure)
